@@ -244,7 +244,7 @@ input[type=range]::-moz-range-thumb{ width:18px; height:18px; border-radius:50%;
 .roi-break div{ display:flex; justify-content:space-between; }
 
 /* ====================== WORK / LANDING PAGES ====================== */
-.work-grid{ display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+.work-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
 .proj{ border-radius:22px; overflow:hidden; transition:transform .5s var(--ease), box-shadow .5s; }
 .proj:hover{ transform:translateY(-6px); box-shadow:var(--shadow-glow); }
 .frame{ position:relative; height:330px; overflow:hidden; border-bottom:1px solid var(--line); background:var(--solid-2); }
@@ -342,7 +342,7 @@ footer .small{ font-size:.7rem; color:var(--muted-2); margin-top:6px; }
   .hero-grid{ grid-template-columns:1fr; gap:40px; }
   .profile-card{ max-width:440px; margin:0 auto; }
   .roi-grid{ grid-template-columns:1fr; }
-  .work-grid{ grid-template-columns:1fr; }
+  .work-grid{ grid-template-columns:repeat(2,1fr); }
   .grid-4{ grid-template-columns:repeat(2,1fr); }
   .tools{ grid-template-columns:repeat(3,1fr); }
   .contact-grid{ grid-template-columns:1fr; }
@@ -351,6 +351,7 @@ footer .small{ font-size:.7rem; color:var(--muted-2); margin-top:6px; }
   .nav-links,.nav-right .btn,.nav-right .hide-sm{ display:none; }
   .menu-btn{ display:grid; }
   section{ padding:78px 0; }
+  .work-grid{ grid-template-columns:1fr; }
   .tools{ grid-template-columns:repeat(2,1fr); }
   .two{ grid-template-columns:1fr; }
 }
@@ -554,9 +555,9 @@ footer .small{ font-size:.7rem; color:var(--muted-2); margin-top:6px; }
   <section id="work">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">Landing Page Design &amp; Development</div>
+        <div class="eyebrow">Landing Page &amp; Funnel Design</div>
         <h2>Pages that <span class="serif grad-text" style="font-size:1.05em">convert</span></h2>
-        <p>Beyond Customer Success, I design and build conversion-focused landing pages end-to-end — strategy, copy, design, and code. Hover a card to preview the live page; click through to explore the real build.</p>
+        <p>Beyond Customer Success, I design and build conversion-focused landing pages and funnels end-to-end — strategy, copy, design, and code. Hover a card to preview the live build; click through to explore the real thing.</p>
       </div>
       <div class="work-grid">
 
@@ -598,8 +599,27 @@ footer .small{ font-size:.7rem; color:var(--muted-2); margin-top:6px; }
           </div>
         </article>
 
+        <!-- Masterclass Funnel -->
+        <article class="proj card spot reveal" data-cursor style="--d:.24s">
+          <div class="frame">
+            <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="u">Free Live Masterclass — Funnel</span></div>
+            <div class="scaler"><iframe src="projects/masterclass/index.html" title="Funnel — Masterclass" loading="lazy" scrolling="no"></iframe></div>
+            <div class="glow"></div>
+            <a href="projects/masterclass/index.html" target="_blank" rel="noopener" class="btn btn-primary live-cta" data-cursor>Open full funnel ↗</a>
+          </div>
+          <div class="proj-body">
+            <div class="ptype">Funnel · Masterclass</div>
+            <h3>Signature Offer Masterclass</h3>
+            <p>A live-webinar registration funnel that turns expertise into a premium coaching offer — curriculum, coach bio, proof, and FAQ, capped by a final CTA with a live countdown and seat-scarcity. Built GoHighLevel-ready.</p>
+            <div class="chips"><span class="chip">GoHighLevel</span><span class="chip">Webinar Opt-in</span><span class="chip">Countdown + Scarcity</span><span class="chip">Hand-coded</span></div>
+            <div class="proj-links">
+              <a href="projects/masterclass/index.html" target="_blank" rel="noopener" class="primary" data-cursor>View live funnel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
       </div>
-      <p class="work-note reveal">More landing-page builds available on request — each one strategy-first, hand-coded, and tuned for conversion.</p>
+      <p class="work-note reveal">More landing-page &amp; funnel builds available on request — each one strategy-first, hand-coded, and tuned for conversion.</p>
     </div>
   </section>
 

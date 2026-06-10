@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ascend — Free Signature Offer Masterclass</title>
+<meta name="description" content="Free live masterclass: package your expertise into a premium $5K coaching offer — without a big audience.">
+</head>
+<body>
+
+<!-- ============================================================= -->
+<!-- ⬇⬇⬇  GOHIGHLEVEL PASTE START  ⬇⬇⬇                              -->
+<!-- Drop everything between these markers into ONE Custom Code     -->
+<!-- (HTML) element in the GHL funnel builder. Fonts, styles, markup-->
+<!-- and JS all travel together. Everything is scoped to .oc-funnel.-->
+<!-- ============================================================= -->
+<div class="oc-funnel">
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap');
+
+/* ---------- SCOPED RESET + TOKENS ---------- */
+.oc-funnel{
+  --ink:#14131a;
+  --ink-soft:#4b4a57;
+  --ink-faint:#8a8896;
+  --canvas:#f4f3f1;
+  --surface:#ffffff;
+  --line:rgba(20,19,26,0.08);
+  --violet:#5b4bf5;
+  --violet-deep:#3b2fb8;
+  --coral:#ff6a4d;
+  --mint:#13c6a4;
+  --grad: linear-gradient(120deg,#5b4bf5 0%,#7b5cff 38%,#ff6a4d 100%);
+  --grad-soft: linear-gradient(120deg,rgba(91,75,245,0.14),rgba(255,106,77,0.12));
+  --shadow-soft: 0 1px 2px rgba(20,19,26,.04), 0 12px 30px -12px rgba(20,19,26,.14);
+  --shadow-lift: 0 2px 4px rgba(20,19,26,.05), 0 30px 60px -24px rgba(20,19,26,.28);
+  --ease: cubic-bezier(0.32,0.72,0,1);
+  --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
+  --r-xl: 32px;
+  --r-lg: 24px;
+  --r-md: 16px;
+  font-family:'Satoshi',-apple-system,system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--canvas);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  position:relative;
+  overflow-x:hidden;
+}
+.oc-funnel *,
+.oc-funnel *::before,
+.oc-funnel *::after{ box-sizing:border-box; margin:0; padding:0; }
+.oc-funnel img{ max-width:100%; display:block; }
+.oc-funnel a{ text-decoration:none; color:inherit; }
+.oc-funnel button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
+.oc-funnel input{ font-family:inherit; }
+.oc-funnel h1,.oc-funnel h2,.oc-funnel h3,.oc-funnel h4{
+  font-family:'Clash Display',sans-serif; font-weight:600; line-height:1.04;
+  letter-spacing:-0.02em; color:var(--ink);
+}
+.oc-funnel ::selection{ background:var(--violet); color:#fff; }
+
+/* film grain */
+.oc-grain{
+  position:fixed; inset:0; z-index:60; pointer-events:none; opacity:.035; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* layout */
+.oc-wrap{ width:100%; max-width:1200px; margin:0 auto; padding:0 28px; }
+.oc-section{ padding:120px 0; position:relative; }
+.oc-eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:'Satoshi'; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:.22em;
+  color:var(--violet-deep); background:rgba(91,75,245,.08);
+  border:1px solid rgba(91,75,245,.16); border-radius:100px; padding:7px 14px;
+}
+.oc-eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--coral); box-shadow:0 0 0 4px rgba(255,106,77,.18); animation:ocPulse 2.4s var(--ease) infinite; }
+@keyframes ocPulse{ 0%,100%{ transform:scale(1); opacity:1; } 50%{ transform:scale(1.4); opacity:.5; } }
+.oc-h2{ font-size:clamp(34px,5.2vw,60px); }
+.oc-lead{ font-size:clamp(17px,2vw,20px); color:var(--ink-soft); max-width:600px; }
+.oc-center{ text-align:center; }
+.oc-center .oc-lead{ margin-left:auto; margin-right:auto; }
+
+/* ---------- BUTTONS ---------- */
+.oc-btn{
+  position:relative; display:inline-flex; align-items:center; gap:12px;
+  font-weight:700; font-size:15px; padding:13px 14px 13px 24px; border-radius:100px;
+  transition:transform .5s var(--ease), box-shadow .5s var(--ease), background .4s var(--ease);
+  white-space:nowrap; will-change:transform;
+}
+.oc-btn .ic{
+  width:34px; height:34px; border-radius:50%; display:grid; place-items:center; flex:0 0 auto;
+  transition:transform .5s var(--ease-spring), background .4s var(--ease);
+}
+.oc-btn svg{ width:16px; height:16px; }
+.oc-btn--primary{ background:var(--grad); color:#fff; box-shadow:0 10px 28px -10px rgba(91,75,245,.7); }
+.oc-btn--primary .ic{ background:rgba(255,255,255,.18); }
+.oc-btn--primary:hover{ transform:translateY(-2px); box-shadow:0 18px 40px -12px rgba(91,75,245,.8); }
+.oc-btn--primary:hover .ic{ transform:translate(3px,-2px) scale(1.06); background:rgba(255,255,255,.28); }
+.oc-btn--primary:active{ transform:translateY(0) scale(.985); }
+.oc-btn--ink{ background:var(--ink); color:#fff; }
+.oc-btn--ink .ic{ background:rgba(255,255,255,.12); }
+.oc-btn--ink:hover{ transform:translateY(-2px); }
+.oc-btn--ink:hover .ic{ transform:translate(3px,-2px) scale(1.06); background:rgba(255,255,255,.2); }
+.oc-btn--ghost{ background:var(--surface); color:var(--ink); border:1px solid var(--line); box-shadow:var(--shadow-soft); padding:13px 22px; }
+.oc-btn--ghost:hover{ transform:translateY(-2px); box-shadow:var(--shadow-lift); }
+.oc-btn--lg{ font-size:16px; padding:16px 16px 16px 28px; }
+.oc-btn--lg .ic{ width:38px; height:38px; }
+
+/* ---------- NAV ---------- */
+.oc-nav{ position:fixed; top:0; left:0; right:0; z-index:50; display:flex; justify-content:center; padding:18px 16px; transition:padding .5s var(--ease); }
+.oc-nav.shrink{ padding:10px 16px; }
+.oc-nav-inner{
+  width:100%; max-width:1080px; display:flex; align-items:center; justify-content:space-between;
+  background:rgba(255,255,255,.72); backdrop-filter:blur(20px) saturate(160%); -webkit-backdrop-filter:blur(20px) saturate(160%);
+  border:1px solid rgba(255,255,255,.6); box-shadow:0 1px 2px rgba(20,19,26,.04), 0 18px 50px -24px rgba(20,19,26,.3);
+  border-radius:100px; padding:10px 12px 10px 22px; transition:box-shadow .5s var(--ease);
+}
+.oc-logo{ display:flex; align-items:center; gap:10px; font-family:'Clash Display'; font-weight:600; font-size:20px; letter-spacing:-.02em; }
+.oc-logo .mark{ width:30px; height:30px; border-radius:9px; background:var(--grad); display:grid; place-items:center; box-shadow:0 6px 16px -6px rgba(91,75,245,.7); }
+.oc-logo .mark svg{ width:17px; height:17px; }
+.oc-nav-links{ display:flex; align-items:center; gap:6px; }
+.oc-nav-links a{ font-weight:500; font-size:14.5px; color:var(--ink-soft); padding:9px 14px; border-radius:100px; transition:color .3s var(--ease), background .3s var(--ease); }
+.oc-nav-links a:hover{ color:var(--ink); background:rgba(20,19,26,.05); }
+.oc-nav-cta{ display:flex; align-items:center; gap:10px; }
+.oc-burger{ display:none; width:42px; height:42px; border-radius:50%; background:rgba(20,19,26,.05); position:relative; }
+.oc-burger span{ position:absolute; left:12px; width:18px; height:2px; background:var(--ink); border-radius:2px; transition:transform .45s var(--ease), opacity .3s var(--ease); }
+.oc-burger span:nth-child(1){ top:16px; } .oc-burger span:nth-child(2){ top:22px; } .oc-burger span:nth-child(3){ top:28px; }
+.oc-funnel.menu-open .oc-burger span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+.oc-funnel.menu-open .oc-burger span:nth-child(2){ opacity:0; }
+.oc-funnel.menu-open .oc-burger span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+
+/* mobile overlay */
+.oc-mobile{
+  position:fixed; inset:0; z-index:49; background:rgba(244,243,241,.85); backdrop-filter:blur(28px); -webkit-backdrop-filter:blur(28px);
+  display:flex; flex-direction:column; justify-content:center; gap:6px; padding:40px;
+  opacity:0; visibility:hidden; transition:opacity .5s var(--ease), visibility .5s var(--ease);
+}
+.oc-funnel.menu-open .oc-mobile{ opacity:1; visibility:visible; }
+.oc-mobile a{ font-family:'Clash Display'; font-size:34px; font-weight:500; padding:10px 0; opacity:0; transform:translateY(24px); transition:opacity .6s var(--ease), transform .6s var(--ease); }
+.oc-funnel.menu-open .oc-mobile a{ opacity:1; transform:translateY(0); }
+.oc-funnel.menu-open .oc-mobile a:nth-child(1){ transition-delay:.08s; }
+.oc-funnel.menu-open .oc-mobile a:nth-child(2){ transition-delay:.14s; }
+.oc-funnel.menu-open .oc-mobile a:nth-child(3){ transition-delay:.2s; }
+.oc-funnel.menu-open .oc-mobile a:nth-child(4){ transition-delay:.26s; }
+.oc-mobile .oc-btn{ margin-top:24px; align-self:flex-start; }
+
+/* ---------- HERO ---------- */
+.oc-hero{ position:relative; padding:170px 0 90px; overflow:hidden; }
+.oc-orb{ position:absolute; border-radius:50%; filter:blur(70px); opacity:.5; z-index:0; pointer-events:none; }
+.oc-orb.a{ width:520px; height:520px; background:radial-gradient(circle,#7b5cff,transparent 70%); top:-160px; right:-120px; animation:ocFloat 16s var(--ease) infinite; }
+.oc-orb.b{ width:440px; height:440px; background:radial-gradient(circle,#ff6a4d,transparent 70%); bottom:-180px; left:-140px; opacity:.4; animation:ocFloat 20s var(--ease) infinite reverse; }
+@keyframes ocFloat{ 0%,100%{ transform:translate(0,0) scale(1); } 50%{ transform:translate(30px,-30px) scale(1.08); } }
+.oc-hero-grid{ position:relative; z-index:2; display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; }
+.oc-hero h1{ font-size:clamp(40px,6.4vw,76px); margin:22px 0 20px; }
+.oc-hero h1 em{ font-style:normal; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.oc-hero .oc-lead{ margin-bottom:30px; }
+
+.oc-optin{ display:flex; gap:10px; background:var(--surface); padding:8px; border-radius:100px; box-shadow:var(--shadow-lift); border:1px solid var(--line); max-width:480px; }
+.oc-optin input{ flex:1; border:none; background:transparent; padding:0 18px; font-size:15px; color:var(--ink); outline:none; }
+.oc-optin input::placeholder{ color:var(--ink-faint); }
+.oc-optin .oc-btn{ flex:0 0 auto; }
+.oc-microtrust{ display:flex; align-items:center; gap:8px; margin-top:14px; font-size:13.5px; color:var(--ink-faint); }
+.oc-microtrust svg{ width:15px; height:15px; color:var(--mint); }
+
+.oc-proof{ display:flex; align-items:center; gap:16px; margin-top:34px; }
+.oc-avatars{ display:flex; }
+.oc-avatars span{ width:42px; height:42px; border-radius:50%; border:3px solid var(--canvas); margin-left:-12px; display:grid; place-items:center; font-weight:700; font-size:13px; color:#fff; }
+.oc-avatars span:first-child{ margin-left:0; }
+.oc-proof .txt{ font-size:14px; color:var(--ink-soft); }
+.oc-proof .txt b{ color:var(--ink); }
+.oc-stars{ color:var(--coral); letter-spacing:2px; font-size:14px; }
+
+/* hero visual — masterclass card (double bezel) */
+.oc-hero-visual{ position:relative; }
+.oc-card-shell{ background:rgba(20,19,26,.04); border:1px solid var(--line); border-radius:var(--r-xl); padding:10px; box-shadow:var(--shadow-lift); }
+.oc-card-core{ background:var(--surface); border-radius:calc(var(--r-xl) - 10px); overflow:hidden; box-shadow:inset 0 1px 1px rgba(255,255,255,.6); }
+.oc-player{ position:relative; aspect-ratio:16/11; background:linear-gradient(135deg,#2a2540,#5b4bf5 60%,#ff6a4d); display:grid; place-items:center; }
+.oc-player .grid-ov{ position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px); background-size:34px 34px; mask-image:radial-gradient(circle at 50% 50%,#000,transparent 75%); }
+.oc-player .badge-live{ position:absolute; top:16px; left:16px; display:flex; align-items:center; gap:7px; background:rgba(0,0,0,.35); backdrop-filter:blur(8px); border-radius:100px; padding:7px 13px; font-size:11px; font-weight:700; letter-spacing:.12em; color:#fff; text-transform:uppercase; }
+.oc-player .badge-live i{ width:7px; height:7px; border-radius:50%; background:var(--coral); display:inline-block; animation:ocPulse 1.8s infinite; }
+.oc-play{ width:78px; height:78px; border-radius:50%; background:rgba(255,255,255,.95); display:grid; place-items:center; box-shadow:0 20px 50px -10px rgba(0,0,0,.4); transition:transform .5s var(--ease-spring); }
+.oc-play:hover{ transform:scale(1.08); }
+.oc-play svg{ width:26px; height:26px; color:var(--violet); margin-left:4px; }
+.oc-player .dur{ position:absolute; bottom:16px; right:16px; background:rgba(0,0,0,.4); backdrop-filter:blur(8px); color:#fff; font-size:12px; font-weight:600; padding:6px 12px; border-radius:100px; }
+.oc-card-meta{ padding:20px 22px; }
+.oc-card-meta h3{ font-size:19px; margin-bottom:6px; }
+.oc-card-meta p{ font-size:13.5px; color:var(--ink-faint); }
+.oc-card-meta .row{ display:flex; align-items:center; gap:8px; margin-top:14px; }
+.oc-card-meta .tag{ font-size:11px; font-weight:700; color:var(--violet-deep); background:rgba(91,75,245,.08); padding:5px 11px; border-radius:100px; }
+
+/* floating mini cards */
+.oc-float{ position:absolute; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-md); box-shadow:var(--shadow-lift); padding:14px 16px; display:flex; align-items:center; gap:12px; z-index:3; }
+.oc-float .fi{ width:38px; height:38px; border-radius:11px; display:grid; place-items:center; flex:0 0 auto; }
+.oc-float .fi svg{ width:19px; height:19px; }
+.oc-float .ft b{ display:block; font-family:'Clash Display'; font-size:17px; line-height:1; }
+.oc-float .ft span{ font-size:11.5px; color:var(--ink-faint); }
+.oc-float.f1{ top:-26px; left:-30px; animation:ocBob 6s var(--ease) infinite; }
+.oc-float.f2{ bottom:34px; right:-34px; animation:ocBob 7s var(--ease) infinite .6s; }
+@keyframes ocBob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-12px); } }
+
+/* ---------- LOGO BAR ---------- */
+.oc-logos{ padding:46px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.oc-logos .lbl{ text-align:center; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:26px; font-weight:600; }
+.oc-logos .row{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:46px; opacity:.55; }
+.oc-logos .row span{ font-family:'Clash Display'; font-weight:600; font-size:21px; color:var(--ink); letter-spacing:-.01em; }
+
+/* ---------- BENTO VALUE ---------- */
+.oc-bento{ display:grid; grid-template-columns:repeat(12,1fr); gap:18px; margin-top:58px; }
+.oc-tile{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:30px; box-shadow:var(--shadow-soft); transition:transform .6s var(--ease), box-shadow .6s var(--ease); position:relative; overflow:hidden; }
+.oc-tile:hover{ transform:translateY(-6px); box-shadow:var(--shadow-lift); }
+.oc-tile .ti{ width:50px; height:50px; border-radius:14px; display:grid; place-items:center; margin-bottom:20px; }
+.oc-tile .ti svg{ width:24px; height:24px; }
+.oc-tile h3{ font-size:21px; margin-bottom:9px; }
+.oc-tile p{ font-size:15px; color:var(--ink-soft); }
+.oc-tile.span7{ grid-column:span 7; } .oc-tile.span5{ grid-column:span 5; }
+.oc-tile.span4{ grid-column:span 4; } .oc-tile.span8{ grid-column:span 8; }
+.oc-tile.dark{ background:var(--ink); color:#fff; border-color:transparent; }
+.oc-tile.dark h3{ color:#fff; } .oc-tile.dark p{ color:rgba(255,255,255,.66); }
+.oc-tile.dark .mesh{ position:absolute; inset:0; background:radial-gradient(400px circle at 80% 0,rgba(123,92,255,.5),transparent 60%); }
+.oc-tile.dark .inner{ position:relative; z-index:1; }
+.oc-tile .stat{ font-family:'Clash Display'; font-size:46px; font-weight:600; line-height:1; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+.ic-v{ background:rgba(91,75,245,.1); color:var(--violet); }
+.ic-c{ background:rgba(255,106,77,.12); color:var(--coral); }
+.ic-m{ background:rgba(19,198,164,.12); color:var(--mint); }
+
+/* ---------- CURRICULUM ---------- */
+.oc-curric{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+.oc-modules{ display:flex; flex-direction:column; gap:14px; }
+.oc-module{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r-md); padding:22px 24px; display:flex; gap:18px; align-items:flex-start; box-shadow:var(--shadow-soft); transition:transform .5s var(--ease), box-shadow .5s var(--ease); }
+.oc-module:hover{ transform:translateX(6px); box-shadow:var(--shadow-lift); }
+.oc-module .num{ font-family:'Clash Display'; font-weight:600; font-size:15px; color:#fff; background:var(--ink); width:38px; height:38px; border-radius:11px; display:grid; place-items:center; flex:0 0 auto; }
+.oc-module:nth-child(odd) .num{ background:var(--grad); }
+.oc-module h4{ font-size:18px; margin-bottom:5px; }
+.oc-module p{ font-size:14.5px; color:var(--ink-soft); }
+.oc-curric-side{ position:sticky; top:110px; }
+.oc-gift{ background:var(--ink); border-radius:var(--r-xl); padding:36px; color:#fff; position:relative; overflow:hidden; box-shadow:var(--shadow-lift); }
+.oc-gift .mesh{ position:absolute; inset:0; background:radial-gradient(500px circle at 100% 0,rgba(255,106,77,.4),transparent 55%),radial-gradient(400px circle at 0 100%,rgba(91,75,245,.5),transparent 55%); }
+.oc-gift .inner{ position:relative; z-index:1; }
+.oc-gift .pill{ display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#fff; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); padding:6px 13px; border-radius:100px; }
+.oc-gift h3{ color:#fff; font-size:27px; margin:18px 0 10px; }
+.oc-gift p{ color:rgba(255,255,255,.7); font-size:15px; margin-bottom:22px; }
+.oc-gift ul{ list-style:none; display:flex; flex-direction:column; gap:13px; margin-bottom:26px; }
+.oc-gift li{ display:flex; align-items:center; gap:12px; font-size:15px; color:rgba(255,255,255,.92); }
+.oc-gift li svg{ width:20px; height:20px; color:var(--mint); flex:0 0 auto; }
+.oc-gift .worth{ font-size:13px; color:rgba(255,255,255,.55); margin-top:14px; }
+.oc-gift .worth s{ color:rgba(255,255,255,.4); }
+
+/* ---------- ABOUT COACH ---------- */
+.oc-coach{ display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; align-items:center; }
+.oc-photo-shell{ background:rgba(20,19,26,.04); border:1px solid var(--line); border-radius:var(--r-xl); padding:10px; box-shadow:var(--shadow-lift); }
+.oc-photo{ position:relative; border-radius:calc(var(--r-xl) - 10px); overflow:hidden; aspect-ratio:4/5; background:linear-gradient(150deg,#5b4bf5,#7b5cff 45%,#ff6a4d); display:grid; place-items:center; }
+.oc-photo img{ width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+.oc-photo .initials{ font-family:'Clash Display'; font-size:72px; font-weight:600; color:rgba(255,255,255,.92); }
+.oc-photo .badge{ position:absolute; bottom:14px; left:14px; right:14px; background:rgba(255,255,255,.92); backdrop-filter:blur(10px); border-radius:var(--r-md); padding:14px 18px; display:flex; align-items:center; gap:12px; }
+.oc-photo .badge .av{ width:40px; height:40px; border-radius:11px; background:var(--grad); display:grid; place-items:center; color:#fff; }
+.oc-photo .badge .av svg{ width:20px; height:20px; }
+.oc-photo .badge b{ display:block; font-size:14px; } .oc-photo .badge span{ font-size:12px; color:var(--ink-faint); }
+.oc-coach h2{ margin:18px 0 16px; }
+.oc-coach p{ color:var(--ink-soft); font-size:16px; margin-bottom:16px; max-width:560px; }
+.oc-coach-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:30px; }
+.oc-cstat{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r-md); padding:20px 18px; box-shadow:var(--shadow-soft); }
+.oc-cstat .n{ font-family:'Clash Display'; font-size:32px; font-weight:600; letter-spacing:-.02em; }
+.oc-cstat .l{ font-size:12.5px; color:var(--ink-faint); margin-top:4px; }
+
+/* ---------- TESTIMONIALS ---------- */
+.oc-marquee{ margin-top:54px; -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); overflow:hidden; }
+.oc-track{ display:flex; gap:20px; width:max-content; animation:ocScroll 46s linear infinite; }
+.oc-marquee:hover .oc-track{ animation-play-state:paused; }
+@keyframes ocScroll{ to{ transform:translateX(-50%); } }
+.oc-quote{ width:380px; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:28px; box-shadow:var(--shadow-soft); flex:0 0 auto; }
+.oc-quote .stars{ color:var(--coral); letter-spacing:2px; font-size:14px; margin-bottom:14px; }
+.oc-quote p{ font-size:15.5px; color:var(--ink); line-height:1.6; margin-bottom:20px; }
+.oc-quote .who{ display:flex; align-items:center; gap:12px; }
+.oc-quote .who .av{ width:44px; height:44px; border-radius:50%; display:grid; place-items:center; color:#fff; font-weight:700; font-size:14px; }
+.oc-quote .who b{ display:block; font-size:14.5px; } .oc-quote .who span{ font-size:12.5px; color:var(--ink-faint); }
+
+/* ---------- FIT (who it's for) ---------- */
+.oc-fit{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:54px; }
+.oc-fit-col{ border-radius:var(--r-lg); padding:34px; border:1px solid var(--line); box-shadow:var(--shadow-soft); }
+.oc-fit-col.yes{ background:var(--surface); }
+.oc-fit-col.no{ background:rgba(20,19,26,.025); }
+.oc-fit-col h3{ font-size:22px; display:flex; align-items:center; gap:12px; margin-bottom:22px; }
+.oc-fit-col h3 .b{ width:34px; height:34px; border-radius:10px; display:grid; place-items:center; }
+.oc-fit-col h3 .b svg{ width:18px; height:18px; }
+.oc-fit-col ul{ list-style:none; display:flex; flex-direction:column; gap:15px; }
+.oc-fit-col li{ display:flex; gap:12px; font-size:15.5px; color:var(--ink-soft); align-items:flex-start; }
+.oc-fit-col li svg{ width:20px; height:20px; flex:0 0 auto; margin-top:1px; }
+.yes li svg{ color:var(--mint); } .no li svg{ color:var(--ink-faint); }
+
+/* ---------- FAQ ---------- */
+.oc-faq{ max-width:780px; margin:54px auto 0; display:flex; flex-direction:column; gap:14px; }
+.oc-faq-item{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r-md); overflow:hidden; box-shadow:var(--shadow-soft); transition:box-shadow .4s var(--ease); }
+.oc-faq-item.open{ box-shadow:var(--shadow-lift); }
+.oc-faq-q{ width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px 26px; text-align:left; font-family:'Clash Display'; font-weight:500; font-size:18px; }
+.oc-faq-q .pm{ width:30px; height:30px; border-radius:50%; background:rgba(91,75,245,.08); display:grid; place-items:center; flex:0 0 auto; transition:transform .5s var(--ease), background .4s var(--ease); }
+.oc-faq-q .pm svg{ width:15px; height:15px; color:var(--violet); }
+.oc-faq-item.open .pm{ transform:rotate(45deg); background:var(--violet); }
+.oc-faq-item.open .pm svg{ color:#fff; }
+.oc-faq-a{ max-height:0; overflow:hidden; transition:max-height .55s var(--ease); }
+.oc-faq-a p{ padding:0 26px 24px; color:var(--ink-soft); font-size:15.5px; }
+
+/* ---------- FINAL CTA (dark glass) ---------- */
+.oc-final{ position:relative; background:#0e0d12; color:#fff; overflow:hidden; }
+.oc-final .orb{ position:absolute; border-radius:50%; filter:blur(90px); }
+.oc-final .orb.a{ width:560px; height:560px; background:radial-gradient(circle,rgba(123,92,255,.55),transparent 70%); top:-200px; left:-100px; }
+.oc-final .orb.b{ width:480px; height:480px; background:radial-gradient(circle,rgba(255,106,77,.45),transparent 70%); bottom:-200px; right:-80px; }
+.oc-final .oc-wrap{ position:relative; z-index:2; }
+.oc-final h2{ color:#fff; font-size:clamp(36px,5.6vw,66px); }
+.oc-final .oc-lead{ color:rgba(255,255,255,.7); }
+.oc-final .oc-eyebrow{ color:#fff; background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.16); }
+
+.oc-countdown{ display:flex; gap:14px; justify-content:center; margin:34px 0; }
+.oc-cd{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:var(--r-md); padding:16px 8px; min-width:84px; text-align:center; backdrop-filter:blur(10px); }
+.oc-cd .v{ font-family:'Clash Display'; font-size:40px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+.oc-cd .l{ font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-top:8px; }
+
+.oc-final-form{ max-width:520px; margin:0 auto; }
+.oc-final-form .oc-optin{ background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.14); box-shadow:none; backdrop-filter:blur(10px); }
+.oc-final-form .oc-optin input{ color:#fff; }
+.oc-final-form .oc-optin input::placeholder{ color:rgba(255,255,255,.5); }
+.oc-seats{ margin-top:18px; font-size:13.5px; color:rgba(255,255,255,.6); display:flex; align-items:center; justify-content:center; gap:8px; }
+.oc-seats b{ color:var(--coral); }
+
+/* opt-in success */
+.oc-success{ display:none; align-items:center; gap:14px; background:rgba(19,198,164,.1); border:1px solid rgba(19,198,164,.3); border-radius:100px; padding:16px 24px; max-width:480px; }
+.oc-success.show{ display:flex; animation:ocPop .5s var(--ease-spring); }
+.oc-success svg{ width:24px; height:24px; color:var(--mint); flex:0 0 auto; }
+.oc-success b{ font-size:15px; } .oc-success span{ font-size:13px; color:var(--ink-soft); display:block; }
+.oc-final-form .oc-success{ margin:0 auto; background:rgba(19,198,164,.14); }
+.oc-final-form .oc-success span{ color:rgba(255,255,255,.7); }
+@keyframes ocPop{ 0%{ transform:scale(.92); opacity:0; } 100%{ transform:scale(1); opacity:1; } }
+
+/* ---------- FOOTER ---------- */
+.oc-footer{ background:#0a090d; color:rgba(255,255,255,.6); padding:64px 0 40px; }
+.oc-footer-top{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.08); }
+.oc-footer .oc-logo{ color:#fff; }
+.oc-footer-top p{ max-width:300px; margin-top:14px; font-size:14px; }
+.oc-fcols{ display:flex; gap:64px; flex-wrap:wrap; }
+.oc-fcol h5{ color:#fff; font-family:'Satoshi'; font-weight:700; font-size:13px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:16px; }
+.oc-fcol a{ display:block; font-size:14px; margin-bottom:11px; transition:color .3s var(--ease); }
+.oc-fcol a:hover{ color:#fff; }
+.oc-footer-bot{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; padding-top:28px; font-size:13px; color:rgba(255,255,255,.4); }
+.oc-disclaimer{ font-size:12px; color:rgba(255,255,255,.3); margin-top:22px; line-height:1.6; max-width:760px; }
+
+/* ---------- STICKY CTA ---------- */
+.oc-sticky{ position:fixed; left:16px; right:16px; bottom:18px; z-index:48; display:flex; justify-content:center; transform:translateY(140%); transition:transform .6s var(--ease); pointer-events:none; }
+.oc-sticky.show{ transform:translateY(0); }
+.oc-sticky-inner{ pointer-events:auto; display:flex; align-items:center; gap:18px; background:rgba(20,19,26,.92); backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,.1); border-radius:100px; padding:10px 12px 10px 24px; box-shadow:0 20px 50px -16px rgba(0,0,0,.6); max-width:560px; width:100%; }
+.oc-sticky-inner .txt{ color:#fff; font-size:14px; flex:1; }
+.oc-sticky-inner .txt b{ font-family:'Clash Display'; font-weight:600; }
+.oc-sticky-inner .txt span{ display:block; color:rgba(255,255,255,.55); font-size:12px; }
+
+/* scroll progress */
+.oc-progress{ position:fixed; top:0; left:0; height:3px; width:0; background:var(--grad); z-index:55; transition:width .1s linear; }
+
+/* ---------- REVEAL ANIM ---------- */
+.oc-reveal{ opacity:0; transform:translateY(40px); filter:blur(6px); transition:opacity .9s var(--ease), transform .9s var(--ease), filter .9s var(--ease); }
+.oc-reveal.in{ opacity:1; transform:none; filter:none; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:980px){
+  .oc-hero-grid,.oc-curric,.oc-coach{ grid-template-columns:1fr; }
+  .oc-hero-visual{ margin-top:20px; max-width:480px; }
+  .oc-float.f1{ left:0; } .oc-float.f2{ right:0; }
+  .oc-curric-side{ position:static; }
+  .oc-coach-stats{ grid-template-columns:repeat(2,1fr); }
+  .oc-tile.span7,.oc-tile.span5,.oc-tile.span4,.oc-tile.span8{ grid-column:span 12; }
+  .oc-fit,.oc-bento{ gap:16px; }
+}
+@media (max-width:760px){
+  .oc-nav-links{ display:none; }
+  .oc-nav-cta .oc-btn{ display:none; }
+  .oc-burger{ display:block; }
+  .oc-section{ padding:80px 0; }
+  .oc-wrap{ padding:0 18px; }
+  .oc-hero{ padding:140px 0 60px; }
+  .oc-optin{ flex-direction:column; border-radius:24px; padding:10px; gap:10px; }
+  .oc-optin input{ padding:12px 16px; }
+  .oc-optin .oc-btn{ justify-content:center; }
+  .oc-bento,.oc-fit{ grid-template-columns:1fr; }
+  .oc-countdown{ gap:8px; }
+  .oc-cd{ min-width:0; flex:1; padding:14px 4px; }
+  .oc-cd .v{ font-size:30px; }
+  .oc-sticky-inner .txt span{ display:none; }
+  .oc-footer-top{ flex-direction:column; }
+}
+@media (prefers-reduced-motion:reduce){
+  .oc-funnel *{ animation:none !important; transition-duration:.01ms !important; }
+  .oc-reveal{ opacity:1; transform:none; filter:none; }
+}
+</style>
+
+<!-- grain + progress -->
+<div class="oc-grain"></div>
+<div class="oc-progress" id="ocProgress"></div>
+
+<!-- ============== NAV ============== -->
+<nav class="oc-nav" id="ocNav">
+  <div class="oc-nav-inner">
+    <a href="#top" class="oc-logo">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l3.5 6.5L22 12l-6.5 2.5L12 21l-3.5-6.5L2 12l6.5-2.5z" fill="#fff"/></svg></span>
+      Ascend
+    </a>
+    <div class="oc-nav-links">
+      <a href="#learn">What you'll learn</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#coach">Your coach</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="oc-nav-cta">
+      <a href="#register" class="oc-btn oc-btn--primary">Save my seat <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <button class="oc-burger" id="ocBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- mobile overlay -->
+<div class="oc-mobile" id="ocMobile">
+  <a href="#learn">What you'll learn</a>
+  <a href="#agenda">Agenda</a>
+  <a href="#coach">Your coach</a>
+  <a href="#faq">FAQ</a>
+  <a href="#register" class="oc-btn oc-btn--primary">Save my free seat <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+</div>
+
+<!-- ============== HERO ============== -->
+<header class="oc-hero" id="top">
+  <div class="oc-orb a"></div>
+  <div class="oc-orb b"></div>
+  <div class="oc-wrap">
+    <div class="oc-hero-grid">
+      <div class="oc-hero-copy">
+        <span class="oc-eyebrow oc-reveal"><span class="dot"></span> Free Live Masterclass · Limited Seats</span>
+        <h1 class="oc-reveal" data-d="60">Turn your expertise into a <em>$5K coaching offer</em> — without a big audience.</h1>
+        <p class="oc-lead oc-reveal" data-d="120">Join the free 75-minute masterclass and get the exact <b>Signature Offer Method</b> 12,000+ coaches use to package, price, and sell premium programs they're proud of.</p>
+
+        <form class="oc-optin oc-reveal" data-d="180" id="heroForm">
+          <input type="email" placeholder="Enter your best email" required>
+          <button class="oc-btn oc-btn--primary" type="submit">Save my free seat <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+        </form>
+        <div class="oc-success" id="heroSuccess">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+          <div><b>You're in! Check your inbox.</b><span>We just sent your seat confirmation + calendar invite.</span></div>
+        </div>
+
+        <div class="oc-microtrust oc-reveal" data-d="220">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          100% free · Live replay included · No pitch-fest
+        </div>
+
+        <div class="oc-proof oc-reveal" data-d="260">
+          <div class="oc-avatars">
+            <span style="background:linear-gradient(135deg,#5b4bf5,#7b5cff)">JL</span>
+            <span style="background:linear-gradient(135deg,#ff6a4d,#ff9a4d)">MK</span>
+            <span style="background:linear-gradient(135deg,#13c6a4,#5b4bf5)">SA</span>
+            <span style="background:linear-gradient(135deg,#7b5cff,#ff6a4d)">TR</span>
+          </div>
+          <div class="txt"><div class="oc-stars">★★★★★</div><b>4.9/5</b> from <b>12,000+</b> coaches & creators</div>
+        </div>
+      </div>
+
+      <!-- hero visual -->
+      <div class="oc-hero-visual oc-reveal" data-d="200">
+        <div class="oc-float f1">
+          <span class="fi ic-m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></span>
+          <span class="ft"><b>+312%</b><span>Avg. offer value</span></span>
+        </div>
+        <div class="oc-float f2">
+          <span class="fi ic-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
+          <span class="ft"><b>2,000+</b><span>Premium clients enrolled</span></span>
+        </div>
+
+        <div class="oc-card-shell">
+          <div class="oc-card-core">
+            <div class="oc-player">
+              <div class="grid-ov"></div>
+              <div class="badge-live"><i></i> Live Masterclass</div>
+              <button class="oc-play" aria-label="Play preview"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+              <div class="dur">75 min · + Q&A</div>
+            </div>
+            <div class="oc-card-meta">
+              <h3>The Signature Offer Method™</h3>
+              <p>Package, price &amp; sell a premium program — even with a tiny list.</p>
+              <div class="row">
+                <span class="tag">Beginner-friendly</span>
+                <span class="tag">Workbook included</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============== LOGO BAR ============== -->
+<section class="oc-logos">
+  <div class="oc-wrap">
+    <p class="lbl">Trusted by coaches building with</p>
+    <div class="row oc-reveal">
+      <span>Maven</span><span>Teachable</span><span>Kajabi</span><span>Circle</span><span>Substack</span><span>Podia</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== VALUE / WHAT YOU'LL LEARN ============== -->
+<section class="oc-section" id="learn">
+  <div class="oc-wrap">
+    <div class="oc-center">
+      <span class="oc-eyebrow oc-reveal">In this free session</span>
+      <h2 class="oc-h2 oc-reveal" data-d="60" style="margin:18px auto 14px;max-width:760px;">Everything you need to launch a premium offer — in one sitting</h2>
+      <p class="oc-lead oc-reveal" data-d="120">No theory dumps. Just the exact frameworks, scripts, and pricing psychology you can apply the same afternoon.</p>
+    </div>
+
+    <div class="oc-bento">
+      <div class="oc-tile span7 oc-reveal">
+        <div class="ti ic-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l2.4 5.4L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.6-1.6z"/></svg></div>
+        <h3>The Signature Offer framework</h3>
+        <p>Turn the thing you already know into a clear, irresistible transformation people happily pay $2K–$10K for — without inventing anything new.</p>
+      </div>
+      <div class="oc-tile span5 oc-reveal" data-d="80">
+        <div class="ti ic-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Premium pricing psychology</h3>
+        <p>Price for the transformation, not your time — and feel zero guilt doing it.</p>
+      </div>
+      <div class="oc-tile span4 oc-reveal">
+        <div class="ti ic-m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>The 3-part enrollment conversation</h3>
+        <p>Sell without feeling salesy. A repeatable call flow that converts at 40%+.</p>
+      </div>
+      <div class="oc-tile dark span8 oc-reveal" data-d="80">
+        <div class="mesh"></div>
+        <div class="inner">
+          <div class="ti" style="background:rgba(255,255,255,.1);color:#fff;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+          <span class="stat" data-count="89">0</span><span style="font-family:'Clash Display';font-size:46px;font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;">%</span>
+          <h3 style="margin-top:8px;">of students land their first premium client within 30 days</h3>
+          <p>The content-to-client funnel that works on a small, engaged audience — no ads, no virality required.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== AGENDA / CURRICULUM ============== -->
+<section class="oc-section" id="agenda" style="background:linear-gradient(180deg,transparent,rgba(91,75,245,.04));">
+  <div class="oc-wrap">
+    <div class="oc-curric">
+      <div>
+        <span class="oc-eyebrow oc-reveal">The 75-minute agenda</span>
+        <h2 class="oc-h2 oc-reveal" data-d="60" style="margin:18px 0 30px;">What we'll cover, step by step</h2>
+        <div class="oc-modules">
+          <div class="oc-module oc-reveal"><div class="num">01</div><div><h4>Position your premium offer</h4><p>Find the high-value problem only you can solve — and name it so it sells itself.</p></div></div>
+          <div class="oc-module oc-reveal" data-d="60"><div class="num">02</div><div><h4>Price for transformation, not time</h4><p>The value-stacking method that justifies a 3–5× higher price point.</p></div></div>
+          <div class="oc-module oc-reveal" data-d="120"><div class="num">03</div><div><h4>The magnetic masterclass funnel</h4><p>Turn a single free training into a predictable stream of qualified booked calls.</p></div></div>
+          <div class="oc-module oc-reveal" data-d="180"><div class="num">04</div><div><h4>Enroll without feeling salesy</h4><p>Live walkthrough of the enrollment conversation + the exact words to use.</p></div></div>
+        </div>
+      </div>
+
+      <div class="oc-curric-side oc-reveal" data-d="120">
+        <div class="oc-gift">
+          <div class="mesh"></div>
+          <div class="inner">
+            <span class="pill">🎁 Free bonus stack</span>
+            <h3>Register and instantly unlock the Offer Builder Kit</h3>
+            <p>Show up live and these are yours to keep — replay or not.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> The Signature Offer Blueprint (fill-in workbook)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> 12 plug-and-play enrollment scripts</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> Premium pricing calculator</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> Full session replay (48-hour access)</li>
+            </ul>
+            <a href="#register" class="oc-btn oc-btn--primary oc-btn--lg" style="width:100%;justify-content:center;">Claim my free seat + bonuses <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+            <p class="worth">Total value <s>$497</s> — free when you attend live.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ABOUT COACH ============== -->
+<section class="oc-section" id="coach">
+  <div class="oc-wrap">
+    <div class="oc-coach">
+      <div class="oc-photo-shell oc-reveal">
+        <div class="oc-photo">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="Maya Reyes, business coach" onerror="this.style.display='none'">
+          <div class="initials">MR</div>
+          <div class="badge">
+            <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 5.4L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.6-1.6z"/></svg></div>
+            <div><b>Maya Reyes</b><span>Founder, Ascend Coaching Co.</span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="oc-eyebrow oc-reveal">Your host</span>
+        <h2 class="oc-h2 oc-reveal" data-d="60">Hi, I'm Maya — I help experts get paid like experts.</h2>
+        <p class="oc-reveal" data-d="100">After leaving a 12-year corporate career, I built a coaching business to multiple six figures with a list of under 3,000 people. No viral moment. No ad budget. Just one clear, premium offer and a repeatable way to fill it.</p>
+        <p class="oc-reveal" data-d="140">In this free masterclass I'm handing you the exact system — the same one my private clients pay $8K to learn — so you can stop trading hours for dollars and start selling transformation.</p>
+        <div class="oc-coach-stats">
+          <div class="oc-cstat oc-reveal"><div class="n"><span data-count="12">0</span>K+</div><div class="l">Students taught</div></div>
+          <div class="oc-cstat oc-reveal" data-d="60"><div class="n">$<span data-count="20">0</span>M+</div><div class="l">Client revenue generated</div></div>
+          <div class="oc-cstat oc-reveal" data-d="120"><div class="n"><span data-count="18">0</span></div><div class="l">Countries reached</div></div>
+          <div class="oc-cstat oc-reveal" data-d="180"><div class="n"><span data-count="4.9">0</span></div><div class="l">Avg. rating</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TESTIMONIALS ============== -->
+<section class="oc-section" style="padding-bottom:120px;background:linear-gradient(180deg,rgba(255,106,77,.04),transparent);">
+  <div class="oc-wrap oc-center">
+    <span class="oc-eyebrow oc-reveal">Real results</span>
+    <h2 class="oc-h2 oc-reveal" data-d="60" style="margin:18px auto 0;max-width:680px;">Coaches who took one free hour — and changed their pricing forever</h2>
+  </div>
+  <div class="oc-marquee">
+    <div class="oc-track" id="ocTrack">
+      <!-- set 1 -->
+      <div class="oc-quote"><div class="stars">★★★★★</div><p>"I'd been undercharging for years. Two weeks after this masterclass I closed a $6,000 client using Maya's enrollment script — word for word."</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#5b4bf5,#7b5cff)">JL</div><div><b>Jordan Lee</b><span>Leadership coach</span></div></div></div>
+      <div class="oc-quote"><div class="stars">★★★★★</div><p>"Finally a free training that's actually free. I rebuilt my whole offer in an afternoon and doubled my price the next day."</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#ff6a4d,#ff9a4d)">MK</div><div><b>Mara Khan</b><span>Nutrition coach</span></div></div></div>
+      <div class="oc-quote"><div class="stars">★★★★★</div><p>"My list is tiny — under 800 people. The funnel Maya teaches got me 11 booked calls in a week. Mind blown."</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#13c6a4,#5b4bf5)">SA</div><div><b>Sofia Alvarez</b><span>Brand strategist</span></div></div></div>
+      <div class="oc-quote"><div class="stars">★★★★★</div><p>"The pricing psychology section alone was worth thousands. I stopped apologizing for my rates and clients respect me more for it."</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#7b5cff,#ff6a4d)">TR</div><div><b>Tom Rivera</b><span>Fitness coach</span></div></div></div>
+      <!-- set 2 (dup for loop) -->
+      <div class="oc-quote"><div class="stars">★★★★★</div><p>"I'd been undercharging for years. Two weeks after this masterclass I closed a $6,000 client using Maya's enrollment script — word for word."</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#5b4bf5,#7b5cff)">JL</div><div><b>Jordan Lee</b><span>Leadership coach</span></div></div></div>
+      <div class="oc-quote"><div class="stars">★★★★★</div><p>"Finally a free training that's actually free. I rebuilt my whole offer in an afternoon and doubled my price the next day."</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#ff6a4d,#ff9a4d)">MK</div><div><b>Mara Khan</b><span>Nutrition coach</span></div></div></div>
+      <div class="oc-quote"><div class="stars">★★★★★</div><p>"My list is tiny — under 800 people. The funnel Maya teaches got me 11 booked calls in a week. Mind blown."</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#13c6a4,#5b4bf5)">SA</div><div><b>Sofia Alvarez</b><span>Brand strategist</span></div></div></div>
+      <div class="oc-quote"><div class="stars">★★★★★</div><p>"The pricing psychology section alone was worth thousands. I stopped apologizing for my rates and clients respect me more for it."</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#7b5cff,#ff6a4d)">TR</div><div><b>Tom Rivera</b><span>Fitness coach</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== WHO IT'S FOR ============== -->
+<section class="oc-section" style="padding-top:0;">
+  <div class="oc-wrap">
+    <div class="oc-center">
+      <span class="oc-eyebrow oc-reveal">Is this for you?</span>
+      <h2 class="oc-h2 oc-reveal" data-d="60" style="margin:18px auto 0;">Let's make sure you're in the right room</h2>
+    </div>
+    <div class="oc-fit">
+      <div class="oc-fit-col yes oc-reveal">
+        <h3><span class="b ic-m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg></span> This is perfect if…</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> You're a coach, consultant, or expert ready to package what you know.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> You're tired of trading hours for dollars and want a premium offer.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> You have a small but engaged audience (or are just starting one).</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> You want a proven system, not more random tactics.</li>
+        </ul>
+      </div>
+      <div class="oc-fit-col no oc-reveal" data-d="80">
+        <h3><span class="b" style="background:rgba(20,19,26,.06);color:var(--ink-faint);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg></span> Maybe skip this if…</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg> You're looking for a get-rich-quick scheme or passive income hack.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg> You're not willing to have real conversations with potential clients.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg> You'd rather keep guessing at your pricing than follow a framework.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg> You have zero expertise or transformation to offer (yet).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section class="oc-section" id="faq" style="padding-top:0;">
+  <div class="oc-wrap">
+    <div class="oc-center">
+      <span class="oc-eyebrow oc-reveal">Good questions</span>
+      <h2 class="oc-h2 oc-reveal" data-d="60" style="margin:18px auto 0;">Everything you might be wondering</h2>
+    </div>
+    <div class="oc-faq" id="ocFaq">
+      <div class="oc-faq-item oc-reveal">
+        <button class="oc-faq-q">Is the masterclass really free? <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="oc-faq-a"><p>Yes — 100% free, no card required. You'll get the full 75-minute training plus the bonus Offer Builder Kit. There's an optional offer at the end for those who want to go deeper, but you'll walk away with everything you need either way.</p></div>
+      </div>
+      <div class="oc-faq-item oc-reveal" data-d="50">
+        <button class="oc-faq-q">What if I can't attend live? <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="oc-faq-a"><p>Register anyway. Everyone who signs up gets a 48-hour replay link. That said, live attendees get the live Q&A and the full bonus stack — so show up if you can.</p></div>
+      </div>
+      <div class="oc-faq-item oc-reveal" data-d="100">
+        <button class="oc-faq-q">Do I need a big audience or email list? <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="oc-faq-a"><p>Not at all. The entire method is designed for small, engaged audiences. Many of our best results come from coaches with fewer than 1,000 followers. It's about the offer and the conversation, not the numbers.</p></div>
+      </div>
+      <div class="oc-faq-item oc-reveal" data-d="150">
+        <button class="oc-faq-q">I'm just getting started — is this too advanced? <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="oc-faq-a"><p>It's beginner-friendly. We start from "what do I even sell?" and build up. If you have real expertise or a transformation you can help people with, you're ready.</p></div>
+      </div>
+      <div class="oc-faq-item oc-reveal" data-d="200">
+        <button class="oc-faq-q">How long do I have access to the bonuses? <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="oc-faq-a"><p>The workbook, scripts, and pricing calculator are yours to keep forever. The session replay is available for 48 hours after the live class.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINAL CTA (dark) ============== -->
+<section class="oc-section oc-final" id="register">
+  <div class="orb a"></div>
+  <div class="orb b"></div>
+  <div class="oc-wrap oc-center">
+    <span class="oc-eyebrow oc-reveal"><span class="dot"></span> Next live session starts in</span>
+
+    <div class="oc-countdown oc-reveal" data-d="60" id="ocCountdown">
+      <div class="oc-cd"><div class="v" data-cd="d">00</div><div class="l">Days</div></div>
+      <div class="oc-cd"><div class="v" data-cd="h">00</div><div class="l">Hours</div></div>
+      <div class="oc-cd"><div class="v" data-cd="m">00</div><div class="l">Mins</div></div>
+      <div class="oc-cd"><div class="v" data-cd="s">00</div><div class="l">Secs</div></div>
+    </div>
+
+    <h2 class="oc-reveal" data-d="100" style="max-width:820px;margin:0 auto 18px;">Your premium offer is one free hour away.</h2>
+    <p class="oc-lead oc-reveal" data-d="140" style="margin:0 auto 34px;">Save your seat, show up live, and leave with a packaged, priced, ready-to-sell coaching offer.</p>
+
+    <div class="oc-final-form oc-reveal" data-d="180">
+      <form class="oc-optin" id="finalForm">
+        <input type="email" placeholder="Enter your best email" required>
+        <button class="oc-btn oc-btn--primary" type="submit">Reserve my free seat <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+      </form>
+      <div class="oc-success" id="finalSuccess">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+        <div><b>Seat reserved! 🎉</b><span>Check your inbox for the calendar invite + bonus kit.</span></div>
+      </div>
+      <div class="oc-seats"><svg viewBox="0 0 24 24" fill="none" stroke="#ff6a4d" stroke-width="2" width="15" height="15"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg> Only <b id="ocSeats">37</b> free seats left for this session</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="oc-footer">
+  <div class="oc-wrap">
+    <div class="oc-footer-top">
+      <div>
+        <a href="#top" class="oc-logo">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l3.5 6.5L22 12l-6.5 2.5L12 21l-3.5-6.5L2 12l6.5-2.5z" fill="#fff"/></svg></span>
+          Ascend
+        </a>
+        <p>Helping coaches and experts package their genius into premium offers that sell.</p>
+      </div>
+      <div class="oc-fcols">
+        <div class="oc-fcol"><h5>Masterclass</h5><a href="#learn">What you'll learn</a><a href="#agenda">Agenda</a><a href="#register">Save your seat</a></div>
+        <div class="oc-fcol"><h5>Company</h5><a href="#coach">About Maya</a><a href="#">Success stories</a><a href="#">Contact</a></div>
+        <div class="oc-fcol"><h5>Legal</h5><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Earnings Disclaimer</a></div>
+      </div>
+    </div>
+    <div class="oc-footer-bot">
+      <span>© 2026 Ascend Coaching Co. All rights reserved.</span>
+      <span>Made with care · Not affiliated with Facebook or any social platform.</span>
+    </div>
+    <p class="oc-disclaimer">Earnings disclaimer: The results shared on this page are not typical and are not a guarantee of your success. Income and results depend on many factors including your effort, experience, and market. This page is for educational purposes only.</p>
+  </div>
+</footer>
+
+<!-- ============== STICKY CTA ============== -->
+<div class="oc-sticky" id="ocSticky">
+  <div class="oc-sticky-inner">
+    <div class="txt"><b>Free Signature Offer Masterclass</b><span>75 minutes · Live + replay · Limited seats</span></div>
+    <a href="#register" class="oc-btn oc-btn--primary">Save my seat <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var root = document.querySelector('.oc-funnel');
+  if(!root) return;
+
+  function ready(fn){ if(document.readyState!=='loading'){ fn(); } else { document.addEventListener('DOMContentLoaded', fn); } }
+
+  ready(function(){
+
+    /* ---- Mobile nav morph ---- */
+    var burger = document.getElementById('ocBurger');
+    var mobile = document.getElementById('ocMobile');
+    if(burger){
+      burger.addEventListener('click', function(){ root.classList.toggle('menu-open'); });
+    }
+    if(mobile){
+      mobile.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){ root.classList.remove('menu-open'); });
+      });
+    }
+
+    /* ---- Nav shrink + scroll progress + sticky CTA ---- */
+    var nav = document.getElementById('ocNav');
+    var progress = document.getElementById('ocProgress');
+    var sticky = document.getElementById('ocSticky');
+    var hero = document.getElementById('top');
+    var ticking = false;
+    function onScroll(){
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      if(nav){ nav.classList.toggle('shrink', y > 30); }
+      if(progress){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = (h>0 ? (y/h*100) : 0) + '%';
+      }
+      if(sticky && hero){
+        var past = y > (hero.offsetHeight - 120);
+        var reg = document.getElementById('register');
+        var nearEnd = reg && (y + window.innerHeight > reg.offsetTop + 80);
+        sticky.classList.toggle('show', past && !nearEnd);
+      }
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){ if(!ticking){ window.requestAnimationFrame(onScroll); ticking=true; } }, {passive:true});
+    onScroll();
+
+    /* ---- Smooth anchor scroll ---- */
+    root.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        var id = a.getAttribute('href');
+        if(id === '#' || id === '#top'){ }
+        var t = id==='#top' ? root : document.querySelector(id);
+        if(t){ e.preventDefault(); var top = (id==='#top')?0:(t.getBoundingClientRect().top + window.pageYOffset - 90); window.scrollTo({top:top, behavior:'smooth'}); }
+      });
+    });
+
+    /* ---- Reveal on scroll ---- */
+    var reveals = root.querySelectorAll('.oc-reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){
+            var d = parseInt(en.target.getAttribute('data-d')||'0',10);
+            setTimeout(function(){ en.target.classList.add('in'); }, d);
+            io.unobserve(en.target);
+          }
+        });
+      }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+      reveals.forEach(function(el){ io.observe(el); });
+    } else {
+      reveals.forEach(function(el){ el.classList.add('in'); });
+    }
+
+    /* ---- Animated counters ---- */
+    function animateCount(el){
+      var target = parseFloat(el.getAttribute('data-count'));
+      var isFloat = target % 1 !== 0;
+      var dur = 1500, start = null;
+      function step(ts){
+        if(!start) start = ts;
+        var p = Math.min((ts-start)/dur, 1);
+        var eased = 1 - Math.pow(1-p, 3);
+        var val = target * eased;
+        el.textContent = isFloat ? val.toFixed(1) : Math.round(val).toLocaleString();
+        if(p < 1) requestAnimationFrame(step);
+        else el.textContent = isFloat ? target.toFixed(1) : Math.round(target).toLocaleString();
+      }
+      requestAnimationFrame(step);
+    }
+    var counters = root.querySelectorAll('[data-count]');
+    if('IntersectionObserver' in window){
+      var cio = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting){ animateCount(en.target); cio.unobserve(en.target); } });
+      }, {threshold:0.5});
+      counters.forEach(function(el){ cio.observe(el); });
+    } else { counters.forEach(animateCount); }
+
+    /* ---- FAQ accordion ---- */
+    var faq = document.getElementById('ocFaq');
+    if(faq){
+      faq.querySelectorAll('.oc-faq-item').forEach(function(item){
+        var q = item.querySelector('.oc-faq-q');
+        var a = item.querySelector('.oc-faq-a');
+        q.addEventListener('click', function(){
+          var open = item.classList.contains('open');
+          faq.querySelectorAll('.oc-faq-item').forEach(function(it){ it.classList.remove('open'); it.querySelector('.oc-faq-a').style.maxHeight = null; });
+          if(!open){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+        });
+      });
+    }
+
+    /* ---- Countdown to next live session ---- */
+    /* GHL note: change the schedule logic below to your real webinar time. */
+    var cd = document.getElementById('ocCountdown');
+    if(cd){
+      function nextSession(){
+        // next session = upcoming Tuesday OR Thursday at 11:00 local time
+        var now = new Date();
+        var candidates = [];
+        for(var i=0;i<14;i++){
+          var d = new Date(now.getFullYear(), now.getMonth(), now.getDate()+i, 11, 0, 0, 0);
+          var dow = d.getDay(); // 2=Tue, 4=Thu
+          if((dow===2 || dow===4) && d.getTime() > now.getTime()){ candidates.push(d); }
+        }
+        return candidates[0] || new Date(now.getTime()+86400000);
+      }
+      var target = nextSession();
+      var elD=cd.querySelector('[data-cd=d]'), elH=cd.querySelector('[data-cd=h]'), elM=cd.querySelector('[data-cd=m]'), elS=cd.querySelector('[data-cd=s]');
+      function pad(n){ return (n<10?'0':'')+n; }
+      function tick(){
+        var diff = target.getTime() - Date.now();
+        if(diff <= 0){ target = nextSession(); diff = target.getTime() - Date.now(); }
+        var s = Math.floor(diff/1000);
+        elD.textContent = pad(Math.floor(s/86400));
+        elH.textContent = pad(Math.floor((s%86400)/3600));
+        elM.textContent = pad(Math.floor((s%3600)/60));
+        elS.textContent = pad(s%60);
+      }
+      tick(); setInterval(tick, 1000);
+    }
+
+    /* ---- Seats slowly ticking down (social proof) ---- */
+    var seats = document.getElementById('ocSeats');
+    if(seats){
+      setInterval(function(){
+        var n = parseInt(seats.textContent,10);
+        if(n > 9 && Math.random() > 0.5){ seats.textContent = n-1; }
+      }, 9000);
+    }
+
+    /* ---- Opt-in forms → success state ----
+       GHL: replace these handlers by dropping a native GHL Form/Survey
+       element here, OR keep this and POST to your webhook. */
+    function wireForm(formId, successId){
+      var form = document.getElementById(formId);
+      var success = document.getElementById(successId);
+      if(!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var email = form.querySelector('input[type=email]');
+        if(email && !email.value){ return; }
+        form.style.display = 'none';
+        if(success){ success.classList.add('show'); }
+        /* Example webhook hookup:
+        fetch('YOUR_GHL_WEBHOOK_URL', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email: email.value})});
+        */
+      });
+    }
+    wireForm('heroForm','heroSuccess');
+    wireForm('finalForm','finalSuccess');
+
+    /* ---- Magnetic primary CTA (desktop, lightweight) ---- */
+    if(window.matchMedia('(pointer:fine)').matches){
+      root.querySelectorAll('.oc-btn--primary').forEach(function(btn){
+        btn.addEventListener('pointermove', function(e){
+          var r = btn.getBoundingClientRect();
+          var x = (e.clientX - r.left - r.width/2) * 0.18;
+          var y = (e.clientY - r.top - r.height/2) * 0.3;
+          btn.style.transform = 'translate('+x+'px,'+(y-1)+'px)';
+        });
+        btn.addEventListener('pointerleave', function(){ btn.style.transform = ''; });
+      });
+    }
+
+  });
+})();
+</script>
+</div>
+<!-- ============================================================= -->
+<!-- ⬆⬆⬆  GOHIGHLEVEL PASTE END  ⬆⬆⬆                                -->
+<!-- ============================================================= -->
+
+</body>
+</html>
