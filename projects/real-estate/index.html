@@ -1160,7 +1160,7 @@
           <span class="eyebrow" id="pdBadge"></span>
           <h3 id="pdName"></h3>
           <div class="pd-loc" id="pdLoc"></div>
-          <div class="pd-price"><span id="pdPriceVal"></span></div>
+          <div class="pd-price" id="pdPrice"><span id="pdPriceVal"></span></div>
           <div class="pd-specs" id="pdSpecs"></div>
           <p class="pd-desc" id="pdDesc"></p>
           <div class="pd-tags" id="pdTags"></div>
@@ -1419,7 +1419,7 @@
     document.getElementById('pdBadge').textContent = p.badge;
     document.getElementById('pdName').textContent = p.name;
     document.getElementById('pdLoc').textContent = p.loc;
-    document.getElementById('pdPriceVal').parentElement.innerHTML = p.price + '<span>Asking</span>';
+    document.getElementById('pdPrice').innerHTML = p.price + '<span>Asking</span>';
     document.getElementById('pdDesc').textContent = p.desc;
 
     document.getElementById('pdSpecs').innerHTML =
