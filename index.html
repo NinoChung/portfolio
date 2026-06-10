@@ -1,915 +1,934 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niño Chung | Customer Success Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                            navy: '#0b1329',
-                            accent: '#3b82f6',
-                            glow: '#60a5fa'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .light .glass-panel {
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(15, 23, 42, 0.08);
-        }
-    </style>
-</head>
-<body class="bg-brand-navy text-slate-100 dark:bg-brand-navy dark:text-slate-100 light:bg-slate-50 light:text-slate-900 min-h-screen flex flex-col selection:bg-brand-accent selection:text-white">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Niño Chung — Customer Success Manager & Landing Page Designer</title>
+<meta name="description" content="Niño Chung — Customer Success Manager with 8+ years across global SaaS & BPO, and a landing-page designer/developer. Accelerating time-to-value, protecting net revenue retention, and crafting conversion-focused pages." />
+<meta name="theme-color" content="#070a14" />
 
-    <!-- Top Progress Scroll Indicator (Psychological engagement bar) -->
-    <div class="fixed top-0 left-0 w-full h-1 bg-slate-800 z-50">
-        <div id="scrollProgress" class="h-full bg-gradient-to-r from-blue-500 to-indigo-500 w-0 transition-all duration-100"></div>
+<!-- Prevent theme flash -->
+<script>(function(){try{var t=localStorage.getItem('nc-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+<style>
+/* =====================================================================
+   NIÑO CHUNG — Portfolio (Elevated Dark SaaS, motion-first)
+   Single file. Hand-crafted CSS + vanilla JS. No frameworks.
+   ===================================================================== */
+
+:root{
+  --bg:        #070a14;
+  --bg-2:      #0a0f20;
+  --panel:     rgba(255,255,255,.035);
+  --panel-2:   rgba(255,255,255,.055);
+  --solid:     #0c1326;
+  --solid-2:   #0a1020;
+  --line:      rgba(255,255,255,.09);
+  --line-2:    rgba(255,255,255,.14);
+  --text:      #e9eefb;
+  --head:      #ffffff;
+  --muted:     #97a3bd;
+  --muted-2:   #6f7c98;
+
+  --blue:   #3b82f6;
+  --indigo: #6366f1;
+  --cyan:   #22d3ee;
+  --violet: #a855f7;
+  --emerald:#10b981;
+  --amber:  #f59e0b;
+  --pink:   #ec4899;
+
+  --grad: linear-gradient(120deg,#60a5fa 0%,#818cf8 45%,#22d3ee 100%);
+  --grad-warm: linear-gradient(120deg,#34d399 0%,#22d3ee 100%);
+
+  --ease:     cubic-bezier(.22,1,.36,1);
+  --ease-lux: cubic-bezier(.32,.72,0,1);
+  --maxw: 1200px;
+  --nav-h: 70px;
+
+  --shadow-card: 0 24px 60px -30px rgba(0,0,0,.85);
+  --shadow-glow: 0 0 0 1px rgba(96,165,250,.18), 0 30px 80px -40px rgba(59,130,246,.45);
+}
+
+[data-theme="light"]{
+  --bg:#f6f8fc; --bg-2:#eef2fa;
+  --panel: rgba(15,23,42,.025);
+  --panel-2: rgba(15,23,42,.045);
+  --solid:#ffffff; --solid-2:#f1f5fb;
+  --line: rgba(15,23,42,.10);
+  --line-2: rgba(15,23,42,.16);
+  --text:#243047; --head:#0b1220; --muted:#566481; --muted-2:#7e8aa3;
+  --shadow-card: 0 24px 60px -34px rgba(20,40,90,.30);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+
+body{
+  font-family:"Inter", system-ui, -apple-system, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  letter-spacing:-.011em;
+  transition:background .5s var(--ease), color .5s var(--ease);
+}
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
+::selection{ background:var(--blue); color:#fff; }
+
+h1,h2,h3,h4{ color:var(--head); line-height:1.06; letter-spacing:-.03em; font-weight:800; }
+.serif{ font-family:"Instrument Serif", Georgia, serif; font-weight:400; font-style:italic; letter-spacing:-.01em; }
+.wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+.grad-text{ background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+/* ---------- Ambient background: aurora + grain ---------- */
+.bg-fx{ position:fixed; inset:0; z-index:-2; overflow:hidden; pointer-events:none; background:
+  radial-gradient(120% 80% at 50% -10%, rgba(59,130,246,.10), transparent 60%),
+  linear-gradient(180deg,var(--bg) 0%, var(--bg-2) 100%); }
+.blob{ position:absolute; border-radius:50%; filter:blur(70px); opacity:.55; will-change:transform; }
+.blob.a{ width:46vw; height:46vw; left:-10vw; top:-8vw; background:radial-gradient(circle,#1d4ed8,transparent 70%); animation:drift1 22s var(--ease) infinite alternate; }
+.blob.b{ width:42vw; height:42vw; right:-8vw; top:6vh; background:radial-gradient(circle,#7c3aed,transparent 70%); opacity:.4; animation:drift2 26s var(--ease) infinite alternate; }
+.blob.c{ width:38vw; height:38vw; left:30vw; bottom:-14vw; background:radial-gradient(circle,#0891b2,transparent 70%); opacity:.4; animation:drift3 30s var(--ease) infinite alternate; }
+[data-theme="light"] .blob{ opacity:.30; }
+@keyframes drift1{ to{ transform:translate(8vw,6vh) scale(1.15);} }
+@keyframes drift2{ to{ transform:translate(-7vw,8vh) scale(1.1);} }
+@keyframes drift3{ to{ transform:translate(5vw,-7vh) scale(1.2);} }
+.grain{ position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.035; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+@media (prefers-reduced-motion: reduce){ .blob{ animation:none; } }
+
+/* ---------- Custom cursor ---------- */
+.cursor-dot,.cursor-ring{ position:fixed; top:0; left:0; z-index:9999; pointer-events:none; border-radius:50%; transform:translate(-50%,-50%); mix-blend-mode:difference; }
+.cursor-dot{ width:6px; height:6px; background:#fff; }
+.cursor-ring{ width:34px; height:34px; border:1.5px solid rgba(255,255,255,.55); transition:width .2s var(--ease),height .2s var(--ease),background .2s; }
+.cursor-ring.hot{ width:54px; height:54px; background:rgba(96,165,250,.12); border-color:rgba(96,165,250,.8); }
+body.has-cursor, body.has-cursor *{ cursor:none; }
+@media (hover:none),(pointer:coarse){ .cursor-dot,.cursor-ring{ display:none; } }
+
+/* ---------- Scroll progress ---------- */
+.progress{ position:fixed; top:0; left:0; height:3px; width:0; z-index:200; background:var(--grad); box-shadow:0 0 14px rgba(59,130,246,.7); }
+
+/* ---------- Reveal animations ---------- */
+.reveal{ opacity:0; transform:translateY(30px); filter:blur(6px); transition:opacity .9s var(--ease), transform .9s var(--ease), filter .9s var(--ease); transition-delay:var(--d,0ms); }
+.reveal.in{ opacity:1; transform:none; filter:none; }
+.reveal-x{ opacity:0; transform:translateX(-34px); transition:opacity .9s var(--ease), transform .9s var(--ease); transition-delay:var(--d,0ms); }
+.reveal-x.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){ .reveal,.reveal-x{ opacity:1!important; transform:none!important; filter:none!important; } }
+
+/* ---------- Header / nav ---------- */
+header{ position:sticky; top:0; z-index:120; transition:background .4s var(--ease), border-color .4s, backdrop-filter .4s; border-bottom:1px solid transparent; }
+header.scrolled{ background:color-mix(in oklab, var(--bg) 72%, transparent); backdrop-filter:blur(16px) saturate(140%); -webkit-backdrop-filter:blur(16px) saturate(140%); border-bottom:1px solid var(--line); }
+.nav{ height:var(--nav-h); display:flex; align-items:center; justify-content:space-between; }
+.brand{ display:flex; align-items:center; gap:12px; font-weight:800; }
+.logo{ width:40px; height:40px; border-radius:11px; display:grid; place-items:center; font-weight:900; letter-spacing:.06em; color:#fff; background:var(--grad); box-shadow:0 8px 24px -8px rgba(59,130,246,.7); position:relative; overflow:hidden; }
+.logo::after{ content:""; position:absolute; inset:0; background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,.5) 50%,transparent 60%); transform:translateX(-120%); animation:sheen 5s ease-in-out infinite; }
+@keyframes sheen{ 0%,72%{ transform:translateX(-120%);} 86%,100%{ transform:translateX(120%);} }
+.brand-name{ font-size:1.02rem; letter-spacing:-.02em; }
+.brand-name small{ display:block; font-size:.66rem; font-weight:600; color:var(--muted); letter-spacing:.02em; margin-top:-2px; }
+.nav-links{ display:flex; gap:6px; }
+.nav-links a{ position:relative; font-size:.86rem; font-weight:500; color:var(--muted); padding:8px 12px; border-radius:9px; transition:color .25s; }
+.nav-links a:hover{ color:var(--head); }
+.nav-links a::after{ content:""; position:absolute; left:12px; right:12px; bottom:3px; height:2px; border-radius:2px; background:var(--grad); transform:scaleX(0); transform-origin:left; transition:transform .35s var(--ease); }
+.nav-links a.active{ color:var(--head); }
+.nav-links a.active::after{ transform:scaleX(1); }
+.nav-right{ display:flex; align-items:center; gap:10px; }
+.icon-btn{ width:40px; height:40px; border-radius:11px; display:grid; place-items:center; background:var(--panel); border:1px solid var(--line); transition:.25s var(--ease); }
+.icon-btn:hover{ background:var(--panel-2); transform:translateY(-2px); }
+.icon-btn svg{ width:18px; height:18px; }
+.sun{ display:none; } [data-theme="light"] .sun{ display:block; } [data-theme="light"] .moon{ display:none; }
+.btn{ display:inline-flex; align-items:center; gap:9px; font-weight:600; font-size:.9rem; padding:11px 20px; border-radius:12px; transition:transform .25s var(--ease), box-shadow .25s, background .25s; white-space:nowrap; }
+.btn-primary{ background:var(--grad); color:#fff; box-shadow:0 14px 34px -14px rgba(59,130,246,.8); }
+.btn-primary:hover{ box-shadow:0 18px 44px -12px rgba(59,130,246,.95); }
+.btn-ghost{ background:var(--panel); border:1px solid var(--line-2); color:var(--head); }
+.btn-ghost:hover{ background:var(--panel-2); }
+.hide-sm{ } .menu-btn{ display:none; }
+
+/* ---------- Section scaffolding ---------- */
+section{ position:relative; padding:108px 0; }
+.eyebrow{ display:inline-flex; align-items:center; gap:8px; font-size:.74rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--blue); }
+.eyebrow::before{ content:""; width:26px; height:1px; background:linear-gradient(90deg,var(--blue),transparent); }
+.section-head{ max-width:720px; margin:0 auto 56px; text-align:center; }
+.section-head h2{ font-size:clamp(1.9rem,4vw,2.9rem); margin:14px 0 12px; }
+.section-head p{ color:var(--muted); font-size:1.02rem; }
+.pill{ display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border-radius:100px; font-size:.76rem; font-weight:600; background:var(--panel); border:1px solid var(--line); color:var(--muted); }
+.dot{ width:8px; height:8px; border-radius:50%; background:var(--emerald); box-shadow:0 0 0 0 rgba(16,185,129,.6); animation:ping 2s infinite; }
+@keyframes ping{ 0%{ box-shadow:0 0 0 0 rgba(16,185,129,.5);} 70%{ box-shadow:0 0 0 9px rgba(16,185,129,0);} 100%{ box-shadow:0 0 0 0 rgba(16,185,129,0);} }
+
+.card{ background:var(--panel); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow-card); }
+.glass{ background:color-mix(in oklab, var(--solid) 78%, transparent); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid var(--line); }
+
+/* spotlight cards (mouse-follow highlight) */
+.spot{ position:relative; overflow:hidden; }
+.spot::before{ content:""; position:absolute; inset:0; opacity:0; transition:opacity .4s; background:radial-gradient(220px circle at var(--mx,50%) var(--my,50%), rgba(96,165,250,.16), transparent 65%); }
+.spot:hover::before{ opacity:1; }
+
+/* ====================== HERO ====================== */
+.hero{ padding-top:64px; }
+.hero-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:56px; align-items:center; }
+.h-status{ margin-bottom:22px; }
+.hero h1{ font-size:clamp(2.5rem,6vw,4.6rem); letter-spacing:-.04em; }
+.hero h1 .line{ display:block; overflow:hidden; }
+.hero h1 .line > span{ display:inline-block; transform:translateY(110%); animation:rise .9s var(--ease-lux) forwards; }
+.hero h1 .line:nth-child(2) > span{ animation-delay:.08s; }
+.hero h1 .line:nth-child(3) > span{ animation-delay:.16s; }
+@keyframes rise{ to{ transform:none; } }
+.hero p.lead{ color:var(--muted); font-size:1.12rem; max-width:560px; margin:24px 0 14px; }
+.hero .lead .serif{ color:var(--cyan); font-size:1.2em; }
+.tagrow{ display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 30px; }
+.tag{ display:inline-flex; align-items:center; gap:8px; font-size:.83rem; color:var(--muted); padding:8px 13px; border-radius:11px; background:var(--panel); border:1px solid var(--line); }
+.tag svg{ width:15px; height:15px; color:var(--cyan); }
+.cta-row{ display:flex; flex-wrap:wrap; gap:14px; }
+
+/* hero profile card */
+.profile-card{ position:relative; }
+.profile-card .halo{ position:absolute; inset:-2px; border-radius:26px; background:var(--grad); opacity:.35; filter:blur(22px); }
+.pc-inner{ position:relative; border-radius:24px; padding:26px; }
+.pc-top{ display:flex; gap:16px; align-items:center; }
+.avatar{ width:74px; height:74px; border-radius:18px; padding:2px; background:var(--grad-warm); flex-shrink:0; position:relative; }
+.avatar img{ width:100%; height:100%; border-radius:16px; object-fit:cover; object-position:top; background:var(--solid-2); }
+.avatar .live{ position:absolute; right:-3px; bottom:-3px; width:18px; height:18px; border-radius:50%; background:var(--emerald); border:3px solid var(--solid); }
+.pc-name{ font-size:1.25rem; }
+.pc-role{ color:var(--cyan); font-weight:600; font-size:.9rem; margin-top:1px; }
+.pc-loc{ color:var(--muted); font-size:.78rem; margin-top:6px; display:flex; align-items:center; gap:6px; }
+.pc-loc svg{ width:13px; height:13px; color:var(--cyan); }
+.divider{ height:1px; background:var(--line); margin:22px 0; }
+.metric{ margin-bottom:16px; }
+.metric .top{ display:flex; justify-content:space-between; font-size:.78rem; font-weight:600; margin-bottom:7px; }
+.metric .bar{ height:8px; border-radius:6px; background:rgba(255,255,255,.06); overflow:hidden; }
+[data-theme="light"] .metric .bar{ background:rgba(15,23,42,.08); }
+.metric .fill{ height:100%; border-radius:6px; width:0; transition:width 1.3s var(--ease-lux); }
+.quote{ margin-top:22px; padding:15px 17px; border-radius:14px; background:color-mix(in oklab,var(--cyan) 8%, transparent); border:1px solid color-mix(in oklab,var(--cyan) 22%, transparent); font-size:.82rem; font-style:italic; color:var(--text); }
+
+/* ---------- marquee ---------- */
+.marquee{ margin-top:18px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:22px 0; -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent); mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent); }
+.marquee .track{ display:flex; gap:54px; width:max-content; animation:scrollx 32s linear infinite; }
+.marquee:hover .track{ animation-play-state:paused; }
+.marquee .item{ font-size:1.05rem; font-weight:600; color:var(--muted); display:flex; align-items:center; gap:12px; white-space:nowrap; }
+.marquee .item::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--blue); }
+@keyframes scrollx{ to{ transform:translateX(-50%);} }
+@media (prefers-reduced-motion: reduce){ .marquee .track{ animation:none; } }
+
+/* ---------- stat / results ---------- */
+.grid-4{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.stat{ padding:28px 24px; border-radius:18px; }
+.stat .num{ font-size:2.7rem; font-weight:900; letter-spacing:-.04em; line-height:1; }
+.stat h4{ font-size:1.02rem; margin:12px 0 8px; }
+.stat p{ color:var(--muted); font-size:.86rem; }
+.stat .num.b{ color:var(--blue);} .stat .num.i{ color:var(--indigo);} .stat .num.v{ color:var(--violet);} .stat .num.e{ color:var(--emerald);}
+
+/* ---------- ROI calculator ---------- */
+.roi{ max-width:920px; margin:0 auto; }
+.roi-grid{ display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:stretch; }
+.slider-block{ margin-bottom:26px; }
+.slider-block .lab{ display:flex; justify-content:space-between; font-size:.88rem; margin-bottom:12px; }
+.slider-block .lab b{ font-weight:700; }
+input[type=range]{ -webkit-appearance:none; appearance:none; width:100%; height:6px; border-radius:6px; background:linear-gradient(90deg,var(--blue) 0%,var(--blue) var(--p,40%), rgba(255,255,255,.1) var(--p,40%)); outline:none; }
+[data-theme="light"] input[type=range]{ background:linear-gradient(90deg,var(--blue) 0%,var(--blue) var(--p,40%), rgba(15,23,42,.12) var(--p,40%)); }
+input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; width:20px; height:20px; border-radius:50%; background:#fff; border:4px solid var(--blue); cursor:pointer; box-shadow:0 4px 12px rgba(59,130,246,.5); transition:transform .15s; }
+input[type=range]::-webkit-slider-thumb:hover{ transform:scale(1.18); }
+input[type=range]::-moz-range-thumb{ width:18px; height:18px; border-radius:50%; background:#fff; border:4px solid var(--blue); cursor:pointer; }
+.range-ticks{ display:flex; justify-content:space-between; font-size:.68rem; color:var(--muted-2); margin-top:7px; }
+.roi-out{ border-radius:18px; padding:28px; background:var(--solid-2); border:1px solid var(--line); display:flex; flex-direction:column; }
+.roi-out .cap{ font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+.roi-out .big{ font-size:clamp(2.4rem,6vw,3.4rem); font-weight:900; letter-spacing:-.04em; margin:10px 0; background:var(--grad-warm); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.roi-out small{ color:var(--muted); font-size:.78rem; line-height:1.5; }
+.roi-break{ margin-top:auto; padding-top:20px; border-top:1px solid var(--line); display:grid; gap:12px; font-size:.82rem; }
+.roi-break div{ display:flex; justify-content:space-between; }
+
+/* ====================== WORK / LANDING PAGES ====================== */
+.work-grid{ display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+.proj{ border-radius:22px; overflow:hidden; transition:transform .5s var(--ease), box-shadow .5s; }
+.proj:hover{ transform:translateY(-6px); box-shadow:var(--shadow-glow); }
+.frame{ position:relative; height:330px; overflow:hidden; border-bottom:1px solid var(--line); background:var(--solid-2); }
+.frame .bar{ position:absolute; top:0; left:0; right:0; height:34px; z-index:3; display:flex; align-items:center; gap:7px; padding:0 14px; background:color-mix(in oklab,var(--solid) 92%, transparent); border-bottom:1px solid var(--line); }
+.frame .bar i{ width:9px; height:9px; border-radius:50%; display:inline-block; }
+.frame .bar .u{ margin-left:10px; font-size:.7rem; color:var(--muted); font-weight:500; background:rgba(255,255,255,.05); padding:3px 12px; border-radius:6px; flex:1; }
+[data-theme="light"] .frame .bar .u{ background:rgba(15,23,42,.05); }
+.frame .scaler{ position:absolute; top:34px; left:0; width:200%; height:1500px; transform-origin:top left; transform:scale(.5); transition:transform 6.5s var(--ease-lux); }
+.proj:hover .frame .scaler{ transform:scale(.5) translateY(-560px); }
+.frame iframe{ width:100%; height:100%; border:0; pointer-events:none; }
+.frame .glow{ position:absolute; inset:34px 0 0 0; z-index:2; pointer-events:none; opacity:0; transition:opacity .4s; background:radial-gradient(120% 60% at 50% 120%, rgba(8,12,24,.55), transparent 60%); }
+.proj:hover .frame .glow{ opacity:1; }
+.frame .live-cta{ position:absolute; z-index:4; bottom:16px; left:50%; transform:translate(-50%,16px); opacity:0; transition:.4s var(--ease); }
+.proj:hover .frame .live-cta{ transform:translate(-50%,0); opacity:1; }
+.proj-body{ padding:24px; }
+.proj-body .ptype{ font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan); }
+.proj-body h3{ font-size:1.45rem; margin:9px 0 9px; }
+.proj-body p{ color:var(--muted); font-size:.9rem; }
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 18px; }
+.chip{ font-size:.72rem; font-weight:600; color:var(--muted); padding:5px 11px; border-radius:8px; background:var(--panel-2); border:1px solid var(--line); }
+.proj-links{ display:flex; gap:14px; align-items:center; }
+.proj-links a{ font-size:.86rem; font-weight:600; display:inline-flex; align-items:center; gap:7px; }
+.proj-links a.primary{ color:var(--head); }
+.proj-links a.primary svg{ width:15px; height:15px; transition:transform .25s; }
+.proj-links a.primary:hover svg{ transform:translate(3px,-3px); }
+.proj-links a.muted{ color:var(--muted); }
+.work-note{ text-align:center; margin-top:40px; color:var(--muted); font-size:.92rem; }
+
+/* ---------- timeline ---------- */
+.timeline{ max-width:780px; margin:0 auto; position:relative; padding-left:8px; }
+.tl-line{ position:absolute; left:14px; top:6px; bottom:6px; width:2px; background:linear-gradient(180deg,var(--blue),var(--indigo),var(--violet),transparent); }
+.tl-item{ position:relative; padding-left:52px; padding-bottom:42px; }
+.tl-item:last-child{ padding-bottom:0; }
+.tl-dot{ position:absolute; left:5px; top:3px; width:20px; height:20px; border-radius:50%; background:var(--solid); border:2px solid var(--blue); display:grid; place-items:center; transition:.3s; }
+.tl-dot span{ width:7px; height:7px; border-radius:50%; background:var(--blue); }
+.tl-item:hover .tl-dot{ box-shadow:0 0 0 6px rgba(59,130,246,.14); }
+.tl-head{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; align-items:baseline; }
+.tl-head h4{ font-size:1.2rem; }
+.tl-when{ font-size:.74rem; font-weight:600; color:var(--muted); background:var(--panel); border:1px solid var(--line); padding:4px 11px; border-radius:100px; }
+.tl-co{ font-size:.86rem; font-weight:600; color:var(--cyan); margin:5px 0 10px; }
+.tl-item ul{ list-style:none; display:grid; gap:8px; }
+.tl-item li{ position:relative; padding-left:18px; color:var(--muted); font-size:.9rem; }
+.tl-item li::before{ content:""; position:absolute; left:0; top:9px; width:6px; height:6px; border-radius:2px; background:var(--blue); opacity:.7; }
+.tl-more-wrap{ text-align:center; margin-top:38px; }
+#olderExp{ overflow:hidden; max-height:0; transition:max-height .6s var(--ease); }
+
+/* ---------- ecosystem ---------- */
+.filters{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:40px; }
+.filter{ font-size:.82rem; font-weight:600; padding:9px 17px; border-radius:11px; background:var(--panel); border:1px solid var(--line); color:var(--muted); transition:.25s var(--ease); }
+.filter:hover{ color:var(--head); }
+.filter.active{ background:var(--grad); color:#fff; border-color:transparent; box-shadow:0 12px 28px -14px rgba(59,130,246,.8); }
+.tools{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.tool{ display:flex; align-items:center; gap:13px; padding:16px; border-radius:14px; background:var(--panel); border:1px solid var(--line); transition:.35s var(--ease); }
+.tool:hover{ transform:translateY(-4px); border-color:var(--line-2); background:var(--panel-2); }
+.tool.hidden{ display:none; }
+.tool .ic{ width:42px; height:42px; border-radius:11px; display:grid; place-items:center; font-weight:800; font-size:.82rem; flex-shrink:0; }
+.tool b{ font-size:.9rem; color:var(--head); display:block; }
+.tool small{ font-size:.7rem; color:var(--muted); }
+
+/* ---------- contact ---------- */
+.contact-grid{ display:grid; grid-template-columns:1.6fr 1fr; gap:26px; max-width:980px; margin:0 auto; align-items:start; }
+.field{ margin-bottom:16px; }
+.field label{ font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:7px; }
+.field input,.field select,.field textarea{ width:100%; padding:13px 15px; border-radius:12px; background:var(--solid-2); border:1px solid var(--line); color:var(--text); font-family:inherit; font-size:.92rem; transition:border-color .25s, box-shadow .25s; }
+.field input:focus,.field select:focus,.field textarea:focus{ outline:none; border-color:var(--blue); box-shadow:0 0 0 4px rgba(59,130,246,.14); }
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.success{ display:none; margin-top:14px; padding:14px; border-radius:12px; background:color-mix(in oklab,var(--emerald) 12%, transparent); border:1px solid color-mix(in oklab,var(--emerald) 30%, transparent); color:var(--emerald); font-size:.88rem; text-align:center; }
+.success.show{ display:block; }
+.ch-card{ padding:24px; border-radius:18px; margin-bottom:18px; }
+.ch-card h4{ font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--head); margin-bottom:18px; }
+.ch{ margin-bottom:16px; }
+.ch span{ font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted-2); display:block; margin-bottom:3px; }
+.ch a,.ch b{ font-size:.92rem; font-weight:600; color:var(--cyan); }
+.ch b{ color:var(--text); }
+.book{ text-align:center; padding:24px; border-radius:18px; background:var(--solid-2); border:1px solid var(--line); }
+.book .ic{ font-size:1.6rem; }
+.book h5{ font-size:.95rem; margin:10px 0 6px; }
+.book p{ font-size:.78rem; color:var(--muted); margin-bottom:14px; }
+
+/* ---------- footer ---------- */
+footer{ border-top:1px solid var(--line); padding:40px 0; text-align:center; }
+footer p{ font-size:.8rem; color:var(--muted); }
+footer .small{ font-size:.7rem; color:var(--muted-2); margin-top:6px; }
+.to-top{ position:fixed; right:24px; bottom:24px; z-index:90; width:46px; height:46px; border-radius:14px; display:grid; place-items:center; background:var(--grad); color:#fff; box-shadow:0 14px 30px -12px rgba(59,130,246,.8); opacity:0; transform:translateY(16px) scale(.9); pointer-events:none; transition:.35s var(--ease); }
+.to-top.show{ opacity:1; transform:none; pointer-events:auto; }
+
+/* ---------- mobile drawer ---------- */
+.drawer{ position:fixed; inset:0; z-index:130; background:color-mix(in oklab,var(--bg) 88%, transparent); backdrop-filter:blur(20px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; opacity:0; pointer-events:none; transition:opacity .35s; }
+.drawer.open{ opacity:1; pointer-events:auto; }
+.drawer a{ font-size:1.5rem; font-weight:700; color:var(--head); padding:12px; }
+.drawer .close{ position:absolute; top:22px; right:22px; }
+
+/* ====================== RESPONSIVE ====================== */
+@media (max-width:980px){
+  .hero-grid{ grid-template-columns:1fr; gap:40px; }
+  .profile-card{ max-width:440px; margin:0 auto; }
+  .roi-grid{ grid-template-columns:1fr; }
+  .work-grid{ grid-template-columns:1fr; }
+  .grid-4{ grid-template-columns:repeat(2,1fr); }
+  .tools{ grid-template-columns:repeat(3,1fr); }
+  .contact-grid{ grid-template-columns:1fr; }
+}
+@media (max-width:760px){
+  .nav-links,.nav-right .btn,.nav-right .hide-sm{ display:none; }
+  .menu-btn{ display:grid; }
+  section{ padding:78px 0; }
+  .tools{ grid-template-columns:repeat(2,1fr); }
+  .two{ grid-template-columns:1fr; }
+}
+@media (max-width:480px){
+  .grid-4{ grid-template-columns:1fr; }
+  .frame{ height:280px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Ambient FX -->
+<div class="bg-fx"><span class="blob a"></span><span class="blob b"></span><span class="blob c"></span></div>
+<div class="grain"></div>
+
+<!-- Custom cursor -->
+<div class="cursor-ring" id="cRing"></div>
+<div class="cursor-dot" id="cDot"></div>
+
+<!-- Scroll progress -->
+<div class="progress" id="progress"></div>
+
+<!-- ===== Header ===== -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand" data-cursor>
+      <span class="logo">NC</span>
+      <span class="brand-name">Niño Chung<small>Customer Success · Landing Pages</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#results">Results</a>
+      <a href="#roi">ROI</a>
+      <a href="#journey">Journey</a>
+      <a href="#stack">Stack</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn" id="themeBtn" data-cursor aria-label="Toggle theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></svg>
+      </button>
+      <a href="#contact" class="btn btn-primary hide-sm" data-cursor>Get in Touch</a>
+      <button class="icon-btn menu-btn" id="menuBtn" data-cursor aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="drawer" id="drawer">
+  <button class="icon-btn close" id="closeBtn" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <a href="#about">About</a><a href="#work">Work</a><a href="#results">Results</a>
+  <a href="#roi">ROI</a><a href="#journey">Journey</a><a href="#stack">Stack</a>
+  <a href="#contact" class="grad-text">Get in Touch →</a>
+</div>
+
+<main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section id="about" class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="pill h-status reveal"><span class="dot"></span> Open to Full-Time CS Opportunities · Available Now</div>
+        <h1>
+          <span class="line"><span>Customer Success,</span></span>
+          <span class="line"><span class="grad-text">engineered</span> <span class="serif">&amp; designed.</span></span>
+        </h1>
+        <p class="lead reveal" style="--d:.2s">
+          I'm <b style="color:var(--head)">Niño Chung</b> — a Customer Success Manager with <span class="serif">8+ years</span> across global SaaS &amp; BPO. I accelerate time-to-value, automate workflows, and protect net revenue retention — and on the side, I design &amp; build high-converting <b style="color:var(--head)">landing pages</b>.
+        </p>
+        <div class="tagrow reveal" style="--d:.3s">
+          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Metro Manila, PH · Remote</span>
+          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Immediate Availability</span>
+        </div>
+        <div class="cta-row reveal" style="--d:.4s">
+          <a href="https://calendly.com/ninoechung/30min" target="_blank" rel="noopener" class="btn btn-primary" data-cursor>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Schedule a Quick Intro
+          </a>
+          <a href="#work" class="btn btn-ghost" data-cursor>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            View Landing Page Work
+          </a>
+        </div>
+      </div>
+
+      <!-- profile card -->
+      <div class="profile-card reveal" style="--d:.25s">
+        <div class="halo"></div>
+        <div class="pc-inner glass">
+          <div class="pc-top">
+            <div class="avatar">
+              <img src="Profile_NChung.png" alt="Niño Chung" onerror="this.onerror=null;this.src='https://placehold.co/150x150/0c1326/60a5fa?text=NC'">
+              <span class="live"></span>
+            </div>
+            <div>
+              <div class="pc-name">Niño Chung</div>
+              <div class="pc-role">Customer Success Executive</div>
+              <div class="pc-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Metro Manila, PH (Remote)</div>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="metric">
+            <div class="top"><span style="color:var(--muted)">Avg. Net Revenue Retention</span><span style="color:var(--emerald)">110%</span></div>
+            <div class="bar"><div class="fill" data-w="78%" style="background:var(--emerald)"></div></div>
+          </div>
+          <div class="metric">
+            <div class="top"><span style="color:var(--muted)">Avg. Time-to-Value Reduction</span><span style="color:var(--cyan)">−20% days</span></div>
+            <div class="bar"><div class="fill" data-w="72%" style="background:var(--cyan)"></div></div>
+          </div>
+          <div class="metric">
+            <div class="top"><span style="color:var(--muted)">Strategic CRM Integration Rate</span><span style="color:var(--indigo)">99.2%</span></div>
+            <div class="bar"><div class="fill" data-w="92%" style="background:var(--indigo)"></div></div>
+          </div>
+          <div class="quote">"Simplifying technical bottlenecks to boost product adoption and protect recurring revenue."</div>
+        </div>
+      </div>
     </div>
 
-    <!-- Header/Navigation -->
-    <header class="sticky top-0 z-40 w-full border-b border-slate-800/80 bg-brand-navy/80 dark:bg-brand-navy/80 light:bg-white/80 light:border-slate-200/80 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-lg tracking-wider shadow-md">NC</div>
-                <span class="font-bold text-lg hidden sm:inline-block tracking-tight text-white dark:text-white light:text-slate-900">Niño Chung</span>
-            </div>
-            
-            <nav class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#about" class="text-slate-300 dark:text-slate-300 light:text-slate-600 hover:text-white dark:hover:text-white light:hover:text-slate-900 transition-colors">About</a>
-                <a href="#achievements" class="text-slate-300 dark:text-slate-300 light:text-slate-600 hover:text-white dark:hover:text-white light:hover:text-slate-900 transition-colors">Achievements</a>
-                <a href="#calculator" class="text-slate-300 dark:text-slate-300 light:text-slate-600 hover:text-white dark:hover:text-white light:hover:text-slate-900 transition-colors">ROI Calculator</a>
-                <a href="#roadmap" class="text-slate-300 dark:text-slate-300 light:text-slate-600 hover:text-white dark:hover:text-white light:hover:text-slate-900 transition-colors">Roadmap</a>
-                <a href="#skills" class="text-slate-300 dark:text-slate-300 light:text-slate-600 hover:text-white dark:hover:text-white light:hover:text-slate-900 transition-colors">Ecosystem</a>
-            </nav>
+    <!-- marquee -->
+    <div class="wrap"><div class="marquee reveal" style="--d:.5s">
+      <div class="track" id="mqTrack">
+        <span class="item">GoHighLevel</span><span class="item">Salesforce</span><span class="item">HubSpot</span><span class="item">Zendesk</span><span class="item">Freshdesk</span><span class="item">FollowUpBoss</span><span class="item">Asana</span><span class="item">Monday.com</span><span class="item">ClickUp</span><span class="item">Zapier</span><span class="item">Make</span><span class="item">WordPress</span><span class="item">Shopify</span>
+      </div>
+    </div></div>
+  </section>
 
-            <div class="flex items-center space-x-4">
-                <!-- Theme Toggler -->
-                <button id="themeToggle" class="p-2 rounded-lg bg-slate-800 dark:bg-slate-800 light:bg-slate-100 hover:bg-slate-700 dark:hover:bg-slate-700 light:hover:bg-slate-200 transition-colors" aria-label="Toggle Theme">
-                    <i class="fas fa-sun text-amber-400 hidden dark:inline"></i>
-                    <i class="fas fa-moon text-slate-700 inline dark:hidden"></i>
-                </button>
-                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-lg bg-blue-600 hover:bg-blue-500 text-white shadow-md transition-all duration-200 hover:-translate-y-0.5">
-                    Get in Touch
-                </a>
-            </div>
+  <!-- ===== RESULTS ===== -->
+  <section id="results">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Quantifiable Business Results</div>
+        <h2>Proven metrics &amp; value delivery</h2>
+        <p>Outcomes from across the portfolio — measured, shipped, and repeatable.</p>
+      </div>
+      <div class="grid-4">
+        <div class="stat card spot reveal" data-cursor style="--d:0ms">
+          <div class="num b"><span class="count" data-to="233" data-suffix="%">0%</span></div>
+          <h4>Team Expansion</h4><p>Grew the delivery team from 3 to 10 hires at 2nd Office Inc. while standardizing QA frameworks.</p>
         </div>
-    </header>
-
-    <main class="flex-grow">
-        <!-- Hero Section -->
-        <section id="about" class="relative py-20 lg:py-28 overflow-hidden">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.08),transparent_50%)]"></div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <!-- Left Hero Copy -->
-                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                            Open to Full-Time CS Opportunities
-                        </div>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
-                            <span class="block text-white dark:text-white light:text-slate-900">Hi, I'm Niño Chung</span>
-                            <span class="block mt-1 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Customer Success Manager</span>
-                        </h1>
-                        <p class="text-lg text-slate-300 dark:text-slate-300 light:text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                            Strategic Customer Success and Implementation Leader with 8+ years of experience across global SaaS and BPO organizations. I specialize in accelerating time-to-value, workflow automation, and configuring custom CRM systems to protect net revenue retention.
-                        </p>
-
-                        <!-- Highlight Tags -->
-                        <div class="flex flex-wrap gap-3 justify-center lg:justify-start text-sm">
-                            <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700/50 text-slate-300"><i class="fas fa-map-marker-alt text-blue-400"></i> Metro Manila, PH (Remote)</span>
-                            <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700/50 text-slate-300"><i class="fas fa-clock text-blue-400"></i> Immediate Availability</span>
-                        </div>
-
-                        <!-- CTA Actions -->
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-lg shadow-blue-500/20 hover:shadow-blue-500/35 transition-all duration-200 hover:-translate-y-0.5">
-                                <i class="fas fa-calendar-alt mr-2"></i> Schedule a Quick Intro
-                            </a>
-                            <!-- Fallback resume link to mock standard download behavior -->
-                            <a href="#contact" onclick="window.print(); return false;" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 light:bg-slate-200 light:hover:bg-slate-300 text-white dark:text-white light:text-slate-800 font-semibold border border-slate-700 dark:border-slate-700 light:border-slate-300 transition-all duration-200 hover:-translate-y-0.5">
-                                <i class="fas fa-download mr-2"></i> Export Profile (PDF)
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Right Hero Profile & Metrics Card (Restored from screenshot image_e424de) -->
-                    <div class="lg:col-span-5 flex justify-center">
-                        <div class="relative w-full max-w-md">
-                            <!-- Background Subtle Glow -->
-                            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-500/20 to-teal-500/20 opacity-35 blur-lg"></div>
-                            
-                            <!-- Main Card Panel -->
-                            <div class="relative glass-panel rounded-3xl p-6 sm:p-8 border border-slate-800/90 shadow-2xl bg-[#0c1424]">
-                                
-                                <!-- Card Header -->
-                                <div class="flex items-center space-x-4">
-                                    <!-- Glowing Teal Profile Frame -->
-                                    <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-2 border-teal-400 p-0.5 bg-slate-950 flex-shrink-0">
-                                        <img src="Profile_NChung.png" alt="Niño Chung" onerror="this.onerror=null; this.src='https://placehold.co/150x150/0f172a/3b82f6?text=NC'" class="w-full h-full object-cover rounded-xl object-top">
-                                        <!-- Active Online Indicator -->
-                                        <span class="absolute bottom-0 right-0 block h-4 w-4 rounded-full bg-[#10b981] border-2 border-[#0c1424]" aria-hidden="true"></span>
-                                    </div>
-                                    <!-- Header Meta Info -->
-                                    <div>
-                                        <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Niño Chung</h2>
-                                        <p class="text-sm font-semibold text-sky-400 tracking-wide mt-0.5">Customer Success Manager</p>
-                                        <p class="text-xs text-slate-400 flex items-center gap-1.5 mt-1.5">
-                                            <i class="fas fa-map-marker-alt text-teal-400"></i> Metro Manila, PH (Remote)
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Horizontal Separator Line -->
-                                <hr class="border-slate-800/80 my-5">
-
-                                <!-- Visual Stats Metrics Tracks -->
-                                <div class="space-y-4">
-                                    
-                                    <!-- Metric 1 -->
-                                    <div>
-                                        <div class="flex justify-between items-center text-xs font-semibold mb-1.5">
-                                            <span class="text-slate-300">Avg. Net Revenue Retention (NRR)</span>
-                                            <span class="text-[#10b981]">110%</span>
-                                        </div>
-                                        <div class="w-full h-2 bg-slate-800/80 rounded-full overflow-hidden">
-                                            <div class="h-full bg-[#10b981] rounded-full" style="width: 78%;"></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Metric 2 -->
-                                    <div>
-                                        <div class="flex justify-between items-center text-xs font-semibold mb-1.5">
-                                            <span class="text-slate-300">Avg. Time-to-Value Reduction</span>
-                                            <span class="text-sky-400">-20% Days</span>
-                                        </div>
-                                        <div class="w-full h-2 bg-slate-800/80 rounded-full overflow-hidden">
-                                            <div class="h-full bg-sky-400 rounded-full" style="width: 72%;"></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Metric 3 -->
-                                    <div>
-                                        <div class="flex justify-between items-center text-xs font-semibold mb-1.5">
-                                            <span class="text-slate-300">Strategic CRM Integration Rate</span>
-                                            <span class="text-indigo-400">99.2%</span>
-                                        </div>
-                                        <div class="w-full h-2 bg-slate-800/80 rounded-full overflow-hidden">
-                                            <div class="h-full bg-indigo-400 rounded-full" style="width: 92%;"></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <!-- Deep-Dive Quote Banner at bottom -->
-                                <div class="mt-6 p-4 rounded-xl bg-cyan-950/25 border border-cyan-900/40 text-center">
-                                    <p class="text-xs font-medium text-slate-300 italic leading-relaxed">
-                                        "Simplifying technical bottlenecks to boost product adoption and protect recurring revenue."
-                                    </p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Key Achievements Bento Board (Authority Signal) -->
-        <section id="achievements" class="py-16 bg-slate-900/40 dark:bg-slate-900/40 light:bg-slate-100 border-y border-slate-800/50 light:border-slate-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-xs uppercase tracking-widest text-blue-500 font-bold mb-2">Quantifiable Business Results</h2>
-                    <p class="text-3xl font-extrabold text-white dark:text-white light:text-slate-900">Proven Business Metrics & Value Delivery</p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Stat Card 1 -->
-                    <div class="glass-panel p-6 rounded-2xl hover:border-blue-500/30 transition-all group">
-                        <div class="text-4xl font-extrabold text-blue-400 mb-2 group-hover:scale-105 transition-transform origin-left">233%</div>
-                        <div class="text-lg font-bold mb-1 text-slate-200 dark:text-slate-200 light:text-slate-800">Team Expansion</div>
-                        <p class="text-sm text-slate-400 dark:text-slate-400 light:text-slate-600">Grew delivery team from 3 to 10 hires at 2nd Office Inc. while standardizing QA frameworks.</p>
-                    </div>
-
-                    <!-- Stat Card 2 -->
-                    <div class="glass-panel p-6 rounded-2xl hover:border-blue-500/30 transition-all group">
-                        <div class="text-4xl font-extrabold text-indigo-400 mb-2 group-hover:scale-105 transition-transform origin-left">+25%</div>
-                        <div class="text-lg font-bold mb-1 text-slate-200 dark:text-slate-200 light:text-slate-800">CSAT Score Improvement</div>
-                        <p class="text-sm text-slate-400 dark:text-slate-400 light:text-slate-600">Optimized customer feedback protocols and hands-on support workflows at 2nd Office.</p>
-                    </div>
-
-                    <!-- Stat Card 3 -->
-                    <div class="glass-panel p-6 rounded-2xl hover:border-blue-500/30 transition-all group">
-                        <div class="text-4xl font-extrabold text-purple-400 mb-2 group-hover:scale-105 transition-transform origin-left">-20%</div>
-                        <div class="text-lg font-bold mb-1 text-slate-200 dark:text-slate-200 light:text-slate-800">Turnaround Speedup</div>
-                        <p class="text-sm text-slate-400 dark:text-slate-400 light:text-slate-600">Coordinated localized delivery workflows for demanding legal accounts at Lionbridge.</p>
-                    </div>
-
-                    <!-- Stat Card 4 -->
-                    <div class="glass-panel p-6 rounded-2xl hover:border-blue-500/30 transition-all group">
-                        <div class="text-4xl font-extrabold text-emerald-400 mb-2 group-hover:scale-105 transition-transform origin-left">+10%</div>
-                        <div class="text-lg font-bold mb-1 text-slate-200 dark:text-slate-200 light:text-slate-800">SaaS Revenue Uplift</div>
-                        <p class="text-sm text-slate-400 dark:text-slate-400 light:text-slate-600">Identified and secured system expansion/upsell opportunities across eComEngine portfolios.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Customer Success Value & Churn Mitigation ROI Calculator -->
-        <section id="calculator" class="py-20 relative">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6">
-                
-                <div class="text-center max-w-2xl mx-auto mb-12">
-                    <div class="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-semibold mb-3">Employer ROI Engine</div>
-                    <h2 class="text-3xl font-extrabold text-white dark:text-white light:text-slate-900">What Value Do I Return to Your Company?</h2>
-                    <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 mt-2 text-sm sm:text-base">
-                        Plug in your company's metrics below to dynamically project the estimated recurring revenue I can recover, safeguard, and scale over a 12-month tenure.
-                    </p>
-                </div>
-
-                <!-- Main Calculator Card -->
-                <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        
-                        <!-- Sliders panel -->
-                        <div class="space-y-6">
-                            <!-- Slider 1 -->
-                            <div class="space-y-2">
-                                <div class="flex justify-between text-sm">
-                                    <label class="font-medium text-slate-300 dark:text-slate-300 light:text-slate-700">Annual Recurring Revenue (ARR)</label>
-                                    <span id="arrVal" class="font-bold text-blue-400">$2,000,000</span>
-                                </div>
-                                <input id="arrSlider" type="range" min="500000" max="10000000" step="100000" value="2000000" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-500">
-                                <div class="flex justify-between text-[10px] text-slate-500">
-                                    <span>$500K</span>
-                                    <span>$10M+</span>
-                                </div>
-                            </div>
-
-                            <!-- Slider 2 -->
-                            <div class="space-y-2">
-                                <div class="flex justify-between text-sm">
-                                    <label class="font-medium text-slate-300 dark:text-slate-300 light:text-slate-700">Target Expansion Uplift</label>
-                                    <span id="expansionVal" class="font-bold text-indigo-400">10%</span>
-                                </div>
-                                <input id="expansionSlider" type="range" min="1" max="25" step="1" value="10" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-indigo-500">
-                                <div class="flex justify-between text-[10px] text-slate-500">
-                                    <span>1%</span>
-                                    <span>25%</span>
-                                </div>
-                            </div>
-
-                            <!-- Slider 3 -->
-                            <div class="space-y-2">
-                                <div class="flex justify-between text-sm">
-                                    <label class="font-medium text-slate-300 dark:text-slate-300 light:text-slate-700">Baseline Annual Churn Rate</label>
-                                    <span id="churnVal" class="font-bold text-purple-400">15%</span>
-                                </div>
-                                <input id="churnSlider" type="range" min="2" max="40" step="1" value="15" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-purple-500">
-                                <div class="flex justify-between text-[10px] text-slate-500">
-                                    <span>2%</span>
-                                    <span>40%</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Outputs Display Panel -->
-                        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 flex flex-col justify-between h-full space-y-6">
-                            <div>
-                                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Estimated Value Generated</span>
-                                <div id="totalValueDisplay" class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300 mt-2">$275,000</div>
-                                <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
-                                    Projection based on a historic <strong class="text-emerald-400">25% reduction</strong> in addressable churn, plus achieving your <strong class="text-blue-400">targeted account expansion</strong>.
-                                </p>
-                            </div>
-
-                            <hr class="border-slate-800">
-
-                            <!-- Breakdown list -->
-                            <div class="space-y-3 text-xs">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-slate-400">Retained Churn Revenue (25% saved):</span>
-                                    <span id="retainedValue" class="font-semibold text-emerald-400">+$75,000</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-slate-400">Account Upsell / Expansion Yield:</span>
-                                    <span id="expansionYield" class="font-semibold text-blue-400">+$200,000</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Execution Roadmap / Journey Timeline -->
-        <section id="roadmap" class="py-20 bg-slate-900/20 dark:bg-slate-900/20 light:bg-slate-100 border-y border-slate-800/30 light:border-slate-200">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6">
-                
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs uppercase tracking-widest text-blue-500 font-bold mb-2">Career Chronology</h2>
-                    <h3 class="text-3xl font-extrabold text-white dark:text-white light:text-slate-900">The Execution Roadmap</h3>
-                    <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 mt-2">8+ Years of Customer Success Experience</p>
-                </div>
-
-                <!-- Timeline System -->
-                <div class="relative border-l border-slate-800 light:border-slate-300 ml-4 sm:ml-6 space-y-12">
-                    
-                    <!-- Era 1 -->
-                    <div class="relative pl-8 sm:pl-10 group">
-                        <!-- Marker -->
-                        <div class="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-slate-900 border-2 border-blue-500 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                            <span class="w-2.5 h-2.5 rounded-full bg-blue-500 group-hover:bg-white"></span>
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                <h4 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Onboarding & Technology Consultant</h4>
-                                <span class="inline-block px-3 py-1 rounded-full bg-slate-800 light:bg-slate-200 text-slate-400 light:text-slate-700 text-xs font-semibold sm:self-start">Mar 2025 – Apr 2026</span>
-                            </div>
-                            <p class="text-sm font-semibold text-blue-400">Freelance Contract</p>
-                            <ul class="space-y-2 text-sm text-slate-300 dark:text-slate-300 light:text-slate-600 list-disc list-inside">
-                                <li>Configured customized white-label CRM solutions, workflows, API hooks, and third-party tools to speed up value delivery.</li>
-                                <li>Delivered custom onboarding programs and system walkthroughs, minimizing implementation support tickets and administrative churn.</li>
-                                <li>Monitored product adoption analytics post-onboarding, flagging low-engagement accounts early to advise optimization steps.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Era 2 -->
-                    <div class="relative pl-8 sm:pl-10 group">
-                        <!-- Marker -->
-                        <div class="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-slate-900 border-2 border-indigo-500 flex items-center justify-center group-hover:bg-indigo-600 transition-colors">
-                            <span class="w-2.5 h-2.5 rounded-full bg-indigo-500 group-hover:bg-white"></span>
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                <h4 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Customer Success Manager</h4>
-                                <span class="inline-block px-3 py-1 rounded-full bg-slate-800 light:bg-slate-200 text-slate-400 light:text-slate-700 text-xs font-semibold sm:self-start">Mar 2024 – Mar 2025</span>
-                            </div>
-                            <p class="text-sm font-semibold text-indigo-400">HighLevel / GoHighLevel (Full-time)</p>
-                            <ul class="space-y-2 text-sm text-slate-300 dark:text-slate-300 light:text-slate-600 list-disc list-inside">
-                                <li>Deconstructed detailed agency parameters into straightforward system setups, reducing configuration timelines.</li>
-                                <li>Headed focused reactivation playbooks for inactive accounts, re-aligning clients to safeguard monthly recurring revenue.</li>
-                                <li>Acting liaison between product and client technical teams, escalating user pain points to engineering sprints.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Era 3 -->
-                    <div class="relative pl-8 sm:pl-10 group">
-                        <!-- Marker -->
-                        <div class="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-slate-900 border-2 border-purple-500 flex items-center justify-center group-hover:bg-purple-600 transition-colors">
-                            <span class="w-2.5 h-2.5 rounded-full bg-purple-500 group-hover:bg-white"></span>
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                <h4 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Customer Success Manager</h4>
-                                <span class="inline-block px-3 py-1 rounded-full bg-slate-800 light:bg-slate-200 text-slate-400 light:text-slate-700 text-xs font-semibold sm:self-start">Jul 2023 – Mar 2024</span>
-                            </div>
-                            <p class="text-sm font-semibold text-purple-400">Freelance Contract</p>
-                            <ul class="space-y-2 text-sm text-slate-300 dark:text-slate-300 light:text-slate-600 list-disc list-inside">
-                                <li>Spearheaded structured deployment plans for green/automated heating, lighting, and HVAC systems.</li>
-                                <li>Conducted regular account check-ins, recognizing and locking in system extension contracts.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Era 4 -->
-                    <div class="relative pl-8 sm:pl-10 group">
-                        <!-- Marker -->
-                        <div class="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-slate-900 border-2 border-pink-500 flex items-center justify-center group-hover:bg-pink-600 transition-colors">
-                            <span class="w-2.5 h-2.5 rounded-full bg-pink-500 group-hover:bg-white"></span>
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                <h4 class="text-xl font-bold text-white dark:text-white light:text-slate-900">CSM & Project Coordinator</h4>
-                                <span class="inline-block px-3 py-1 rounded-full bg-slate-800 light:bg-slate-200 text-slate-400 light:text-slate-700 text-xs font-semibold sm:self-start">Jul 2021 – Jun 2023</span>
-                            </div>
-                            <p class="text-sm font-semibold text-pink-400">Lionbridge (Full-time)</p>
-                            <ul class="space-y-2 text-sm text-slate-300 dark:text-slate-300 light:text-slate-600 list-disc list-inside">
-                                <li>Direct interface for elite global law portfolios, overseeing urgent deliveries and critical escalation updates.</li>
-                                <li>Coordinated localization pipelines, decreasing average system delivery turnarounds by 20%.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="text-center mt-12">
-                    <button id="toggleOlderExperience" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 light:bg-slate-200 light:hover:bg-slate-300 text-sm font-semibold transition-all">
-                        <span id="toggleText">Reveal Earlier Experience (2010 - 2021)</span> <i id="toggleIcon" class="fas fa-chevron-down ml-2"></i>
-                    </button>
-                </div>
-
-                <!-- Hidden Older Experiences Container -->
-                <div id="olderExperienceContainer" class="hidden mt-12 relative border-l border-slate-800 light:border-slate-300 ml-4 sm:ml-6 space-y-12 pt-12">
-                    
-                    <!-- Era 5 -->
-                    <div class="relative pl-8 sm:pl-10 group animate-fade-in">
-                        <div class="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-slate-900 border-2 border-emerald-500 flex items-center justify-center">
-                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                <h4 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Senior Customer Success Manager</h4>
-                                <span class="inline-block px-3 py-1 rounded-full bg-slate-800 light:bg-slate-200 text-slate-400 light:text-slate-700 text-xs font-semibold">Jun 2020 – May 2021</span>
-                            </div>
-                            <p class="text-sm font-semibold text-emerald-400">eComEngine (Full-time)</p>
-                            <p class="text-sm text-slate-300 dark:text-slate-300 light:text-slate-600">
-                                Guided post-sales activities for merchants utilizing feedback tools, review software, and inventory metrics, contributing to a 10% revenue lift through feature adoption.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Era 6 -->
-                    <div class="relative pl-8 sm:pl-10 group">
-                        <div class="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-slate-900 border-2 border-teal-500 flex items-center justify-center">
-                            <span class="w-2.5 h-2.5 rounded-full bg-teal-500"></span>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                <h4 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Customer Success Manager</h4>
-                                <span class="inline-block px-3 py-1 rounded-full bg-slate-800 light:bg-slate-200 text-slate-400 light:text-slate-700 text-xs font-semibold">Jan 2020 – Jun 2020</span>
-                            </div>
-                            <p class="text-sm font-semibold text-teal-400">Crisalix (Full-time)</p>
-                            <p class="text-sm text-slate-300 dark:text-slate-300 light:text-slate-600">
-                                Directed implementation and onboarding programs for premium clinics using medical visualization solutions.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Era 7 -->
-                    <div class="relative pl-8 sm:pl-10 group">
-                        <div class="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-slate-900 border-2 border-amber-500 flex items-center justify-center">
-                            <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                <h4 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Operations & Client Success Manager</h4>
-                                <span class="inline-block px-3 py-1 rounded-full bg-slate-800 light:bg-slate-200 text-slate-400 light:text-slate-700 text-xs font-semibold">Jan 2018 – Dec 2019</span>
-                            </div>
-                            <p class="text-sm font-semibold text-amber-400">2nd Office Inc. (Full-time)</p>
-                            <p class="text-sm text-slate-300 dark:text-slate-300 light:text-slate-600">
-                                Scaled high-capacity service teams from 3 to 10 agents, improving CSAT scores by 25% through QA coaching.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Era 8 -->
-                    <div class="relative pl-8 sm:pl-10 group">
-                        <div class="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-slate-900 border-2 border-gray-500 flex items-center justify-center">
-                            <span class="w-2.5 h-2.5 rounded-full bg-gray-500"></span>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                <h4 class="text-xl font-bold text-white dark:text-white light:text-slate-900">BPO Support & Escalations Manager</h4>
-                                <span class="inline-block px-3 py-1 rounded-full bg-slate-800 light:bg-slate-200 text-slate-400 light:text-slate-700 text-xs font-semibold">Jun 2011 – Mar 2017</span>
-                            </div>
-                            <p class="text-sm font-semibold text-gray-400">Telus International (Full-time)</p>
-                            <p class="text-sm text-slate-300 dark:text-slate-300 light:text-slate-600">
-                                Monitored delivery metrics and resolved critical complaints for international accounts.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Ecosystem / Skills Section -->
-        <section id="skills" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-xs uppercase tracking-widest text-blue-500 font-bold mb-2">Systems Stack</h2>
-                    <h3 class="text-3xl font-extrabold text-white dark:text-white light:text-slate-900">Ecosystem Mastery</h3>
-                    <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 mt-2">Filter platforms by specialization domain</p>
-                </div>
-
-                <!-- Domain Filter Controls -->
-                <div class="flex flex-wrap justify-center gap-2 mb-10">
-                    <button class="filter-btn px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-blue-600 text-white transition" data-filter="all">All Tools</button>
-                    <button class="filter-btn px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-slate-800 dark:bg-slate-800 light:bg-slate-200 text-slate-300 dark:text-slate-300 light:text-slate-700 hover:bg-slate-700 dark:hover:bg-slate-700 light:hover:bg-slate-300 transition" data-filter="crm">CRM &amp; Support</button>
-                    <button class="filter-btn px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-slate-800 dark:bg-slate-800 light:bg-slate-200 text-slate-300 dark:text-slate-300 light:text-slate-700 hover:bg-slate-700 dark:hover:bg-slate-700 light:hover:bg-slate-300 transition" data-filter="pm">Project Management</button>
-                    <button class="filter-btn px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-slate-800 dark:bg-slate-800 light:bg-slate-200 text-slate-300 dark:text-slate-300 light:text-slate-700 hover:bg-slate-700 dark:hover:bg-slate-700 light:hover:bg-slate-300 transition" data-filter="auto">Automation &amp; AI</button>
-                    <button class="filter-btn px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-slate-800 dark:bg-slate-800 light:bg-slate-200 text-slate-300 dark:text-slate-300 light:text-slate-700 hover:bg-slate-700 dark:hover:bg-slate-700 light:hover:bg-slate-300 transition" data-filter="cms">CMS</button>
-                </div>
-
-                <!-- Systems Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" id="skillsGrid">
-                    
-                    <!-- GoHighLevel -->
-                    <div class="skill-card p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center space-x-3" data-category="crm">
-                        <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 font-bold">GHL</div>
-                        <div>
-                            <span class="block text-sm font-bold text-white dark:text-white light:text-slate-900">GoHighLevel</span>
-                            <span class="text-[10px] text-slate-400">Expert Admin</span>
-                        </div>
-                    </div>
-
-                    <!-- Salesforce -->
-                    <div class="skill-card p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center space-x-3" data-category="crm">
-                        <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400"><i class="fab fa-salesforce text-lg"></i></div>
-                        <div>
-                            <span class="block text-sm font-bold text-white dark:text-white light:text-slate-900">Salesforce</span>
-                            <span class="text-[10px] text-slate-400">Enterprise CRM</span>
-                        </div>
-                    </div>
-
-                    <!-- HubSpot -->
-                    <div class="skill-card p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center space-x-3" data-category="crm">
-                        <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400"><i class="fas fa-hubspot text-lg"></i></div>
-                        <div>
-                            <span class="block text-sm font-bold text-white dark:text-white light:text-slate-900">HubSpot</span>
-                            <span class="text-[10px] text-slate-400">CRM Suite</span>
-                        </div>
-                    </div>
-
-                    <!-- Zendesk -->
-                    <div class="skill-card p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center space-x-3" data-category="crm">
-                        <div class="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-400 font-bold">ZD</div>
-                        <div>
-                            <span class="block text-sm font-bold text-white dark:text-white light:text-slate-900">Zendesk</span>
-                            <span class="text-[10px] text-slate-400">Support Desk</span>
-                        </div>
-                    </div>
-
-                    <!-- Freshdesk -->
-                    <div class="skill-card p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center space-x-3" data-category="crm">
-                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold">FD</div>
-                        <div>
-                            <span class="block text-sm font-bold text-white dark:text-white light:text-slate-900">Freshdesk</span>
-                            <span class="text-[10px] text-slate-400">SLA Support</span>
-                        </div>
-                    </div>
-
-                    <!-- FollowUpBoss -->
-                    <div class="skill-card p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center space-x-3" data-category="crm">
-                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-bold">FUB</div>
-                        <div>
-                            <span class="block text-sm font-bold text-white dark:text-white light:text-slate-900">FollowUpBoss</span>
-                            <span class="text-[10px] text-slate-400">Lead Pipeline</span>
-                        </div>
-                    </div>
-
-                    <!-- Asana -->
-                    <div class="skill-card p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center space-x-3" data-category="pm">
-                        <div class="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-400 font-bold">AS</div>
-                        <div>
-                            <span class="block text-sm font-bold text-white dark:text-white light:text-slate-900">Asana</span>
-                            <span class="text-[10px] text-slate-400">PM Coordination</span>
-                        </div>
-                    </div>
-
-                    <!-- Monday.com -->
-                    <div class="skill-card p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center space-x-3" data-category="pm">
-                        <div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400 font-bold">M</div>
-                        <div>
-                            <span class="block text-sm font-bold text-white dark:text-white light:text-slate-900">Monday.com</span>
-                            <span class="text-[10px] text-slate-400">Delivery Boards</span>
-                        </div>
-                    </div>
-
-                    <!-- ClickUp -->
-                    <div class="skill-card p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center space-x-3" data-category="pm">
-                        <div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400 font-bold">CU</div>
-                        <div>
-                            <span class="block text-sm font-bold text-white dark:text-white light:text-slate-900">ClickUp</span>
-                            <span class="text-[10px] text-slate-400">Sprint Tracking</span>
-                        </div>
-                    </div>
-
-                    <!-- Zapier -->
-                    <div class="skill-card p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center space-x-3" data-category="auto">
-                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 font-bold">Z</div>
-                        <div>
-                            <span class="block text-sm font-bold text-white dark:text-white light:text-slate-900">Zapier</span>
-                            <span class="text-[10px] text-slate-400">Flow Automation</span>
-                        </div>
-                    </div>
-
-                    <!-- Make (Integromat) -->
-                    <div class="skill-card p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center space-x-3" data-category="auto">
-                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 font-bold">M</div>
-                        <div>
-                            <span class="block text-sm font-bold text-white dark:text-white light:text-slate-900">Make</span>
-                            <span class="text-[10px] text-slate-400">API Workflows</span>
-                        </div>
-                    </div>
-
-                    <!-- WordPress -->
-                    <div class="skill-card p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center space-x-3" data-category="cms">
-                        <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400"><i class="fab fa-wordpress text-lg"></i></div>
-                        <div>
-                            <span class="block text-sm font-bold text-white dark:text-white light:text-slate-900">WordPress</span>
-                            <span class="text-[10px] text-slate-400">Deployment</span>
-                        </div>
-                    </div>
-
-                    <!-- Shopify -->
-                    <div class="skill-card p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center space-x-3" data-category="cms">
-                        <div class="w-10 h-10 rounded-lg bg-lime-500/10 flex items-center justify-center text-lime-400"><i class="fab fa-shopify text-lg"></i></div>
-                        <div>
-                            <span class="block text-sm font-bold text-white dark:text-white light:text-slate-900">Shopify</span>
-                            <span class="text-[10px] text-slate-400">eCommerce</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact & Booking Section -->
-        <section id="contact" class="py-20 bg-slate-900/40 dark:bg-slate-900/40 light:bg-slate-100 border-t border-slate-800/80 light:border-slate-200">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6">
-                
-                <div class="text-center max-w-2xl mx-auto mb-12">
-                    <h2 class="text-xs uppercase tracking-widest text-blue-500 font-bold mb-2">Initialize Alignment</h2>
-                    <h3 class="text-3xl font-extrabold text-white dark:text-white light:text-slate-900">Schedule a Quick Intro</h3>
-                    <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 mt-2">Let's coordinate on how I can protect and scale your portfolios.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-                    
-                    <!-- Form Container (Wired to Web3Forms for secure, free delivery) -->
-                    <div class="md:col-span-8 glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800/60 shadow-xl">
-                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-                            <!-- Web3Forms Access Key Integration (Value will be updated by user) -->
-                            <input type="hidden" name="access_key" value="ad6e58f6-2f14-4ba9-a965-a842084d96ff">
-                            <input type="hidden" name="subject" value="New Portfolio Inquiry - Niño Chung">
-                            <input type="checkbox" name="botcheck" id="" style="display: none;">
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="space-y-1">
-                                    <label class="text-xs font-semibold text-slate-400 uppercase">Your Name</label>
-                                    <input type="text" name="name" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-blue-500 text-sm text-white">
-                                </div>
-                                <div class="space-y-1">
-                                    <label class="text-xs font-semibold text-slate-400 uppercase">Work Email</label>
-                                    <input type="email" name="email" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-blue-500 text-sm text-white">
-                                </div>
-                            </div>
-
-                            <div class="space-y-1">
-                                <label class="text-xs font-semibold text-slate-400 uppercase">Target Role / Inquiry Focus</label>
-                                <select name="target_role" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-blue-500 text-sm text-white">
-                                    <option value="Full-Time CS Leadership Role">Full-Time CS Leadership Role</option>
-                                    <option value="Full-Time CS Role">Full-Time CS Role</option>
-                                    <option value="Implementation Project">Implementation Project</option>
-                                    <option value="Inquiry">Inquiry</option>
-                                </select>
-                            </div>
-
-                            <div class="space-y-1">
-                                <label class="text-xs font-semibold text-slate-400 uppercase">Brief Context</label>
-                                <textarea name="message" rows="4" required placeholder="Let me know how I can support your goals..." class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-blue-500 text-sm text-white"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-md transition-colors">
-                                Send Message
-                            </button>
-                        </form>
-                        
-                        <!-- Success Message Container -->
-                        <div id="formSuccess" class="hidden mt-4 p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm text-center">
-                            <i class="fas fa-check-circle mr-2"></i> Message sent successfully! I will be in touch shortly.
-                        </div>
-                    </div>
-
-                    <!-- Direct Contact Credentials Block -->
-                    <div class="md:col-span-4 space-y-6">
-                        <div class="glass-panel p-6 rounded-2xl space-y-4">
-                            <h4 class="font-bold text-white dark:text-white light:text-slate-900 text-sm uppercase tracking-wider">Fast-Track Channels</h4>
-                            
-                            <!-- Email -->
-                            <div class="space-y-1">
-                                <span class="text-[10px] text-slate-400 uppercase font-bold">Corporate Mail</span>
-                                <a href="mailto:ninoechung@gmail.com" class="block text-sm font-semibold text-blue-400 hover:underline">ninoechung@gmail.com</a>
-                            </div>
-
-                            <!-- Phone -->
-                            <div class="space-y-1">
-                                <span class="text-[10px] text-slate-400 uppercase font-bold">Direct Line</span>
-                                <span class="block text-sm text-slate-300 dark:text-slate-300 light:text-slate-700 font-semibold">+63 995 412 6149</span>
-                            </div>
-
-                            <!-- LinkedIn -->
-                            <div class="space-y-1">
-                                <span class="text-[10px] text-slate-400 uppercase font-bold">Social Authority</span>
-                                <a href="https://linkedin.com/in/ninochung" target="_blank" class="flex items-center gap-1.5 text-sm font-semibold text-blue-400 hover:underline">
-                                    <i class="fab fa-linkedin"></i> linkedin.com/in/ninochung
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Direct Scheduling CTA Link (Useful placeholder for Calendly integration) -->
-                        <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 text-center space-y-3">
-                            <div class="text-blue-400 text-2xl"><i class="fas fa-calendar-alt"></i></div>
-                            <h5 class="font-bold text-white text-sm">Want instant calendar lock-in?</h5>
-                            <p class="text-[11px] text-slate-400">Skip the back-and-forth emails. Sync directly on our calendars.</p>
-                            <!-- Replace href below with your direct Calendly/TidyCal booking URL when ready -->
-                            <a href="https://calendly.com/ninoechung/30min" class="inline-block text-xs font-semibold bg-slate-800 text-slate-300 px-3 py-2 rounded-lg hover:bg-slate-700 transition">
-                                Book an appointment
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="py-8 border-t border-slate-800/80 light:border-slate-200/80 bg-brand-navy light:bg-white text-center text-xs text-slate-400">
-        <div class="max-w-7xl mx-auto px-4">
-            <p>&copy; 2026 Niño Chung. All rights preserved.</p>
-            <p class="mt-1 text-[10px] text-slate-500">Form submissions processed instantly via Web3Forms infrastructure.</p>
+        <div class="stat card spot reveal" data-cursor style="--d:90ms">
+          <div class="num i"><span class="count" data-to="25" data-prefix="+" data-suffix="%">0%</span></div>
+          <h4>CSAT Improvement</h4><p>Optimized customer feedback protocols and hands-on support workflows.</p>
         </div>
-    </footer>
+        <div class="stat card spot reveal" data-cursor style="--d:180ms">
+          <div class="num v"><span class="count" data-to="20" data-prefix="−" data-suffix="%">0%</span></div>
+          <h4>Turnaround Speedup</h4><p>Coordinated localized delivery workflows for demanding legal accounts at Lionbridge.</p>
+        </div>
+        <div class="stat card spot reveal" data-cursor style="--d:270ms">
+          <div class="num e"><span class="count" data-to="10" data-prefix="+" data-suffix="%">0%</span></div>
+          <h4>SaaS Revenue Uplift</h4><p>Secured system expansion &amp; upsell opportunities across eComEngine portfolios.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Interactive Logic Script (All template strings completely removed for error-free compiling) -->
-    <script>
-        // Progress Scroll Engine
-        window.addEventListener('scroll', function() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById('scrollProgress').style.width = scrolled + '%';
-        });
+  <!-- ===== ROI CALCULATOR ===== -->
+  <section id="roi">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Employer ROI Engine</div>
+        <h2>What value do I return to your company?</h2>
+        <p>Plug in your metrics to project the recurring revenue I can recover, safeguard, and scale over a 12-month tenure.</p>
+      </div>
+      <div class="roi card glass spot reveal" style="padding:34px">
+        <div class="roi-grid">
+          <div>
+            <div class="slider-block">
+              <div class="lab"><span style="color:var(--muted)">Annual Recurring Revenue (ARR)</span><b id="arrVal" style="color:var(--blue)">$2,000,000</b></div>
+              <input id="arrSlider" type="range" min="500000" max="10000000" step="100000" value="2000000">
+              <div class="range-ticks"><span>$500K</span><span>$10M+</span></div>
+            </div>
+            <div class="slider-block">
+              <div class="lab"><span style="color:var(--muted)">Target Expansion Uplift</span><b id="expVal" style="color:var(--indigo)">10%</b></div>
+              <input id="expSlider" type="range" min="1" max="25" step="1" value="10">
+              <div class="range-ticks"><span>1%</span><span>25%</span></div>
+            </div>
+            <div class="slider-block" style="margin-bottom:0">
+              <div class="lab"><span style="color:var(--muted)">Baseline Annual Churn Rate</span><b id="churnVal" style="color:var(--violet)">15%</b></div>
+              <input id="churnSlider" type="range" min="2" max="40" step="1" value="15">
+              <div class="range-ticks"><span>2%</span><span>40%</span></div>
+            </div>
+          </div>
+          <div class="roi-out">
+            <div class="cap">Estimated Value Generated</div>
+            <div class="big" id="totalVal">$275,000</div>
+            <small>Projection based on a historic <b style="color:var(--emerald)">25% reduction</b> in addressable churn, plus achieving your <b style="color:var(--blue)">targeted account expansion</b>.</small>
+            <div class="roi-break">
+              <div><span style="color:var(--muted)">Retained churn revenue (25% saved)</span><b id="retainVal" style="color:var(--emerald)">+$75,000</b></div>
+              <div><span style="color:var(--muted)">Account upsell / expansion yield</span><b id="yieldVal" style="color:var(--blue)">+$200,000</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Theme Toggle Engine
-        var themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', function() {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                document.documentElement.classList.add('light');
-                localStorage.setItem('theme', 'light');
-            } else {
-                document.documentElement.classList.remove('light');
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            }
-        });
+  <!-- ===== WORK / LANDING PAGES ===== -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Landing Page Design &amp; Development</div>
+        <h2>Pages that <span class="serif grad-text" style="font-size:1.05em">convert</span></h2>
+        <p>Beyond Customer Success, I design and build conversion-focused landing pages end-to-end — strategy, copy, design, and code. Hover a card to preview the live page; click through to explore the real build.</p>
+      </div>
+      <div class="work-grid">
 
-        // ROI Calculator Dynamic Engine
-        var arrSlider = document.getElementById('arrSlider');
-        var expansionSlider = document.getElementById('expansionSlider');
-        var churnSlider = document.getElementById('churnSlider');
+        <!-- Derma -->
+        <article class="proj card spot reveal" data-cursor>
+          <div class="frame">
+            <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="u">niñosthetic.com — Aesthetic Dermatology</span></div>
+            <div class="scaler"><iframe src="projects/derma/index.html" title="Landing Page — Derma (Niñosthetic)" loading="lazy" scrolling="no"></iframe></div>
+            <div class="glow"></div>
+            <a href="projects/derma/index.html" target="_blank" rel="noopener" class="btn btn-primary live-cta" data-cursor>Open full page ↗</a>
+          </div>
+          <div class="proj-body">
+            <div class="ptype">Landing Page · Derma</div>
+            <h3>Niñosthetic — Aesthetic Dermatology</h3>
+            <p>A science-led skincare clinic page: editorial-luxury layout, botanical sage palette, treatment showcase, and trust-building social proof — engineered for consultation bookings.</p>
+            <div class="chips"><span class="chip">Editorial Luxury</span><span class="chip">Scroll Reveals</span><span class="chip">Booking CTA</span><span class="chip">Hand-coded</span></div>
+            <div class="proj-links">
+              <a href="projects/derma/index.html" target="_blank" rel="noopener" class="primary" data-cursor>View live page <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
 
-        function updateROICalculation() {
-            var arr = parseInt(arrSlider.value);
-            var expansionRate = parseInt(expansionSlider.value) / 100;
-            var churnRate = parseInt(churnSlider.value) / 100;
+        <!-- Real Estate -->
+        <article class="proj card spot reveal" data-cursor style="--d:.12s">
+          <div class="frame">
+            <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="u">archestate.com — Architectural Real Estate</span></div>
+            <div class="scaler"><iframe src="projects/real-estate/index.html" title="Landing Page — Real Estate" loading="lazy" scrolling="no"></iframe></div>
+            <div class="glow"></div>
+            <a href="projects/real-estate/index.html" target="_blank" rel="noopener" class="btn btn-primary live-cta" data-cursor>Open full page ↗</a>
+          </div>
+          <div class="proj-body">
+            <div class="ptype">Landing Page · Real Estate</div>
+            <h3>Architectural Real Estate</h3>
+            <p>A curated listings page for architectural homes &amp; estates: warm cream-and-clay palette, immersive property showcase, and a refined enquiry flow built to drive qualified viewings.</p>
+            <div class="chips"><span class="chip">Luxury Property</span><span class="chip">Parallax Feel</span><span class="chip">Lead Capture</span><span class="chip">Hand-coded</span></div>
+            <div class="proj-links">
+              <a href="projects/real-estate/index.html" target="_blank" rel="noopener" class="primary" data-cursor>View live page <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
 
-            // Update visible metrics label displays
-            document.getElementById('arrVal').innerText = '$' + arr.toLocaleString();
-            document.getElementById('expansionVal').innerText = expansionSlider.value + '%';
-            document.getElementById('churnVal').innerText = churnSlider.value + '%';
+      </div>
+      <p class="work-note reveal">More landing-page builds available on request — each one strategy-first, hand-coded, and tuned for conversion.</p>
+    </div>
+  </section>
 
-            // Calculate numeric metrics outputs
-            // Niño's baseline records: reduces churn by 25% (saved), expansion rate yields 100% of user target projection
-            var savedChurn = arr * churnRate * 0.25;
-            var expansionYield = arr * expansionRate;
-            var totalValue = savedChurn + expansionYield;
+  <!-- ===== JOURNEY ===== -->
+  <section id="journey">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Career Chronology</div>
+        <h2>The execution roadmap</h2>
+        <p>8+ years of Customer Success across global SaaS &amp; BPO.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-line"></div>
 
-            // Render calculations with classic string concats (No template backticks)
-            document.getElementById('retainedValue').innerText = '+$' + Math.round(savedChurn).toLocaleString();
-            document.getElementById('expansionYield').innerText = '+$' + Math.round(expansionYield).toLocaleString();
-            document.getElementById('totalValueDisplay').innerText = '$' + Math.round(totalValue).toLocaleString();
-        }
+        <div class="tl-item reveal-x"><div class="tl-dot"><span></span></div>
+          <div class="tl-head"><h4>Onboarding &amp; Technology Consultant</h4><span class="tl-when">Mar 2025 – Apr 2026</span></div>
+          <div class="tl-co">Freelance Contract</div>
+          <ul>
+            <li>Configured white-label CRM solutions, workflows, API hooks &amp; third-party tools to speed up value delivery.</li>
+            <li>Delivered custom onboarding programs &amp; walkthroughs, minimizing support tickets and admin churn.</li>
+            <li>Monitored post-onboarding adoption analytics, flagging low-engagement accounts early.</li>
+          </ul>
+        </div>
 
-        arrSlider.addEventListener('input', updateROICalculation);
-        expansionSlider.addEventListener('input', updateROICalculation);
-        churnSlider.addEventListener('input', updateROICalculation);
-        
-        // Initial invocation
-        updateROICalculation();
+        <div class="tl-item reveal-x"><div class="tl-dot" style="border-color:var(--indigo)"><span style="background:var(--indigo)"></span></div>
+          <div class="tl-head"><h4>Customer Success Manager</h4><span class="tl-when">Mar 2024 – Mar 2025</span></div>
+          <div class="tl-co" style="color:var(--indigo)">HighLevel / GoHighLevel · Full-time</div>
+          <ul>
+            <li>Deconstructed detailed agency parameters into straightforward system setups, reducing config timelines.</li>
+            <li>Led reactivation playbooks for inactive accounts, safeguarding monthly recurring revenue.</li>
+            <li>Liaison between product &amp; client technical teams, escalating user pain points to engineering sprints.</li>
+          </ul>
+        </div>
 
-        // Older Experience Toggle Engine
-        var toggleBtn = document.getElementById('toggleOlderExperience');
-        var olderContainer = document.getElementById('olderExperienceContainer');
-        var toggleText = document.getElementById('toggleText');
-        var toggleIcon = document.getElementById('toggleIcon');
+        <div class="tl-item reveal-x"><div class="tl-dot" style="border-color:var(--violet)"><span style="background:var(--violet)"></span></div>
+          <div class="tl-head"><h4>Customer Success Manager</h4><span class="tl-when">Jul 2023 – Mar 2024</span></div>
+          <div class="tl-co" style="color:var(--violet)">Freelance Contract · Green Energy Systems</div>
+          <ul>
+            <li>Spearheaded structured deployment plans for green/automated heating, lighting &amp; HVAC systems.</li>
+            <li>Conducted regular account check-ins, locking in system-extension contracts.</li>
+          </ul>
+        </div>
 
-        toggleBtn.addEventListener('click', function() {
-            if (olderContainer.classList.contains('hidden')) {
-                olderContainer.classList.remove('hidden');
-                toggleText.innerText = 'Collapse Earlier Experience';
-                toggleIcon.classList.remove('fa-chevron-down');
-                toggleIcon.classList.add('fa-chevron-up');
-            } else {
-                olderContainer.classList.add('hidden');
-                toggleText.innerText = 'Reveal Earlier Experience (2010 - 2021)';
-                toggleIcon.classList.remove('fa-chevron-up');
-                toggleIcon.classList.add('fa-chevron-down');
-            }
-        });
+        <div class="tl-item reveal-x"><div class="tl-dot" style="border-color:var(--pink)"><span style="background:var(--pink)"></span></div>
+          <div class="tl-head"><h4>CSM &amp; Project Coordinator</h4><span class="tl-when">Jul 2021 – Jun 2023</span></div>
+          <div class="tl-co" style="color:var(--pink)">Lionbridge · Full-time</div>
+          <ul>
+            <li>Direct interface for elite global law portfolios — urgent deliveries &amp; critical escalation updates.</li>
+            <li>Coordinated localization pipelines, decreasing average delivery turnarounds by 20%.</li>
+          </ul>
+        </div>
 
-        // Ecosystem Filters
-        var filterBtns = document.querySelectorAll('.filter-btn');
-        var cards = document.querySelectorAll('.skill-card');
+        <div id="olderExp">
+          <div class="tl-item reveal-x" style="padding-top:14px"><div class="tl-dot" style="border-color:var(--emerald)"><span style="background:var(--emerald)"></span></div>
+            <div class="tl-head"><h4>Senior Customer Success Manager</h4><span class="tl-when">Jun 2020 – May 2021</span></div>
+            <div class="tl-co" style="color:var(--emerald)">eComEngine · Full-time</div>
+            <ul><li>Guided post-sales for merchants using feedback &amp; review software, contributing a 10% revenue lift via feature adoption.</li></ul>
+          </div>
+          <div class="tl-item reveal-x"><div class="tl-dot" style="border-color:var(--cyan)"><span style="background:var(--cyan)"></span></div>
+            <div class="tl-head"><h4>Customer Success Manager</h4><span class="tl-when">Jan 2020 – Jun 2020</span></div>
+            <div class="tl-co" style="color:var(--cyan)">Crisalix · Full-time</div>
+            <ul><li>Directed implementation &amp; onboarding for premium clinics using medical visualization solutions.</li></ul>
+          </div>
+          <div class="tl-item reveal-x"><div class="tl-dot" style="border-color:var(--amber)"><span style="background:var(--amber)"></span></div>
+            <div class="tl-head"><h4>Operations &amp; Client Success Manager</h4><span class="tl-when">Jan 2018 – Dec 2019</span></div>
+            <div class="tl-co" style="color:var(--amber)">2nd Office Inc. · Full-time</div>
+            <ul><li>Scaled service teams from 3 to 10 agents, improving CSAT scores by 25% through QA coaching.</li></ul>
+          </div>
+          <div class="tl-item reveal-x"><div class="tl-dot" style="border-color:var(--muted)"><span style="background:var(--muted)"></span></div>
+            <div class="tl-head"><h4>BPO Support &amp; Escalations Manager</h4><span class="tl-when">Jun 2011 – Mar 2017</span></div>
+            <div class="tl-co" style="color:var(--muted)">Telus International · Full-time</div>
+            <ul><li>Monitored delivery metrics &amp; resolved critical complaints for international accounts.</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="tl-more-wrap reveal">
+        <button class="btn btn-ghost" id="olderBtn" data-cursor><span id="olderTxt">Reveal earlier experience (2010 – 2021)</span> <span id="olderIco">↓</span></button>
+      </div>
+    </div>
+  </section>
 
-        filterBtns.forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                // Update active buttons styles
-                filterBtns.forEach(function(b) {
-                    b.classList.remove('bg-blue-600', 'text-white');
-                    b.classList.add('bg-slate-800', 'dark:bg-slate-800', 'light:bg-slate-200', 'text-slate-300', 'dark:text-slate-300', 'light:text-slate-700');
-                });
-                btn.classList.remove('bg-slate-800', 'dark:bg-slate-800', 'light:bg-slate-200', 'text-slate-300', 'dark:text-slate-300', 'light:text-slate-700');
-                btn.classList.add('bg-blue-600', 'text-white');
+  <!-- ===== STACK ===== -->
+  <section id="stack">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Systems Stack</div>
+        <h2>Ecosystem mastery</h2>
+        <p>Filter platforms by specialization domain.</p>
+      </div>
+      <div class="filters reveal" id="filters">
+        <button class="filter active" data-f="all" data-cursor>All Tools</button>
+        <button class="filter" data-f="crm" data-cursor>CRM &amp; Support</button>
+        <button class="filter" data-f="pm" data-cursor>Project Management</button>
+        <button class="filter" data-f="auto" data-cursor>Automation &amp; AI</button>
+        <button class="filter" data-f="cms" data-cursor>CMS</button>
+      </div>
+      <div class="tools" id="tools">
+        <div class="tool reveal" data-cat="crm"><div class="ic" style="background:rgba(59,130,246,.12);color:var(--blue)">GHL</div><div><b>GoHighLevel</b><small>Expert Admin</small></div></div>
+        <div class="tool reveal" data-cat="crm"><div class="ic" style="background:rgba(34,211,238,.12);color:var(--cyan)">SF</div><div><b>Salesforce</b><small>Enterprise CRM</small></div></div>
+        <div class="tool reveal" data-cat="crm"><div class="ic" style="background:rgba(245,158,11,.12);color:var(--amber)">HS</div><div><b>HubSpot</b><small>CRM Suite</small></div></div>
+        <div class="tool reveal" data-cat="crm"><div class="ic" style="background:rgba(16,185,129,.12);color:var(--emerald)">ZD</div><div><b>Zendesk</b><small>Support Desk</small></div></div>
+        <div class="tool reveal" data-cat="crm"><div class="ic" style="background:rgba(16,185,129,.12);color:var(--emerald)">FD</div><div><b>Freshdesk</b><small>SLA Support</small></div></div>
+        <div class="tool reveal" data-cat="crm"><div class="ic" style="background:rgba(99,102,241,.12);color:var(--indigo)">FUB</div><div><b>FollowUpBoss</b><small>Lead Pipeline</small></div></div>
+        <div class="tool reveal" data-cat="pm"><div class="ic" style="background:rgba(236,72,153,.12);color:var(--pink)">AS</div><div><b>Asana</b><small>PM Coordination</small></div></div>
+        <div class="tool reveal" data-cat="pm"><div class="ic" style="background:rgba(244,63,94,.12);color:#fb7185">M</div><div><b>Monday.com</b><small>Delivery Boards</small></div></div>
+        <div class="tool reveal" data-cat="pm"><div class="ic" style="background:rgba(168,85,247,.12);color:var(--violet)">CU</div><div><b>ClickUp</b><small>Sprint Tracking</small></div></div>
+        <div class="tool reveal" data-cat="auto"><div class="ic" style="background:rgba(245,158,11,.12);color:var(--amber)">Z</div><div><b>Zapier</b><small>Flow Automation</small></div></div>
+        <div class="tool reveal" data-cat="auto"><div class="ic" style="background:rgba(168,85,247,.12);color:var(--violet)">Mk</div><div><b>Make</b><small>API Workflows</small></div></div>
+        <div class="tool reveal" data-cat="cms"><div class="ic" style="background:rgba(59,130,246,.12);color:var(--blue)">WP</div><div><b>WordPress</b><small>Deployment</small></div></div>
+        <div class="tool reveal" data-cat="cms"><div class="ic" style="background:rgba(132,204,22,.12);color:#a3e635">Sh</div><div><b>Shopify</b><small>eCommerce CSM</small></div></div>
+        <div class="tool reveal" data-cat="cms"><div class="ic" style="background:rgba(34,211,238,.12);color:var(--cyan)">&lt;/&gt;</div><div><b>HTML · CSS · JS</b><small>Landing Pages</small></div></div>
+      </div>
+    </div>
+  </section>
 
-                var filter = btn.getAttribute('data-filter');
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Initialize Alignment</div>
+        <h2>Let's build something that retains</h2>
+        <p>Coordinate on how I can protect and scale your portfolios — or design your next landing page.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="card glass spot reveal" style="padding:30px">
+          <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="ad6e58f6-2f14-4ba9-a965-a842084d96ff">
+            <input type="hidden" name="subject" value="New Portfolio Inquiry — Niño Chung">
+            <input type="checkbox" name="botcheck" style="display:none">
+            <div class="two">
+              <div class="field"><label>Your Name</label><input type="text" name="name" required></div>
+              <div class="field"><label>Work Email</label><input type="email" name="email" required></div>
+            </div>
+            <div class="field"><label>Target Role / Inquiry Focus</label>
+              <select name="target_role" required>
+                <option>Full-Time CS Leadership Role</option>
+                <option>Full-Time CS Role</option>
+                <option>Implementation Project</option>
+                <option>Landing Page Project</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="field"><label>Brief Context</label><textarea name="message" rows="4" required placeholder="Let me know how I can support your goals..."></textarea></div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center" data-cursor>Dispatch Message →</button>
+          </form>
+          <div class="success" id="formSuccess">✓ Message sent successfully! I'll be in touch shortly.</div>
+        </div>
+        <div class="reveal" style="--d:.1s">
+          <div class="ch-card card glass">
+            <h4>Fast-Track Channels</h4>
+            <div class="ch"><span>Email</span><a href="mailto:ninoechung@gmail.com" data-cursor>ninoechung@gmail.com</a></div>
+            <div class="ch"><span>Direct Line</span><b>+63 995 412 6149</b></div>
+            <div class="ch"><span>LinkedIn</span><a href="https://linkedin.com/in/ninochung" target="_blank" rel="noopener" data-cursor>linkedin.com/in/ninochung</a></div>
+          </div>
+          <div class="book">
+            <div class="ic grad-text">◷</div>
+            <h5>Want instant calendar lock-in?</h5>
+            <p>Skip the back-and-forth. Book a 30-min slot directly on my calendar.</p>
+            <a href="https://calendly.com/ninoechung/30min" target="_blank" rel="noopener" class="btn btn-ghost" style="width:100%; justify-content:center" data-cursor>Book a 30-min call →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-                cards.forEach(function(card) {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.classList.remove('hidden');
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                });
-            });
-        });
+<footer>
+  <div class="wrap">
+    <p>© 2026 Niño Chung. All rights reserved. · <span class="grad-text">Customer Success &amp; Landing Pages</span></p>
+    <p class="small">Hand-coded single-page site. Form submissions processed via Web3Forms.</p>
+  </div>
+</footer>
 
-        // Web3Forms AJAX handler (Prevents page hijacking)
-        var contactForm = document.getElementById('contactForm');
-        var formSuccess = document.getElementById('formSuccess');
+<a href="#top" class="to-top" id="toTop" data-cursor aria-label="Back to top">↑</a>
 
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            var formData = new FormData(contactForm);
-            var object = {};
-            formData.forEach(function(value, key){
-                object[key] = value;
-            });
-            var json = JSON.stringify(object);
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            formSuccess.innerText = 'Sending message...';
-            formSuccess.classList.remove('hidden');
+  /* ---------- Seamless marquee (duplicate track for -50% loop) ---------- */
+  var mq = document.getElementById('mqTrack');
+  if(mq){ mq.innerHTML += mq.innerHTML; }
 
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
-            })
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(data) {
-                if (data.success) {
-                    formSuccess.innerText = 'Message dispatched successfully! I will be in touch shortly.';
-                    contactForm.reset();
-                } else {
-                    formSuccess.innerText = 'Submission error: ' + data.message;
-                }
-            })
-            .catch(function(error) {
-                formSuccess.innerText = 'Network error. Please email me directly at ninoechung@gmail.com';
-            });
-        });
-    </script>
+  /* ---------- Theme ---------- */
+  var root = document.documentElement;
+  document.getElementById('themeBtn').addEventListener('click', function(){
+    var t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', t);
+    try{ localStorage.setItem('nc-theme', t); }catch(e){}
+  });
+
+  /* ---------- Header + progress + to-top ---------- */
+  var header = document.getElementById('header'), progress = document.getElementById('progress'), toTop = document.getElementById('toTop');
+  function onScroll(){
+    var y = window.scrollY || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    progress.style.width = (h>0 ? (y/h*100) : 0) + '%';
+    header.classList.toggle('scrolled', y > 12);
+    toTop.classList.toggle('show', y > 600);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* ---------- Mobile drawer ---------- */
+  var drawer = document.getElementById('drawer');
+  document.getElementById('menuBtn').addEventListener('click', function(){ drawer.classList.add('open'); });
+  document.getElementById('closeBtn').addEventListener('click', function(){ drawer.classList.remove('open'); });
+  drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ drawer.classList.remove('open'); }); });
+
+  /* ---------- Reveal on scroll (scroll-based — robust in every renderer) ---------- */
+  var revealEls = [].slice.call(document.querySelectorAll('.reveal,.reveal-x'));
+  function fireReveal(el){
+    el.classList.add('in');
+    el.querySelectorAll('.fill[data-w]').forEach(function(f){ f.style.width = f.getAttribute('data-w'); });
+    if(el.classList.contains('stat')){ startCount(el.querySelector('.count')); }
+  }
+  function revealCheck(){
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    for(var i=revealEls.length-1;i>=0;i--){
+      if(revealEls[i].getBoundingClientRect().top < vh*0.88){ fireReveal(revealEls[i]); revealEls.splice(i,1); }
+    }
+  }
+  window.addEventListener('scroll', revealCheck, {passive:true});
+  window.addEventListener('resize', revealCheck);
+  window.addEventListener('load', revealCheck);
+  revealCheck();
+
+  /* ---------- Counters ---------- */
+  function startCount(el){
+    if(!el || el.dataset.done) return; el.dataset.done='1';
+    var to = parseFloat(el.getAttribute('data-to')), pre = el.getAttribute('data-prefix')||'', suf = el.getAttribute('data-suffix')||'';
+    if(reduce){ el.textContent = pre+to+suf; return; }
+    var dur = 1400, t0 = null;
+    function step(ts){ if(!t0) t0=ts; var p = Math.min((ts-t0)/dur,1); var e = 1-Math.pow(1-p,3);
+      el.textContent = pre + Math.round(to*e) + suf; if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+    // safety: if no animation frame ever runs, snap to the final value
+    setTimeout(function(){ if(parseFloat(el.textContent.replace(/[^0-9.]/g,'')) === 0 && to !== 0){ el.textContent = pre + to + suf; } }, 1800);
+  }
+
+  /* ---------- Scroll-spy (scroll-based) ---------- */
+  var spyIds = ['about','results','roi','work','journey','stack']; // vertical (DOM) order
+  var navMap = {}; document.querySelectorAll('.nav-links a').forEach(function(a){ navMap[a.getAttribute('href').slice(1)] = a; });
+  function spyCheck(){
+    var pos = (window.scrollY||document.documentElement.scrollTop||0) + window.innerHeight*0.35, cur=null;
+    spyIds.forEach(function(id){ var s=document.getElementById(id); if(s && s.offsetTop<=pos) cur=id; });
+    Object.keys(navMap).forEach(function(k){ navMap[k].classList.toggle('active', k===cur); });
+  }
+  window.addEventListener('scroll', spyCheck, {passive:true}); spyCheck();
+
+  /* ---------- ROI calculator ---------- */
+  var arr = document.getElementById('arrSlider'), exp = document.getElementById('expSlider'), churn = document.getElementById('churnSlider');
+  function setTrack(el){ var p = (el.value-el.min)/(el.max-el.min)*100; el.style.setProperty('--p', p+'%'); }
+  function roi(){
+    var a=+arr.value, e=+exp.value/100, c=+churn.value/100;
+    document.getElementById('arrVal').textContent = '$'+a.toLocaleString();
+    document.getElementById('expVal').textContent = exp.value+'%';
+    document.getElementById('churnVal').textContent = churn.value+'%';
+    var saved=a*c*0.25, yield_=a*e, total=saved+yield_;
+    document.getElementById('retainVal').textContent = '+$'+Math.round(saved).toLocaleString();
+    document.getElementById('yieldVal').textContent = '+$'+Math.round(yield_).toLocaleString();
+    document.getElementById('totalVal').textContent = '$'+Math.round(total).toLocaleString();
+    [arr,exp,churn].forEach(setTrack);
+  }
+  [arr,exp,churn].forEach(function(s){ s.addEventListener('input', roi); }); roi();
+
+  /* ---------- Older experience toggle ---------- */
+  var olderBtn = document.getElementById('olderBtn'), older = document.getElementById('olderExp'),
+      olderTxt = document.getElementById('olderTxt'), olderIco = document.getElementById('olderIco'), open=false;
+  olderBtn.addEventListener('click', function(){
+    open=!open;
+    if(open){ older.style.maxHeight = older.scrollHeight+'px'; olderTxt.textContent='Collapse earlier experience'; olderIco.textContent='↑';
+      older.querySelectorAll('.reveal-x').forEach(function(el){ el.classList.add('in'); }); }
+    else{ older.style.maxHeight='0px'; olderTxt.textContent='Reveal earlier experience (2010 – 2021)'; olderIco.textContent='↓'; }
+  });
+
+  /* ---------- Ecosystem filter ---------- */
+  document.querySelectorAll('.filter').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.filter').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.getAttribute('data-f');
+      document.querySelectorAll('.tool').forEach(function(t){
+        t.classList.toggle('hidden', !(f==='all' || t.getAttribute('data-cat')===f));
+      });
+    });
+  });
+
+  /* ---------- Contact form (Web3Forms AJAX) ---------- */
+  var form = document.getElementById('contactForm'), ok = document.getElementById('formSuccess');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = {}; new FormData(form).forEach(function(v,k){ data[k]=v; });
+    ok.textContent='Sending message...'; ok.classList.add('show');
+    fetch('https://api.web3forms.com/submit', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify(data) })
+      .then(function(r){ return r.json(); })
+      .then(function(d){ if(d.success){ ok.textContent='✓ Message dispatched! I will be in touch shortly.'; form.reset(); } else { ok.textContent='Submission error: '+d.message; } })
+      .catch(function(){ ok.textContent='Network error — please email ninoechung@gmail.com directly.'; });
+  });
+
+  /* ---------- Spotlight cards ---------- */
+  document.querySelectorAll('.spot').forEach(function(c){
+    c.addEventListener('pointermove', function(e){
+      var r=c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX-r.left)+'px');
+      c.style.setProperty('--my', (e.clientY-r.top)+'px');
+    });
+  });
+
+  /* ---------- Custom cursor + magnetic (pointer:fine only) ---------- */
+  if(window.matchMedia('(pointer:fine)').matches && !reduce){
+    var ring=document.getElementById('cRing'), dot=document.getElementById('cDot');
+    document.body.classList.add('has-cursor');
+    var rx=0,ry=0,dx=0,dy=0,tx=0,ty=0;
+    document.addEventListener('pointermove', function(e){ tx=e.clientX; ty=e.clientY; dx=tx; dy=ty; });
+    function loop(){ rx+=(tx-rx)*.16; ry+=(ty-ry)*.16; ring.style.transform='translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';
+      dot.style.transform='translate('+dx+'px,'+dy+'px) translate(-50%,-50%)'; requestAnimationFrame(loop); }
+    loop();
+    document.querySelectorAll('[data-cursor]').forEach(function(el){
+      el.addEventListener('pointerenter', function(){ ring.classList.add('hot'); });
+      el.addEventListener('pointerleave', function(){ ring.classList.remove('hot'); el.style.transform=''; });
+      el.addEventListener('pointermove', function(e){
+        if(el.classList.contains('proj')||el.classList.contains('stat')||el.classList.contains('tool')) return;
+        var r=el.getBoundingClientRect(), mx=e.clientX-(r.left+r.width/2), my=e.clientY-(r.top+r.height/2);
+        el.style.transform='translate('+mx*.18+'px,'+my*.28+'px)';
+      });
+    });
+  }
+})();
+</script>
 </body>
 </html>
