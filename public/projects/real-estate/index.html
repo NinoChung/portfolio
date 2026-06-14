@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niño Chung, Architectural Real Estate</title>
+<meta name="description" content="Niño Chung, curated architectural homes and estates. Find a place you'll love to live.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FDFBF7;
+    --cream-deep: #F4EFE6;
+    --espresso: #1C1814;
+    --espresso-soft: #2A241E;
+    --clay: #B0633A;
+    --clay-deep: #96502C;
+    --sage: #8A9180;
+    --ink-40: rgba(28, 24, 20, 0.4);
+    --ink-60: rgba(28, 24, 20, 0.6);
+    --ink-08: rgba(28, 24, 20, 0.08);
+    --ease-lux: cubic-bezier(0.32, 0.72, 0, 1);
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--espresso);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* film grain */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  ::selection { background: var(--clay); color: var(--cream); }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- reveal animations ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(48px);
+    filter: blur(8px);
+    transition: opacity 1s var(--ease-lux), transform 1s var(--ease-lux), filter 1s var(--ease-lux);
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); filter: blur(0); }
+  .reveal.d1 { transition-delay: 0.1s; }
+  .reveal.d2 { transition-delay: 0.2s; }
+  .reveal.d3 { transition-delay: 0.3s; }
+
+  /* ---------- eyebrow ---------- */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--ink-08);
+    background: rgba(255, 255, 255, 0.55);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-60);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--clay);
+  }
+
+  /* ---------- buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 8px 8px 26px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.6s var(--ease-lux), background 0.6s var(--ease-lux), box-shadow 0.6s var(--ease-lux);
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn .orb {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s var(--ease-lux);
+  }
+  .btn:hover .orb { transform: translate(3px, -2px) scale(1.06); }
+  .btn .orb svg { width: 13px; height: 13px; }
+
+  .btn-dark {
+    background: var(--espresso);
+    color: var(--cream);
+    box-shadow: 0 20px 40px -18px rgba(28, 24, 20, 0.45);
+  }
+  .btn-dark:hover { background: var(--espresso-soft); box-shadow: 0 26px 50px -18px rgba(28, 24, 20, 0.5); }
+  .btn-dark .orb { background: rgba(253, 251, 247, 0.14); }
+
+  .btn-clay {
+    background: var(--clay);
+    color: var(--cream);
+    box-shadow: 0 20px 44px -16px rgba(176, 99, 58, 0.55);
+  }
+  .btn-clay:hover { background: var(--clay-deep); }
+  .btn-clay .orb { background: rgba(253, 251, 247, 0.18); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--espresso);
+    border: 1px solid var(--ink-08);
+    padding: 14px 26px;
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.7); }
+
+  /* ---------- nav ---------- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 70;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    pointer-events: none;
+  }
+  .nav-pill {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    padding: 10px 10px 10px 28px;
+    border-radius: 999px;
+    background: rgba(253, 251, 247, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(28, 24, 20, 0.07);
+    box-shadow: 0 14px 40px -18px rgba(28, 24, 20, 0.25), inset 0 1px 1px rgba(255,255,255,0.6);
+    transition: transform 0.7s var(--ease-lux), box-shadow 0.7s var(--ease-lux);
+  }
+  .nav-pill.scrolled { box-shadow: 0 18px 44px -16px rgba(28, 24, 20, 0.32), inset 0 1px 1px rgba(255,255,255,0.6); }
+
+  .logo {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 21px;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: var(--espresso);
+  }
+  .logo span { color: var(--clay); }
+
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--ink-60);
+    text-decoration: none;
+    transition: color 0.5s var(--ease-lux);
+  }
+  .nav-links a:hover { color: var(--espresso); }
+
+  .nav-cta { font-size: 13px; padding: 6px 6px 6px 20px; }
+  .nav-cta .orb { width: 32px; height: 32px; }
+
+  /* hamburger */
+  .burger {
+    display: none;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--ink-08);
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+  }
+  .burger span {
+    position: absolute;
+    left: 11px;
+    width: 18px; height: 1.5px;
+    background: var(--espresso);
+    transition: transform 0.5s var(--ease-lux), top 0.5s var(--ease-lux);
+  }
+  .burger span:nth-child(1) { top: 15px; }
+  .burger span:nth-child(2) { top: 23px; }
+  .burger.open span:nth-child(1) { top: 19px; transform: rotate(45deg); }
+  .burger.open span:nth-child(2) { top: 19px; transform: rotate(-45deg); }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    background: rgba(253, 251, 247, 0.88);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s var(--ease-lux), visibility 0.6s;
+  }
+  .mobile-menu.open { opacity: 1; visibility: visible; }
+  .mobile-menu a {
+    font-family: var(--serif);
+    font-size: 34px;
+    color: var(--espresso);
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s var(--ease-lux), transform 0.7s var(--ease-lux);
+  }
+  .mobile-menu.open a { opacity: 1; transform: translateY(0); }
+  .mobile-menu.open a:nth-child(1) { transition-delay: 0.10s; }
+  .mobile-menu.open a:nth-child(2) { transition-delay: 0.16s; }
+  .mobile-menu.open a:nth-child(3) { transition-delay: 0.22s; }
+  .mobile-menu.open a:nth-child(4) { transition-delay: 0.28s; }
+  .mobile-menu.open a:nth-child(5) { transition-delay: 0.34s; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    padding: 168px 0 96px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: center;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(46px, 5.6vw, 76px);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    margin: 26px 0 24px;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--clay);
+  }
+  .hero-sub {
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: var(--ink-60);
+    max-width: 460px;
+    margin-bottom: 36px;
+  }
+  .hero-ctas { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--ink-08);
+  }
+  .stat .num {
+    font-family: var(--serif);
+    font-size: 34px;
+    font-weight: 500;
+  }
+  .stat .num sup { font-size: 18px; color: var(--clay); }
+  .stat .lbl {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-40);
+    margin-top: 6px;
+  }
+
+  /* double-bezel frame */
+  .bezel {
+    background: rgba(28, 24, 20, 0.05);
+    border: 1px solid rgba(28, 24, 20, 0.07);
+    border-radius: 2rem;
+    padding: 10px;
+    box-shadow: 0 40px 80px -40px rgba(28, 24, 20, 0.35);
+  }
+  .bezel-core {
+    border-radius: calc(2rem - 10px);
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.25);
+  }
+  .bezel-core img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-visual { position: relative; }
+  .hero-visual .bezel-core { aspect-ratio: 4 / 4.7; }
+  .hero-visual .bezel-core img {
+    transition: transform 1.4s var(--ease-lux);
+  }
+  .hero-visual:hover .bezel-core img { transform: scale(1.04); }
+
+  .float-card {
+    position: absolute;
+    z-index: 2;
+    background: rgba(253, 251, 247, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 1.25rem;
+    padding: 16px 20px;
+    box-shadow: 0 24px 50px -24px rgba(28, 24, 20, 0.4);
+  }
+  .float-card.price {
+    bottom: 32px;
+    left: -36px;
+  }
+  .float-card.price .tag { font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-40); }
+  .float-card.price .val { font-family: var(--serif); font-size: 24px; font-weight: 500; margin-top: 2px; }
+  .float-card.price .loc { font-size: 12px; color: var(--ink-60); margin-top: 2px; }
+
+  .float-card.tour {
+    top: 36px;
+    right: -28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: rotate(2deg);
+  }
+  .float-card.tour .dot {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--clay);
+    color: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .float-card.tour .dot svg { width: 13px; height: 13px; }
+  .float-card.tour .t1 { font-size: 13px; font-weight: 600; }
+  .float-card.tour .t2 { font-size: 11.5px; color: var(--ink-60); }
+
+  /* ---------- marquee ---------- */
+  .marquee-band {
+    background: var(--espresso);
+    color: rgba(253, 251, 247, 0.85);
+    padding: 18px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-block;
+    animation: marquee 36s linear infinite;
+  }
+  .marquee-track span {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    margin: 0 28px;
+  }
+  .marquee-track .sep { color: var(--clay); font-style: normal; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ---------- sections ---------- */
+  section { padding: 112px 0; }
+  .sec-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 56px;
+    flex-wrap: wrap;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(34px, 3.8vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-top: 20px;
+    max-width: 560px;
+  }
+  h2 em { font-style: italic; font-weight: 300; color: var(--clay); }
+  .sec-head p {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--ink-60);
+    max-width: 380px;
+  }
+
+  /* ---------- properties bento ---------- */
+  .props {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 22px;
+  }
+  .prop {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  .prop:nth-child(1) { grid-column: span 7; }
+  .prop:nth-child(2) { grid-column: span 5; }
+  .prop:nth-child(3) { grid-column: span 5; }
+  .prop:nth-child(4) { grid-column: span 7; }
+  .prop .bezel { padding: 8px; border-radius: 1.75rem; box-shadow: 0 30px 60px -36px rgba(28,24,20,0.3); }
+  .prop .bezel-core { border-radius: calc(1.75rem - 8px); aspect-ratio: 16 / 10.5; }
+  .prop:nth-child(2) .bezel-core, .prop:nth-child(3) .bezel-core { aspect-ratio: 16 / 12.6; }
+  .prop .bezel-core img { transition: transform 1.2s var(--ease-lux); }
+  .prop:hover .bezel-core img { transform: scale(1.05); }
+
+  .prop .badge {
+    position: absolute;
+    top: 22px; left: 22px;
+    z-index: 2;
+    background: rgba(253,251,247,0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .prop-meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 10px 0;
+  }
+  .prop-meta .name { font-family: var(--serif); font-size: 21px; font-weight: 500; }
+  .prop-meta .loc { font-size: 13px; color: var(--ink-60); margin-top: 3px; }
+  .prop-meta .price { font-family: var(--serif); font-size: 19px; font-weight: 500; color: var(--clay-deep); white-space: nowrap; }
+  .prop-specs {
+    display: flex;
+    gap: 18px;
+    padding: 10px 10px 0;
+    font-size: 12.5px;
+    color: var(--ink-60);
+  }
+  .prop-specs span { display: flex; align-items: center; gap: 6px; }
+  .prop-specs svg { width: 13px; height: 13px; opacity: 0.55; }
+
+  /* ---------- about split ---------- */
+  .about { background: var(--cream-deep); border-radius: 3rem; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 72px;
+    align-items: center;
+  }
+  .about-visual { position: relative; }
+  .about-visual .bezel-core { aspect-ratio: 4 / 4.6; }
+  .about-visual .small-frame {
+    position: absolute;
+    bottom: -36px;
+    right: -32px;
+    width: 46%;
+    transform: rotate(-2.5deg);
+  }
+  .about-visual .small-frame .bezel { padding: 7px; border-radius: 1.25rem; }
+  .about-visual .small-frame .bezel-core { border-radius: calc(1.25rem - 7px); aspect-ratio: 1 / 1.05; }
+
+  .feature-list { margin-top: 40px; display: flex; flex-direction: column; }
+  .feature {
+    display: flex;
+    gap: 22px;
+    padding: 26px 0;
+    border-top: 1px solid var(--ink-08);
+  }
+  .feature:last-child { border-bottom: 1px solid var(--ink-08); }
+  .feature .no {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--clay);
+    min-width: 36px;
+    padding-top: 2px;
+  }
+  .feature h3 { font-family: var(--serif); font-weight: 500; font-size: 19px; margin-bottom: 6px; }
+  .feature p { font-size: 14px; line-height: 1.65; color: var(--ink-60); max-width: 420px; }
+
+  /* ---------- testimonial ---------- */
+  .quote-sec { text-align: center; }
+  .quote-mark {
+    font-family: var(--serif);
+    font-size: 72px;
+    line-height: 0.5;
+    color: var(--clay);
+    display: block;
+    margin-bottom: 26px;
+  }
+  blockquote {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.35;
+    max-width: 780px;
+    margin: 0 auto 32px;
+  }
+  blockquote em { font-style: italic; color: var(--clay-deep); }
+  .quote-who { display: flex; align-items: center; justify-content: center; gap: 14px; }
+  .quote-who img {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 8px 20px -8px rgba(28,24,20,0.3);
+  }
+  .quote-who .nm { font-size: 14px; font-weight: 600; text-align: left; }
+  .quote-who .rl { font-size: 12px; color: var(--ink-60); }
+
+  /* ---------- final CTA ---------- */
+  .cta-final { padding-bottom: 128px; }
+  .cta-card {
+    position: relative;
+    border-radius: 3rem;
+    overflow: hidden;
+    background: var(--espresso);
+    padding: 96px 64px;
+    text-align: center;
+    color: var(--cream);
+  }
+  .cta-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 20% 110%, rgba(176, 99, 58, 0.35), transparent 60%),
+      radial-gradient(ellipse 50% 60% at 85% -10%, rgba(138, 145, 128, 0.22), transparent 60%);
+    pointer-events: none;
+  }
+  .cta-card > * { position: relative; }
+  .cta-card .eyebrow { border-color: rgba(253,251,247,0.18); background: rgba(253,251,247,0.06); color: rgba(253,251,247,0.7); }
+  .cta-card h2 { max-width: 640px; margin: 22px auto 18px; color: var(--cream); }
+  .cta-card p { color: rgba(253,251,247,0.65); max-width: 460px; margin: 0 auto 40px; font-size: 15.5px; line-height: 1.7; }
+
+  /* ---------- footer ---------- */
+  footer {
+    border-top: 1px solid var(--ink-08);
+    padding: 48px 0;
+  }
+  .foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .foot .links { display: flex; gap: 24px; }
+  .foot a { font-size: 13px; color: var(--ink-60); text-decoration: none; transition: color 0.4s var(--ease-lux); }
+  .foot a:hover { color: var(--espresso); }
+  .foot .copy { font-size: 12.5px; color: var(--ink-40); }
+
+  /* ---------- modal ---------- */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(28, 24, 20, 0.45);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.55s var(--ease-lux), visibility 0.55s;
+  }
+  .modal-overlay.open { opacity: 1; visibility: visible; }
+
+  .modal-shell {
+    width: 100%;
+    max-width: 560px;
+    max-height: calc(100dvh - 40px);
+    background: rgba(28, 24, 20, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 2rem;
+    padding: 10px;
+    transform: translateY(40px) scale(0.97);
+    transition: transform 0.6s var(--ease-lux);
+    display: flex;
+  }
+  .modal-overlay.open .modal-shell { transform: translateY(0) scale(1); }
+
+  .modal-core {
+    background: var(--cream);
+    border-radius: calc(2rem - 10px);
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.7);
+    padding: 44px 44px 40px;
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px; right: 20px;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--ink-08);
+    background: transparent;
+    cursor: pointer;
+    color: var(--ink-60);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.5s var(--ease-lux), transform 0.5s var(--ease-lux);
+  }
+  .modal-close:hover { background: var(--cream-deep); transform: rotate(90deg); }
+  .modal-close svg { width: 14px; height: 14px; }
+
+  .modal-core h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.12;
+    margin: 16px 0 10px;
+  }
+  .modal-core h3 em { font-style: italic; color: var(--clay); font-weight: 300; }
+  .modal-core .sub { font-size: 14px; line-height: 1.65; color: var(--ink-60); margin-bottom: 30px; }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .field { display: flex; flex-direction: column; gap: 7px; }
+  .field.full { grid-column: span 2; }
+  .field label {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-60);
+  }
+  .field input, .field select {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--espresso);
+    background: #fff;
+    border: 1px solid var(--ink-08);
+    border-radius: 14px;
+    padding: 13px 16px;
+    outline: none;
+    width: 100%;
+    appearance: none;
+    transition: border-color 0.5s var(--ease-lux), box-shadow 0.5s var(--ease-lux);
+  }
+  .field input::placeholder { color: var(--ink-40); }
+  .field input:focus, .field select:focus {
+    border-color: var(--clay);
+    box-shadow: 0 0 0 4px rgba(176, 99, 58, 0.12);
+  }
+  .field.select { position: relative; }
+  .field.select::after {
+    content: "";
+    position: absolute;
+    right: 18px;
+    bottom: 21px;
+    width: 7px; height: 7px;
+    border-right: 1.5px solid var(--ink-40);
+    border-bottom: 1.5px solid var(--ink-40);
+    transform: rotate(45deg);
+    pointer-events: none;
+  }
+
+  .modal-submit {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 26px;
+    padding: 10px 10px 10px 28px;
+    font-size: 15px;
+  }
+  .form-note {
+    text-align: center;
+    font-size: 11.5px;
+    color: var(--ink-40);
+    margin-top: 16px;
+  }
+
+  .form-status {
+    display: none;
+    text-align: center;
+    padding: 36px 8px 16px;
+  }
+  .form-status .ok-orb {
+    width: 64px; height: 64px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    background: rgba(138, 145, 128, 0.16);
+    border: 1px solid rgba(138, 145, 128, 0.35);
+    display: flex; align-items: center; justify-content: center;
+    color: #5d6b52;
+  }
+  .form-status .ok-orb svg { width: 24px; height: 24px; }
+  .form-status h4 { font-family: var(--serif); font-weight: 500; font-size: 26px; margin-bottom: 10px; }
+  .form-status p { font-size: 14px; line-height: 1.65; color: var(--ink-60); max-width: 340px; margin: 0 auto; }
+
+  /* ---------- property detail modal ---------- */
+  .prop-shell { max-width: 940px; }
+  .prop-core { padding: 36px; }
+  .prop-detail-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .prop-gallery .bezel { padding: 8px; border-radius: 1.5rem; box-shadow: 0 24px 50px -30px rgba(28,24,20,0.35); }
+  .prop-gallery .bezel-core { border-radius: calc(1.5rem - 8px); aspect-ratio: 4 / 3.3; }
+  .prop-gallery .bezel-core img { transition: opacity 0.5s var(--ease-lux); }
+
+  .pd-thumbs { display: flex; gap: 10px; margin-top: 14px; }
+  .pd-thumb {
+    flex: 1;
+    aspect-ratio: 4 / 2.9;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--ink-08);
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    opacity: 0.55;
+    transition: opacity 0.5s var(--ease-lux), box-shadow 0.5s var(--ease-lux), transform 0.5s var(--ease-lux);
+  }
+  .pd-thumb:hover { opacity: 0.85; transform: translateY(-2px); }
+  .pd-thumb.active { opacity: 1; box-shadow: 0 0 0 2px var(--clay); }
+  .pd-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .prop-info h3 { margin-top: 14px; font-size: 30px; }
+  .pd-loc { font-size: 13.5px; color: var(--ink-60); margin-top: 6px; }
+  .pd-price {
+    font-family: var(--serif);
+    font-size: 27px;
+    font-weight: 500;
+    color: var(--clay-deep);
+    margin-top: 14px;
+  }
+  .pd-price span { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-40); margin-left: 8px; }
+
+  .pd-specs {
+    display: flex;
+    gap: 22px;
+    padding: 16px 0;
+    margin: 18px 0;
+    border-top: 1px solid var(--ink-08);
+    border-bottom: 1px solid var(--ink-08);
+    font-size: 13px;
+    color: var(--ink-60);
+  }
+  .pd-specs strong { display: block; font-family: var(--serif); font-size: 19px; font-weight: 500; color: var(--espresso); margin-bottom: 2px; }
+
+  .pd-desc { font-size: 14px; line-height: 1.7; color: var(--ink-60); }
+
+  .pd-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .pd-tag {
+    padding: 6px 13px;
+    border-radius: 999px;
+    border: 1px solid var(--ink-08);
+    background: rgba(255,255,255,0.6);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-60);
+  }
+
+  .pd-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 22px;
+  }
+  .pd-fact {
+    background: var(--cream-deep);
+    border: 1px solid var(--ink-08);
+    border-radius: 14px;
+    padding: 12px 14px;
+  }
+  .pd-fact .k { font-size: 9.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-40); }
+  .pd-fact .v { font-family: var(--serif); font-size: 15.5px; font-weight: 500; margin-top: 4px; }
+
+  .pd-cta { width: 100%; justify-content: space-between; margin-top: 26px; padding: 10px 10px 10px 26px; font-size: 14.5px; }
+
+  .modal-prop-tag {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    margin: -16px 0 24px;
+    padding: 9px 14px;
+    border-radius: 12px;
+    background: var(--cream-deep);
+    border: 1px solid var(--ink-08);
+    font-size: 12.5px;
+    color: var(--ink-60);
+  }
+  .modal-prop-tag.show { display: inline-flex; }
+  .modal-prop-tag b { color: var(--espresso); font-weight: 600; }
+  .modal-prop-tag::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--clay); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 1024px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 64px; }
+    .hero-visual { max-width: 560px; }
+    .float-card.price { left: 16px; }
+    .float-card.tour { right: 16px; }
+    .props .prop { grid-column: span 6 !important; }
+    .about-grid { grid-template-columns: 1fr; gap: 80px; }
+    .about-visual { max-width: 520px; }
+  }
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .burger { display: block; }
+    .nav-pill { gap: 18px; padding: 8px 8px 8px 22px; }
+    section { padding: 72px 0; }
+    .hero { padding: 136px 0 64px; }
+    .hero-stats { gap: 28px; flex-wrap: wrap; }
+    .props { gap: 32px; }
+    .props .prop { grid-column: span 12 !important; }
+    .about { border-radius: 2rem; }
+    .about-visual .small-frame { transform: none; bottom: -24px; right: 0; }
+    .cta-card { padding: 64px 24px; border-radius: 2rem; }
+    .form-grid { grid-template-columns: 1fr; }
+    .field.full { grid-column: span 1; }
+    .modal-core { padding: 36px 24px 32px; }
+    .float-card.tour { transform: none; }
+    .prop-detail-grid { grid-template-columns: 1fr; gap: 26px; }
+    .prop-core { padding: 28px 20px 24px; }
+    .pd-facts { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="nav-pill" id="navPill">
+    <a class="logo" href="#top">Niño Chung<span>.</span></a>
+    <div class="nav-links">
+      <a href="#properties">Properties</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="btn btn-clay nav-cta" data-open-modal>
+      Book a Call
+      <span class="orb">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </span>
+    </button>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#properties">Properties</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+  <a href="#" data-open-modal style="color: var(--clay);">Book a Call ↗</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow reveal">Architectural Real Estate</span>
+      <h1 class="reveal d1">Find a place you'll <em>love</em> to live.</h1>
+      <p class="hero-sub reveal d2">Niño Chung curates exceptional architectural homes and estates, pairing discerning buyers with spaces designed to be lived in, not just looked at.</p>
+      <div class="hero-ctas reveal d3">
+        <button class="btn btn-dark" data-open-modal>
+          Book a Call
+          <span class="orb">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </span>
+        </button>
+        <a class="btn btn-ghost" href="#properties">Explore Homes</a>
+      </div>
+      <div class="hero-stats reveal d3">
+        <div class="stat"><div class="num">450<sup>+</sup></div><div class="lbl">Homes Placed</div></div>
+        <div class="stat"><div class="num">$1.2<sup>B</sup></div><div class="lbl">Sales Volume</div></div>
+        <div class="stat"><div class="num">98<sup>%</sup></div><div class="lbl">Client Retention</div></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal d2">
+      <div class="bezel">
+        <div class="bezel-core">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" alt="Modern architectural home at dusk">
+        </div>
+      </div>
+      <div class="float-card tour">
+        <div class="dot">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v14l11-7-11-7z"/></svg>
+        </div>
+        <div>
+          <div class="t1">Private Tour</div>
+          <div class="t2">Available this week</div>
+        </div>
+      </div>
+      <div class="float-card price">
+        <div class="tag">Featured Listing</div>
+        <div class="val">$2,450,000</div>
+        <div class="loc">The Meridian House · Austin, TX</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Modern Estates</span><span class="sep">✦</span><span>Architect-Designed</span><span class="sep">✦</span><span>Off-Market Access</span><span class="sep">✦</span><span>Concierge Buying</span><span class="sep">✦</span><span>Investment Advisory</span><span class="sep">✦</span>
+    <span>Modern Estates</span><span class="sep">✦</span><span>Architect-Designed</span><span class="sep">✦</span><span>Off-Market Access</span><span class="sep">✦</span><span>Concierge Buying</span><span class="sep">✦</span><span>Investment Advisory</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<!-- ============ PROPERTIES ============ -->
+<section id="properties">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow reveal">Curated Listings</span>
+        <h2 class="reveal d1">Homes with a point <em>of view.</em></h2>
+      </div>
+      <p class="reveal d2">Every property in Niño's portfolio is selected for architectural merit, material honesty, and the quality of light it holds.</p>
+    </div>
+
+    <div class="props">
+      <a class="prop reveal" href="#" data-prop="meridian">
+        <div class="bezel">
+          <div class="bezel-core">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop" alt="The Meridian House exterior">
+          </div>
+        </div>
+        <span class="badge">New Listing</span>
+        <div class="prop-meta">
+          <div>
+            <div class="name">The Meridian House</div>
+            <div class="loc">Westlake Hills · Austin, TX</div>
+          </div>
+          <div class="price">$2.45M</div>
+        </div>
+        <div class="prop-specs">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M5 12V7a2 2 0 012-2h10a2 2 0 012 2v5M4 12v6m16-6v6"/></svg>5 Beds</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4v-3zM7 12V5a2 2 0 014 0"/></svg>4 Baths</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M9 4v16M4 9h16"/></svg>4,820 sqft</span>
+        </div>
+      </a>
+
+      <a class="prop reveal d1" href="#" data-prop="lumen">
+        <div class="bezel">
+          <div class="bezel-core">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop" alt="Casa Lumen with pool">
+          </div>
+        </div>
+        <span class="badge">Off-Market</span>
+        <div class="prop-meta">
+          <div>
+            <div class="name">Casa Lumen</div>
+            <div class="loc">Palm Springs, CA</div>
+          </div>
+          <div class="price">$3.1M</div>
+        </div>
+        <div class="prop-specs">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M5 12V7a2 2 0 012-2h10a2 2 0 012 2v5M4 12v6m16-6v6"/></svg>4 Beds</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4v-3zM7 12V5a2 2 0 014 0"/></svg>5 Baths</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M9 4v16M4 9h16"/></svg>5,200 sqft</span>
+        </div>
+      </a>
+
+      <a class="prop reveal" href="#" data-prop="fold">
+        <div class="bezel">
+          <div class="bezel-core">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop" alt="Fold Residence interior">
+          </div>
+        </div>
+        <span class="badge">Open House</span>
+        <div class="prop-meta">
+          <div>
+            <div class="name">Fold Residence</div>
+            <div class="loc">Boulder, CO</div>
+          </div>
+          <div class="price">$1.85M</div>
+        </div>
+        <div class="prop-specs">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M5 12V7a2 2 0 012-2h10a2 2 0 012 2v5M4 12v6m16-6v6"/></svg>3 Beds</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4v-3zM7 12V5a2 2 0 014 0"/></svg>3 Baths</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M9 4v16M4 9h16"/></svg>3,100 sqft</span>
+        </div>
+      </a>
+
+      <a class="prop reveal d1" href="#" data-prop="hollow">
+        <div class="bezel">
+          <div class="bezel-core">
+            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1400&auto=format&fit=crop" alt="Hollow Oak Estate at twilight">
+          </div>
+        </div>
+        <span class="badge">Featured</span>
+        <div class="prop-meta">
+          <div>
+            <div class="name">Hollow Oak Estate</div>
+            <div class="loc">Scottsdale, AZ</div>
+          </div>
+          <div class="price">$4.2M</div>
+        </div>
+        <div class="prop-specs">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M5 12V7a2 2 0 012-2h10a2 2 0 012 2v5M4 12v6m16-6v6"/></svg>6 Beds</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4v-3zM7 12V5a2 2 0 014 0"/></svg>7 Baths</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M9 4v16M4 9h16"/></svg>7,400 sqft</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / SERVICES ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about" style="padding: 88px 64px;" id="services">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="bezel">
+            <div class="bezel-core">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000&auto=format&fit=crop" alt="Warm minimalist living room">
+            </div>
+          </div>
+          <div class="small-frame">
+            <div class="bezel">
+              <div class="bezel-core">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=700&auto=format&fit=crop" alt="Detail of home exterior">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <span class="eyebrow reveal">Why Niño Chung</span>
+          <h2 class="reveal d1">Buying a home should feel like a <em>conversation,</em> not a transaction.</h2>
+          <div class="feature-list">
+            <div class="feature reveal">
+              <div class="no">01</div>
+              <div>
+                <h3>Concierge Search</h3>
+                <p>One dedicated advisor from first call to closing. We shortlist, tour, and negotiate so you only see homes worth your time.</p>
+              </div>
+            </div>
+            <div class="feature reveal d1">
+              <div class="no">02</div>
+              <div>
+                <h3>Off-Market Access</h3>
+                <p>Roughly a third of our placements never hit a listing site. Our network of architects and owners opens doors first.</p>
+              </div>
+            </div>
+            <div class="feature reveal d2">
+              <div class="no">03</div>
+              <div>
+                <h3>Investment Clarity</h3>
+                <p>Transparent comps, renovation cost modeling, and long-term value analysis on every property we present.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIAL ============ -->
+<section class="quote-sec">
+  <div class="wrap">
+    <span class="quote-mark reveal">“</span>
+    <blockquote class="reveal d1">Niño found us a house we didn't know existed, in a neighborhood we hadn't considered, and it's the <em>best decision</em> we've ever made.</blockquote>
+    <div class="quote-who reveal d2">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" alt="Portrait of Sarah Whitmore">
+      <div>
+        <div class="nm">Sarah Whitmore</div>
+        <div class="rl">Homeowner · Austin, TX</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta-final" id="contact">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <span class="eyebrow">Start the Conversation</span>
+      <h2>Your next address is one <em>call</em> away.</h2>
+      <p>Tell us what home means to you. A 20-minute call with Niño, no pressure, no obligation, just clarity.</p>
+      <button class="btn btn-clay" data-open-modal style="font-size: 15px;">
+        Book a Call
+        <span class="orb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap foot">
+    <a class="logo" href="#top">Niño Chung<span>.</span></a>
+    <div class="links">
+      <a href="#properties">Properties</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="copy">© 2026 Niño Chung Real Estate. Demo page, all listings are illustrative.</div>
+  </div>
+</footer>
+
+<!-- ============ PROPERTY DETAIL MODAL ============ -->
+<div class="modal-overlay" id="propModal" role="dialog" aria-modal="true" aria-labelledby="pdName">
+  <div class="modal-shell prop-shell">
+    <div class="modal-core prop-core">
+      <button class="modal-close" data-close-prop aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <div class="prop-detail-grid">
+        <div class="prop-gallery">
+          <div class="bezel">
+            <div class="bezel-core">
+              <img id="pdImage" src="" alt="Property photo">
+            </div>
+          </div>
+          <div class="pd-thumbs" id="pdThumbs"></div>
+        </div>
+
+        <div class="prop-info">
+          <span class="eyebrow" id="pdBadge"></span>
+          <h3 id="pdName"></h3>
+          <div class="pd-loc" id="pdLoc"></div>
+          <div class="pd-price" id="pdPrice"><span id="pdPriceVal"></span></div>
+          <div class="pd-specs" id="pdSpecs"></div>
+          <p class="pd-desc" id="pdDesc"></p>
+          <div class="pd-tags" id="pdTags"></div>
+          <div class="pd-facts" id="pdFacts"></div>
+          <button class="btn btn-clay pd-cta" id="pdTour">
+            Schedule a Private Tour
+            <span class="orb">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BOOK A CALL MODAL ============ -->
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-shell">
+    <div class="modal-core">
+      <button class="modal-close" data-close-modal aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <div id="formView">
+        <span class="eyebrow">Book a Call</span>
+        <h3 id="modalTitle">Let's find your <em>place.</em></h3>
+        <p class="sub">Share a few details and Niño will reach out within one business day to schedule your call.</p>
+        <div class="modal-prop-tag" id="modalPropTag">Regarding&nbsp;<b id="modalPropName"></b></div>
+
+        <form id="leadForm" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Web3Forms configuration -->
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="subject" value="New Book-a-Call Lead, Niño Chung Landing Page">
+          <input type="hidden" name="from_name" value="Niño Chung Website">
+          <input type="hidden" name="property_interest" id="propertyInterest" value="">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="first_name" placeholder="Jane" required autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="last_name" placeholder="Doe" required autocomplete="family-name">
+            </div>
+            <div class="field full">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required autocomplete="email">
+            </div>
+            <div class="field full">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" placeholder="Austin" required autocomplete="address-level2">
+            </div>
+            <div class="field select">
+              <label for="state">State</label>
+              <select id="state" name="state" required autocomplete="address-level1">
+                <option value="" disabled selected>Select state</option>
+                <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+                <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+                <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+                <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
+                <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
+                <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+                <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
+                <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
+                <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+                <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
+                <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
+                <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
+                <option>Wisconsin</option><option>Wyoming</option><option>District of Columbia</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-dark modal-submit" id="submitBtn">
+            <span id="submitLabel">Request My Call</span>
+            <span class="orb">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </span>
+          </button>
+          <p class="form-note">We respect your inbox. No spam, ever, just one advisor reaching out.</p>
+        </form>
+      </div>
+
+      <div class="form-status" id="formSuccess">
+        <div class="ok-orb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h4>You're on the list.</h4>
+        <p>Thank you, Niño will reach out within one business day to schedule your call.</p>
+      </div>
+
+      <div class="form-status" id="formError">
+        <h4>Something went wrong.</h4>
+        <p id="formErrorMsg">We couldn't send your request. Please try again in a moment.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ---------- scroll reveal ----------
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // ---------- nav shadow on scroll ----------
+  const navPill = document.getElementById('navPill');
+  const navIo = new IntersectionObserver(([e]) => {
+    navPill.classList.toggle('scrolled', !e.isIntersecting);
+  }, { threshold: 0 });
+  const sentinel = document.createElement('div');
+  sentinel.style.cssText = 'position:absolute;top:0;height:80px;width:1px;';
+  document.body.prepend(sentinel);
+  navIo.observe(sentinel);
+
+  // ---------- mobile menu ----------
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
+
+  // ---------- modal ----------
+  const modal = document.getElementById('modal');
+  const formView = document.getElementById('formView');
+  const formSuccess = document.getElementById('formSuccess');
+  const formError = document.getElementById('formError');
+  const modalPropTag = document.getElementById('modalPropTag');
+  const modalPropName = document.getElementById('modalPropName');
+  const propertyInterest = document.getElementById('propertyInterest');
+
+  function openModal(propertyName) {
+    if (propertyName) {
+      propertyInterest.value = propertyName;
+      modalPropName.textContent = propertyName;
+      modalPropTag.classList.add('show');
+    } else {
+      propertyInterest.value = '';
+      modalPropTag.classList.remove('show');
+    }
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => document.getElementById('firstName').focus(), 450);
+  }
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-open-modal]').forEach((btn) =>
+    btn.addEventListener('click', (e) => { e.preventDefault(); openModal(); })
+  );
+  document.querySelectorAll('[data-close-modal]').forEach((btn) =>
+    btn.addEventListener('click', closeModal)
+  );
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+  // ---------- property detail modal ----------
+  const PROPERTIES = {
+    meridian: {
+      name: 'The Meridian House',
+      loc: 'Westlake Hills · Austin, TX',
+      price: '$2,450,000',
+      badge: 'New Listing',
+      beds: 5, baths: 4, sqft: '4,820',
+      desc: 'A study in horizontal lines and warm timber, The Meridian House opens onto a canopy of mature live oaks. Floor-to-ceiling glazing dissolves the boundary between the great room and the terraced lawn, while a charred-cedar volume holds the private quarters above.',
+      tags: ['Architect-Designed', 'Smart Home', 'Heated Pool', 'EV Garage', 'Outdoor Kitchen'],
+      facts: { 'Year Built': '2022', 'Lot Size': '0.84 acres', 'Type': 'Single Family' },
+      images: [
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1200&auto=format&fit=crop'
+      ]
+    },
+    lumen: {
+      name: 'Casa Lumen',
+      loc: 'Palm Springs, CA',
+      price: '$3,100,000',
+      badge: 'Off-Market',
+      beds: 4, baths: 5, sqft: '5,200',
+      desc: 'Casa Lumen is a desert modernist composition of white plaster, glass, and water. Every room orbits the central courtyard pool, and clerestory windows track the light from sunrise over the San Jacinto foothills to golden hour on the patio.',
+      tags: ['Off-Market Exclusive', 'Courtyard Pool', 'Guest Casita', 'Solar Array', 'Mountain Views'],
+      facts: { 'Year Built': '2019', 'Lot Size': '1.10 acres', 'Type': 'Modern Estate' },
+      images: [
+        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=1200&auto=format&fit=crop'
+      ]
+    },
+    fold: {
+      name: 'Fold Residence',
+      loc: 'Boulder, CO',
+      price: '$1,850,000',
+      badge: 'Open House',
+      beds: 3, baths: 3, sqft: '3,100',
+      desc: 'Named for its origami roofline, the Fold Residence frames the Flatirons from every principal room. Warm walnut millwork, a sculptural concrete hearth, and radiant floors make it as comfortable in January as it is in July.',
+      tags: ['Mountain Views', 'Radiant Heat', 'Walnut Millwork', 'Home Office', 'Trail Access'],
+      facts: { 'Year Built': '2021', 'Lot Size': '0.42 acres', 'Type': 'Single Family' },
+      images: [
+        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1200&auto=format&fit=crop'
+      ]
+    },
+    hollow: {
+      name: 'Hollow Oak Estate',
+      loc: 'Scottsdale, AZ',
+      price: '$4,200,000',
+      badge: 'Featured',
+      beds: 6, baths: 7, sqft: '7,400',
+      desc: 'A resort-scale retreat behind the gates of Hollow Oak, this estate pairs a wraparound veranda with a freeform pool and mature palm gardens. A separate guest wing, wine room, and seven-car motor court round out the program.',
+      tags: ['Gated Community', 'Guest Wing', 'Wine Room', 'Resort Pool', '7-Car Garage'],
+      facts: { 'Year Built': '2017', 'Lot Size': '2.30 acres', 'Type': 'Luxury Estate' },
+      images: [
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1200&auto=format&fit=crop'
+      ]
+    }
+  };
+
+  const propModal = document.getElementById('propModal');
+  const pdImage = document.getElementById('pdImage');
+  const pdThumbs = document.getElementById('pdThumbs');
+  let currentProp = null;
+
+  function openPropModal(key) {
+    const p = PROPERTIES[key];
+    if (!p) return;
+    currentProp = p;
+
+    document.getElementById('pdBadge').textContent = p.badge;
+    document.getElementById('pdName').textContent = p.name;
+    document.getElementById('pdLoc').textContent = p.loc;
+    document.getElementById('pdPrice').innerHTML = p.price + '<span>Asking</span>';
+    document.getElementById('pdDesc').textContent = p.desc;
+
+    document.getElementById('pdSpecs').innerHTML =
+      '<div><strong>' + p.beds + '</strong>Bedrooms</div>' +
+      '<div><strong>' + p.baths + '</strong>Bathrooms</div>' +
+      '<div><strong>' + p.sqft + '</strong>Square Feet</div>';
+
+    document.getElementById('pdTags').innerHTML =
+      p.tags.map((t) => '<span class="pd-tag">' + t + '</span>').join('');
+
+    document.getElementById('pdFacts').innerHTML =
+      Object.entries(p.facts).map(([k, v]) =>
+        '<div class="pd-fact"><div class="k">' + k + '</div><div class="v">' + v + '</div></div>'
+      ).join('');
+
+    pdImage.src = p.images[0];
+    pdImage.alt = p.name + ' photo';
+    pdThumbs.innerHTML = p.images.map((src, i) =>
+      '<button class="pd-thumb' + (i === 0 ? ' active' : '') + '" data-src="' + src + '" aria-label="Photo ' + (i + 1) + '"><img src="' + src + '" alt=""></button>'
+    ).join('');
+
+    propModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePropModal() {
+    propModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-prop]').forEach((card) =>
+    card.addEventListener('click', (e) => { e.preventDefault(); openPropModal(card.dataset.prop); })
+  );
+  document.querySelectorAll('[data-close-prop]').forEach((btn) =>
+    btn.addEventListener('click', closePropModal)
+  );
+  propModal.addEventListener('click', (e) => { if (e.target === propModal) closePropModal(); });
+
+  pdThumbs.addEventListener('click', (e) => {
+    const thumb = e.target.closest('.pd-thumb');
+    if (!thumb) return;
+    pdThumbs.querySelectorAll('.pd-thumb').forEach((t) => t.classList.remove('active'));
+    thumb.classList.add('active');
+    pdImage.style.opacity = '0';
+    setTimeout(() => { pdImage.src = thumb.dataset.src; pdImage.style.opacity = '1'; }, 250);
+  });
+
+  document.getElementById('pdTour').addEventListener('click', () => {
+    const name = currentProp ? currentProp.name : '';
+    closePropModal();
+    setTimeout(() => openModal(name), 350);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (modal.classList.contains('open')) closeModal();
+    if (propModal.classList.contains('open')) closePropModal();
+  });
+
+  // ---------- Web3Forms submission ----------
+  const leadForm = document.getElementById('leadForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const submitLabel = document.getElementById('submitLabel');
+
+  leadForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitLabel.textContent = 'Sending…';
+
+    const formData = new FormData(leadForm);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        formView.style.display = 'none';
+        formError.style.display = 'none';
+        formSuccess.style.display = 'block';
+      } else {
+        formError.style.display = 'block';
+        document.getElementById('formErrorMsg').textContent = data.message || "We couldn't send your request. Please try again in a moment.";
+      }
+    } catch (err) {
+      formError.style.display = 'block';
+      document.getElementById('formErrorMsg').textContent = 'Network error, please check your connection and try again.';
+    } finally {
+      submitBtn.disabled = false;
+      submitLabel.textContent = 'Request My Call';
+    }
+  });
+</script>
+</body>
+</html>

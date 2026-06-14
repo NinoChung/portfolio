@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Niño Chung, Aesthetic Dermatology</title>
+<meta name="description" content="Niño Chung, science-led aesthetic dermatology. Personalised skin treatments, expert dermatologists, visible results." />
+
+<!-- Premium fonts: Fraunces (variable serif display) + Plus Jakarta Sans (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* =========================================================
+   NIÑO CHUNG, Aesthetic Dermatology Landing Page
+   Single-file demo. Editorial Luxury / botanical sage.
+   ========================================================= */
+
+:root{
+  --cream:        #F6F1E9;
+  --cream-2:      #EFE8DC;
+  --paper:        #FBF8F2;
+  --espresso:     #2A2722;
+  --ink:          #1C1A16;
+  --green:        #2E3D33;   /* deep botanical */
+  --sage:         #7C9082;   /* muted sage accent */
+  --sage-soft:    #9DAE9E;
+  --blush:        #E7CFC2;   /* warm nude highlight */
+  --blush-deep:   #D9B4A2;
+  --line:         rgba(42,39,34,.10);
+  --line-soft:    rgba(42,39,34,.06);
+  --shadow-soft:  0 30px 60px -25px rgba(46,61,51,.28);
+  --shadow-card:  0 24px 50px -28px rgba(46,61,51,.35);
+  --ease:         cubic-bezier(.32,.72,0,1);
+  --ease-out:     cubic-bezier(.16,1,.3,1);
+  --maxw:         1240px;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  font-family:"Plus Jakarta Sans", system-ui, sans-serif;
+  background:var(--cream);
+  color:var(--espresso);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{ background:var(--sage); color:var(--paper); }
+
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; }
+
+h1,h2,h3{ font-family:"Fraunces", Georgia, serif; font-weight:400; letter-spacing:-.015em; line-height:1.04; color:var(--green); }
+
+/* ---------- Film-grain overlay (fixed, non-scrolling) ---------- */
+.grain{
+  position:fixed; inset:0; z-index:60; pointer-events:none; opacity:.04; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Ambient mesh orbs ---------- */
+.orb{ position:fixed; border-radius:50%; filter:blur(80px); opacity:.5; z-index:0; pointer-events:none; will-change:transform; }
+.orb.a{ width:520px; height:520px; background:radial-gradient(circle, #B9CBBC 0%, transparent 70%); top:-160px; right:-120px; }
+.orb.b{ width:480px; height:480px; background:radial-gradient(circle, var(--blush) 0%, transparent 70%); top:60%; left:-180px; }
+.orb.c{ width:420px; height:420px; background:radial-gradient(circle, #C9D6CB 0%, transparent 70%); top:130%; right:-120px; }
+
+/* ===================== NAV ===================== */
+.nav-wrap{ position:fixed; top:0; left:0; right:0; z-index:50; display:flex; justify-content:center; padding:22px 18px; transition:padding .5s var(--ease); }
+.nav{
+  display:flex; align-items:center; gap:28px;
+  background:rgba(251,248,242,.72);
+  backdrop-filter:blur(18px) saturate(1.4); -webkit-backdrop-filter:blur(18px) saturate(1.4);
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow:0 10px 40px -18px rgba(46,61,51,.35), inset 0 1px 1px rgba(255,255,255,.5);
+  border-radius:999px; padding:9px 9px 9px 24px;
+  transition:transform .5s var(--ease), box-shadow .5s var(--ease);
+}
+.nav.shrunk{ box-shadow:0 14px 44px -16px rgba(46,61,51,.45), inset 0 1px 1px rgba(255,255,255,.6); }
+.brand{ font-family:"Fraunces", serif; font-size:1.18rem; font-weight:500; color:var(--green); display:flex; align-items:center; gap:9px; letter-spacing:-.01em; }
+.brand .dot{ width:9px; height:9px; border-radius:50%; background:var(--sage); box-shadow:0 0 0 4px rgba(124,144,130,.18); }
+.nav-links{ display:flex; align-items:center; gap:6px; }
+.nav-links a{ font-size:.86rem; font-weight:500; color:var(--espresso); padding:8px 15px; border-radius:999px; transition:background .35s var(--ease), color .35s var(--ease); }
+.nav-links a:hover{ background:rgba(124,144,130,.14); color:var(--green); }
+.nav-cta{
+  display:inline-flex; align-items:center; gap:10px; background:var(--green); color:var(--paper);
+  padding:9px 9px 9px 20px; border-radius:999px; font-size:.86rem; font-weight:600;
+  transition:transform .4s var(--ease), background .4s var(--ease);
+}
+.nav-cta:hover{ background:#3a4f41; }
+.nav-cta:active{ transform:scale(.97); }
+.nav-cta .ic{ width:30px; height:30px; border-radius:50%; background:rgba(255,255,255,.16); display:grid; place-items:center; transition:transform .4s var(--ease); }
+.nav-cta:hover .ic{ transform:translate(2px,-1px) scale(1.06); }
+.burger{ display:none; width:44px; height:44px; border-radius:50%; position:relative; }
+.burger span{ position:absolute; left:13px; width:18px; height:1.6px; background:var(--green); border-radius:2px; transition:transform .45s var(--ease), opacity .3s var(--ease); }
+.burger span:nth-child(1){ top:18px; } .burger span:nth-child(2){ top:25px; }
+body.menu-open .burger span:nth-child(1){ transform:translateY(3.5px) rotate(45deg); }
+body.menu-open .burger span:nth-child(2){ transform:translateY(-3.5px) rotate(-45deg); }
+
+/* full-screen mobile menu */
+.mobile-menu{
+  position:fixed; inset:0; z-index:45; background:rgba(246,241,233,.86);
+  backdrop-filter:blur(26px); -webkit-backdrop-filter:blur(26px);
+  display:flex; flex-direction:column; justify-content:center; align-items:flex-start; gap:6px; padding:0 12vw;
+  opacity:0; pointer-events:none; transition:opacity .5s var(--ease);
+}
+body.menu-open .mobile-menu{ opacity:1; pointer-events:auto; }
+.mobile-menu a{ font-family:"Fraunces",serif; font-size:clamp(2.2rem,9vw,3.4rem); color:var(--green); padding:8px 0; transform:translateY(40px); opacity:0; transition:transform .6s var(--ease), opacity .6s var(--ease); }
+body.menu-open .mobile-menu a{ transform:translateY(0); opacity:1; }
+body.menu-open .mobile-menu a:nth-child(1){ transition-delay:.08s; }
+body.menu-open .mobile-menu a:nth-child(2){ transition-delay:.14s; }
+body.menu-open .mobile-menu a:nth-child(3){ transition-delay:.20s; }
+body.menu-open .mobile-menu a:nth-child(4){ transition-delay:.26s; }
+body.menu-open .mobile-menu a:nth-child(5){ transition-delay:.32s; }
+
+/* ===================== SHARED ===================== */
+.section{ position:relative; z-index:1; max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px; font-size:.66rem; font-weight:600; text-transform:uppercase;
+  letter-spacing:.24em; color:var(--sage); background:rgba(124,144,130,.10); border:1px solid rgba(124,144,130,.22);
+  padding:7px 14px; border-radius:999px;
+}
+.eyebrow::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--sage); }
+.btn{
+  display:inline-flex; align-items:center; gap:12px; font-weight:600; font-size:.95rem;
+  padding:13px 13px 13px 26px; border-radius:999px; transition:transform .4s var(--ease), background .4s var(--ease), color .4s var(--ease), box-shadow .4s var(--ease);
+}
+.btn .ic{ width:36px; height:36px; border-radius:50%; display:grid; place-items:center; transition:transform .45s var(--ease); }
+.btn-primary{ background:var(--green); color:var(--paper); box-shadow:var(--shadow-soft); }
+.btn-primary .ic{ background:rgba(255,255,255,.16); }
+.btn-primary:hover{ background:#3a4f41; }
+.btn-primary:hover .ic{ transform:translate(3px,-1px) scale(1.07); }
+.btn-primary:active{ transform:scale(.98); }
+.btn-ghost{ background:rgba(42,39,34,.04); color:var(--espresso); border:1px solid var(--line); padding:13px 24px; }
+.btn-ghost:hover{ background:rgba(42,39,34,.07); }
+.btn-ghost:active{ transform:scale(.98); }
+
+/* reveal-on-scroll */
+.reveal{ opacity:0; transform:translateY(46px); filter:blur(8px); transition:opacity .9s var(--ease-out), transform .9s var(--ease-out), filter .9s var(--ease-out); }
+.reveal.in{ opacity:1; transform:none; filter:blur(0); }
+.reveal[data-d="1"]{ transition-delay:.08s; } .reveal[data-d="2"]{ transition-delay:.16s; }
+.reveal[data-d="3"]{ transition-delay:.24s; } .reveal[data-d="4"]{ transition-delay:.32s; }
+
+/* ===================== HERO ===================== */
+.hero{ min-height:100dvh; display:flex; align-items:center; padding-top:120px; padding-bottom:60px; }
+.hero-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; width:100%; }
+.hero h1{ font-size:clamp(2.9rem, 6.2vw, 5.3rem); margin:24px 0 22px; }
+.hero h1 em{ font-style:italic; color:var(--sage); }
+.hero p.lead{ font-size:1.12rem; color:rgba(42,39,34,.72); max-width:30em; }
+.hero-cta{ display:flex; gap:14px; flex-wrap:wrap; margin-top:34px; }
+.hero-stats{ display:flex; gap:34px; margin-top:48px; flex-wrap:wrap; }
+.hero-stats .st .n{ font-family:"Fraunces",serif; font-size:2rem; color:var(--green); }
+.hero-stats .st .l{ font-size:.78rem; color:rgba(42,39,34,.6); text-transform:uppercase; letter-spacing:.12em; }
+.hero-stats .div{ width:1px; background:var(--line); }
+
+/* hero visual, double-bezel framed portrait + floating chips */
+.hero-visual{ position:relative; }
+.bezel{ background:rgba(255,255,255,.55); border:1px solid rgba(255,255,255,.7); padding:10px; border-radius:34px; box-shadow:var(--shadow-card), inset 0 1px 1px rgba(255,255,255,.6); }
+.bezel .core{ border-radius:25px; overflow:hidden; position:relative; box-shadow:inset 0 1px 1px rgba(255,255,255,.15); }
+.hero-portrait{ aspect-ratio:4/5; background:
+   radial-gradient(120% 80% at 30% 10%, #E9D7CC 0%, transparent 55%),
+   linear-gradient(150deg, #C7D4C8 0%, #93A795 45%, #5E7363 100%);
+  position:relative; }
+.hero-portrait .skin{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(40% 30% at 60% 35%, rgba(255,255,255,.5), transparent 60%),
+    radial-gradient(50% 40% at 38% 70%, rgba(231,207,194,.6), transparent 60%);
+}
+.hero-portrait .glyph{ position:absolute; inset:0; display:grid; place-items:center; }
+.hero-portrait .glyph svg{ width:62%; opacity:.9; }
+.chip{
+  position:absolute; background:rgba(251,248,242,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.7); border-radius:18px; padding:13px 17px; box-shadow:0 18px 40px -20px rgba(46,61,51,.5);
+  display:flex; align-items:center; gap:12px; font-size:.82rem; font-weight:600; color:var(--green);
+}
+.chip .ico{ width:36px; height:36px; border-radius:12px; background:rgba(124,144,130,.16); display:grid; place-items:center; flex:none; }
+.chip small{ display:block; font-weight:400; color:rgba(42,39,34,.55); font-size:.72rem; }
+.chip.one{ top:24px; left:-34px; animation:float 6s var(--ease) infinite; }
+.chip.two{ bottom:30px; right:-30px; animation:float 7s var(--ease) infinite .8s; }
+@keyframes float{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-12px); } }
+
+.marquee{ overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:80px; padding:20px 0; -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
+.marquee .track{ display:flex; gap:60px; white-space:nowrap; animation:scroll 28s linear infinite; }
+.marquee span{ font-family:"Fraunces",serif; font-style:italic; font-size:1.3rem; color:rgba(46,61,51,.45); display:inline-flex; align-items:center; gap:60px; }
+.marquee span::after{ content:"✦"; color:var(--sage); font-style:normal; }
+@keyframes scroll{ to{ transform:translateX(-50%); } }
+
+/* ===================== SERVICES ===================== */
+.head-block{ max-width:640px; margin-bottom:56px; }
+.head-block h2{ font-size:clamp(2.2rem,4.6vw,3.6rem); margin:18px 0 16px; }
+.head-block p{ color:rgba(42,39,34,.66); font-size:1.05rem; }
+
+.bento{ display:grid; grid-template-columns:repeat(12,1fr); gap:20px; }
+.card{
+  background:rgba(255,255,255,.5); border:1px solid rgba(255,255,255,.7); padding:8px; border-radius:30px;
+  box-shadow:var(--shadow-card), inset 0 1px 1px rgba(255,255,255,.5);
+}
+.card .inner{
+  background:var(--paper); border-radius:23px; padding:30px; height:100%; position:relative; overflow:hidden;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.6); transition:transform .6s var(--ease);
+}
+.card:hover .inner{ transform:translateY(-4px); }
+.svc-ico{ width:54px; height:54px; border-radius:16px; background:linear-gradient(150deg,#C7D4C8,#8AA08F); display:grid; place-items:center; box-shadow:0 12px 26px -12px rgba(46,61,51,.6); margin-bottom:22px; }
+.card h3{ font-size:1.5rem; margin-bottom:10px; }
+.card p{ color:rgba(42,39,34,.66); font-size:.95rem; }
+.card .price{ margin-top:18px; font-size:.8rem; font-weight:600; color:var(--sage); text-transform:uppercase; letter-spacing:.1em; }
+.col-7{ grid-column:span 7; } .col-5{ grid-column:span 5; }
+.col-4{ grid-column:span 4; } .col-6{ grid-column:span 6; }
+.card.feature .inner{ background:linear-gradient(155deg,var(--green),#22302a); color:var(--paper); display:flex; flex-direction:column; justify-content:space-between; min-height:280px; }
+.card.feature h3{ color:var(--paper); font-size:1.9rem; }
+.card.feature p{ color:rgba(251,248,242,.72); }
+.card.feature .svc-ico{ background:rgba(255,255,255,.14); }
+.card.feature .tag{ align-self:flex-start; }
+
+/* ===================== ABOUT ===================== */
+.about-grid{ display:grid; grid-template-columns:.95fr 1.05fr; gap:60px; align-items:center; }
+.about-visual{ position:relative; }
+.about-photo{ aspect-ratio:1/1; border-radius:25px; overflow:hidden; background:
+   radial-gradient(110% 90% at 70% 20%, #E9D7CC 0%, transparent 50%),
+   linear-gradient(160deg,#B5C6B8,#5E7363); position:relative; }
+.about-photo .glyph{ position:absolute; inset:0; display:grid; place-items:center; opacity:.85; }
+.about-photo .glyph svg{ width:55%; }
+.badge-float{ position:absolute; bottom:-24px; left:-24px; background:var(--paper); border-radius:22px; padding:20px 24px; box-shadow:var(--shadow-card); text-align:center; }
+.badge-float .n{ font-family:"Fraunces",serif; font-size:2.6rem; color:var(--green); line-height:1; }
+.badge-float .l{ font-size:.74rem; text-transform:uppercase; letter-spacing:.12em; color:rgba(42,39,34,.6); margin-top:6px; }
+.about-text h2{ font-size:clamp(2.1rem,4.4vw,3.3rem); margin:18px 0 20px; }
+.about-text p{ color:rgba(42,39,34,.7); margin-bottom:18px; }
+.about-list{ list-style:none; margin-top:26px; display:grid; gap:14px; }
+.about-list li{ display:flex; gap:14px; align-items:flex-start; font-size:.96rem; }
+.about-list .tick{ width:26px; height:26px; border-radius:50%; background:rgba(124,144,130,.16); display:grid; place-items:center; flex:none; margin-top:2px; }
+
+/* ===================== CTA BAND ===================== */
+.cta-band{ margin:120px auto; }
+.cta-inner{
+  position:relative; overflow:hidden; border-radius:38px; padding:72px 60px; text-align:center;
+  background:linear-gradient(155deg,var(--green) 0%, #243029 100%);
+  box-shadow:var(--shadow-card);
+}
+.cta-inner::before{ content:""; position:absolute; width:480px; height:480px; border-radius:50%; background:radial-gradient(circle,rgba(124,144,130,.5),transparent 70%); top:-200px; right:-120px; }
+.cta-inner::after{ content:""; position:absolute; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(231,207,194,.35),transparent 70%); bottom:-220px; left:-100px; }
+.cta-inner > *{ position:relative; z-index:1; }
+.cta-inner h2{ color:var(--paper); font-size:clamp(2.2rem,4.8vw,3.6rem); margin:18px auto 16px; max-width:14em; }
+.cta-inner p{ color:rgba(251,248,242,.74); max-width:34em; margin:0 auto 32px; }
+.cta-inner .eyebrow{ color:#cbd8cd; background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.18); }
+.cta-inner .eyebrow::before{ background:#cbd8cd; }
+.cta-inner .btn-primary{ background:var(--paper); color:var(--green); }
+.cta-inner .btn-primary .ic{ background:rgba(46,61,51,.1); }
+.cta-inner .btn-primary:hover{ background:#fff; }
+
+/* ===================== CONTACT ===================== */
+.contact-grid{ display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; }
+.contact-info h2{ font-size:clamp(2rem,4.4vw,3.2rem); margin:18px 0 18px; }
+.contact-info p{ color:rgba(42,39,34,.68); margin-bottom:30px; }
+.info-row{ display:flex; gap:16px; align-items:center; padding:16px 0; border-top:1px solid var(--line); }
+.info-row .ico{ width:46px; height:46px; border-radius:14px; background:rgba(124,144,130,.14); display:grid; place-items:center; flex:none; }
+.info-row .l{ font-size:.74rem; text-transform:uppercase; letter-spacing:.12em; color:rgba(42,39,34,.55); }
+.info-row .v{ font-weight:600; color:var(--green); }
+
+.form-shell{ background:rgba(255,255,255,.55); border:1px solid rgba(255,255,255,.7); padding:9px; border-radius:32px; box-shadow:var(--shadow-card); }
+form.contact-form{ background:var(--paper); border-radius:24px; padding:34px; box-shadow:inset 0 1px 1px rgba(255,255,255,.6); }
+.field{ margin-bottom:18px; }
+.field.row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+label{ display:block; font-size:.78rem; font-weight:600; letter-spacing:.04em; color:var(--green); margin-bottom:8px; }
+.input{
+  width:100%; background:var(--cream); border:1px solid var(--line); border-radius:14px; padding:13px 16px;
+  font-family:inherit; font-size:.95rem; color:var(--espresso); transition:border .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease);
+}
+.input::placeholder{ color:rgba(42,39,34,.4); }
+.input:focus{ outline:none; border-color:var(--sage); background:var(--paper); box-shadow:0 0 0 4px rgba(124,144,130,.14); }
+textarea.input{ resize:vertical; min-height:120px; }
+.form-submit{ width:100%; justify-content:center; margin-top:6px; }
+.form-note{ font-size:.78rem; color:rgba(42,39,34,.5); text-align:center; margin-top:14px; }
+.form-status{ display:none; margin-top:16px; padding:13px 16px; border-radius:14px; font-size:.88rem; font-weight:500; text-align:center; }
+.form-status.ok{ display:block; background:rgba(124,144,130,.16); color:var(--green); }
+.form-status.err{ display:block; background:rgba(217,180,162,.25); color:#9a5a44; }
+
+/* ===================== FOOTER ===================== */
+footer{ position:relative; z-index:1; border-top:1px solid var(--line); margin-top:40px; }
+.foot{ max-width:var(--maxw); margin:0 auto; padding:60px 32px 34px; }
+.foot-top{ display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; padding-bottom:40px; border-bottom:1px solid var(--line); }
+.foot-brand{ max-width:24em; }
+.foot-brand .brand{ font-size:1.4rem; margin-bottom:14px; }
+.foot-brand p{ color:rgba(42,39,34,.6); font-size:.92rem; }
+.foot-cols{ display:flex; gap:64px; flex-wrap:wrap; }
+.foot-col h4{ font-family:"Plus Jakarta Sans",sans-serif; font-size:.72rem; text-transform:uppercase; letter-spacing:.16em; color:var(--sage); margin-bottom:16px; font-weight:600; }
+.foot-col a{ display:block; font-size:.92rem; color:rgba(42,39,34,.72); padding:5px 0; transition:color .3s var(--ease), transform .3s var(--ease); }
+.foot-col a:hover{ color:var(--green); transform:translateX(3px); }
+.foot-bottom{ display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; padding-top:26px; font-size:.84rem; color:rgba(42,39,34,.55); }
+.foot-bottom strong{ color:var(--green); font-weight:600; }
+.foot-bottom .sig{ font-family:"Fraunces",serif; font-style:italic; }
+
+/* ===================== BOOKING MODAL ===================== */
+.modal-overlay{ position:fixed; inset:0; z-index:80; background:rgba(28,26,22,.45); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); display:grid; place-items:center; padding:20px; opacity:0; pointer-events:none; transition:opacity .45s var(--ease); }
+.modal-overlay.open{ opacity:1; pointer-events:auto; }
+.modal{
+  width:min(720px,100%); max-height:92dvh; overflow:auto; background:var(--paper); border-radius:30px; padding:8px;
+  box-shadow:0 50px 90px -30px rgba(28,26,22,.6); transform:translateY(30px) scale(.97); transition:transform .55s var(--ease);
+  border:1px solid rgba(255,255,255,.7);
+}
+.modal-overlay.open .modal{ transform:none; }
+.modal-pad{ padding:30px; }
+.modal-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:24px; }
+.modal-head h3{ font-size:1.7rem; }
+.modal-head p{ font-size:.9rem; color:rgba(42,39,34,.6); margin-top:4px; }
+.modal-close{ width:42px; height:42px; border-radius:50%; background:rgba(42,39,34,.06); display:grid; place-items:center; flex:none; transition:background .3s var(--ease), transform .3s var(--ease); }
+.modal-close:hover{ background:rgba(42,39,34,.12); transform:rotate(90deg); }
+.book-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:24px; }
+.cal{ background:var(--cream); border-radius:20px; padding:20px; border:1px solid var(--line); }
+.cal-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+.cal-head .m{ font-family:"Fraunces",serif; font-size:1.15rem; color:var(--green); }
+.cal-nav{ width:34px; height:34px; border-radius:50%; background:var(--paper); border:1px solid var(--line); display:grid; place-items:center; transition:background .3s var(--ease); }
+.cal-nav:hover{ background:rgba(124,144,130,.14); }
+.cal-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:5px; }
+.cal-grid .dow{ font-size:.66rem; text-transform:uppercase; letter-spacing:.06em; color:rgba(42,39,34,.45); text-align:center; padding:6px 0; font-weight:600; }
+.day{ aspect-ratio:1; border-radius:11px; display:grid; place-items:center; font-size:.85rem; font-weight:500; color:var(--espresso); transition:background .25s var(--ease), color .25s var(--ease), transform .25s var(--ease); }
+.day.muted{ color:rgba(42,39,34,.25); pointer-events:none; }
+.day.off{ color:rgba(42,39,34,.25); text-decoration:line-through; pointer-events:none; }
+.day.avail:hover{ background:rgba(124,144,130,.18); transform:scale(1.06); }
+.day.sel{ background:var(--green); color:var(--paper); }
+.slots{ display:flex; flex-direction:column; gap:10px; }
+.slots .slabel{ font-size:.78rem; font-weight:600; color:var(--green); margin-bottom:2px; }
+.slot{ padding:11px 14px; border-radius:12px; background:var(--cream); border:1px solid var(--line); font-size:.88rem; font-weight:500; color:var(--espresso); text-align:left; transition:border .25s var(--ease), background .25s var(--ease); }
+.slot:hover{ border-color:var(--sage); background:var(--paper); }
+.slot.sel{ background:var(--green); color:var(--paper); border-color:var(--green); }
+.book-foot{ margin-top:22px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+.book-summary{ font-size:.88rem; color:rgba(42,39,34,.7); }
+.book-summary b{ color:var(--green); }
+.book-confirm[disabled]{ opacity:.45; pointer-events:none; }
+.book-done{ text-align:center; padding:30px 10px; }
+.book-done .check{ width:72px; height:72px; border-radius:50%; background:rgba(124,144,130,.18); display:grid; place-items:center; margin:0 auto 20px; }
+.book-done h3{ font-size:1.8rem; margin-bottom:10px; }
+.book-done p{ color:rgba(42,39,34,.66); max-width:26em; margin:0 auto; }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width:980px){
+  .hero-grid, .about-grid, .contact-grid{ grid-template-columns:1fr; gap:44px; }
+  .hero-visual{ max-width:440px; margin:0 auto; }
+  .book-grid{ grid-template-columns:1fr; }
+  .col-7,.col-5,.col-4,.col-6{ grid-column:span 12; }
+}
+@media (max-width:760px){
+  .nav-links, .nav-cta{ display:none; }
+  .burger{ display:block; }
+  .section{ padding:0 20px; }
+  .hero{ padding-top:110px; }
+  .cta-inner{ padding:54px 26px; }
+  form.contact-form{ padding:24px; }
+  .field.row{ grid-template-columns:1fr; }
+  .chip.one{ left:-10px; } .chip.two{ right:-10px; }
+  .foot-top{ flex-direction:column; }
+}
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; }
+  .reveal{ opacity:1 !important; transform:none !important; filter:none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+
+<!-- ===================== NAV ===================== -->
+<div class="nav-wrap">
+  <nav class="nav" id="nav">
+    <a href="#top" class="brand"><span class="dot"></span>Niño Chung</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="nav-cta" data-book>Book a consult
+      <span class="ic">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </button>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+  </nav>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="#" data-book>Book a consult</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero section" id="top">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Aesthetic Dermatology · Est. 2014</span>
+      <h1 class="reveal" data-d="1">Skin care, <em>refined</em> by science &amp; artistry.</h1>
+      <p class="lead reveal" data-d="2">Niño Chung blends board-certified dermatology with a calm, considered approach, personalised treatments that reveal skin at its healthiest and most radiant.</p>
+      <div class="hero-cta reveal" data-d="3">
+        <button class="btn btn-primary" data-book>Book your consultation
+          <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </button>
+        <a href="#services" class="btn btn-ghost">Explore treatments</a>
+      </div>
+      <div class="hero-stats reveal" data-d="4">
+        <div class="st"><div class="n" data-count="12">0</div><div class="l">Years of care</div></div>
+        <div class="div"></div>
+        <div class="st"><div class="n" data-count="38" data-suffix="k">0</div><div class="l">Treatments</div></div>
+        <div class="div"></div>
+        <div class="st"><div class="n" data-count="98" data-suffix="%">0</div><div class="l">Would return</div></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" data-d="2">
+      <div class="bezel">
+        <div class="core">
+          <div class="hero-portrait">
+            <div class="skin"></div>
+            <div class="glyph">
+              <svg viewBox="0 0 200 200" fill="none" stroke="rgba(251,248,242,.85)" stroke-width="1.2">
+                <circle cx="100" cy="84" r="46"/>
+                <path d="M100 130 C70 130 52 152 50 182 M100 130 C130 130 148 152 150 182"/>
+                <path d="M82 78 q18 -16 36 0" stroke-width="1.6"/>
+                <circle cx="84" cy="88" r="2.4" fill="rgba(251,248,242,.85)" stroke="none"/>
+                <circle cx="116" cy="88" r="2.4" fill="rgba(251,248,242,.85)" stroke="none"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chip one">
+        <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E3D33" stroke-width="1.5"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/><circle cx="12" cy="12" r="3"/></svg></span>
+        <div>Laser &amp; Light<small>Pigment · Resurfacing</small></div>
+      </div>
+      <div class="chip two">
+        <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E3D33" stroke-width="1.5"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div>Board-certified<small>Dermatologists</small></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- marquee -->
+<div class="marquee section" style="max-width:none; padding:0;">
+  <div class="track">
+    <span>Hydrafacial</span><span>Microneedling</span><span>Chemical Peels</span><span>Laser Resurfacing</span><span>Botox &amp; Fillers</span><span>Acne Therapy</span>
+    <span>Hydrafacial</span><span>Microneedling</span><span>Chemical Peels</span><span>Laser Resurfacing</span><span>Botox &amp; Fillers</span><span>Acne Therapy</span>
+  </div>
+</div>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="section" id="services" style="padding-top:120px;">
+  <div class="head-block reveal">
+    <span class="eyebrow">Our Services</span>
+    <h2>Treatments tailored to your skin's story.</h2>
+    <p>Every plan begins with a thorough skin analysis. From medical dermatology to advanced aesthetics, our protocols are evidence-based and entirely your own.</p>
+  </div>
+
+  <div class="bento">
+    <div class="card feature col-7 reveal">
+      <div class="inner">
+        <div>
+          <div class="svc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FBF8F2" stroke-width="1.4"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 5 2 8h10c0-3 2-5 2-8a7 7 0 0 0-7-7Z"/><path d="M9 21h6"/></svg></div>
+          <span class="eyebrow tag" style="color:#cbd8cd;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);">Signature</span>
+          <h3 style="margin-top:18px;">Bespoke Skin Rejuvenation</h3>
+          <p>A multi-modal programme combining medical-grade resurfacing, biostimulation and targeted actives, designed around your skin's exact needs over a guided course.</p>
+        </div>
+        <div class="price" style="color:#cbd8cd;">From $240 / session</div>
+      </div>
+    </div>
+
+    <div class="card col-5 reveal" data-d="1">
+      <div class="inner">
+        <div class="svc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FBF8F2" stroke-width="1.4"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <h3>Laser &amp; Light Therapy</h3>
+        <p>Precision laser systems for pigmentation, vascular concerns and full-face resurfacing with minimal downtime.</p>
+        <div class="price">From $180</div>
+      </div>
+    </div>
+
+    <div class="card col-4 reveal">
+      <div class="inner">
+        <div class="svc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FBF8F2" stroke-width="1.4"><path d="M3 12c3-6 15-6 18 0-3 6-15 6-18 0Z"/><circle cx="12" cy="12" r="2.4"/></svg></div>
+        <h3>Acne &amp; Scarring</h3>
+        <p>Medical protocols and microneedling that calm active breakouts and smooth lasting texture.</p>
+        <div class="price">From $130</div>
+      </div>
+    </div>
+
+    <div class="card col-4 reveal" data-d="1">
+      <div class="inner">
+        <div class="svc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FBF8F2" stroke-width="1.4"><path d="M12 3c-1.5 3-4 4-4 7a4 4 0 0 0 8 0c0-3-2.5-4-4-7Z"/><path d="M7 18c1.5 2 8.5 2 10 0"/></svg></div>
+        <h3>Injectables</h3>
+        <p>Natural-looking neuromodulators and dermal fillers placed with an anatomical, restrained hand.</p>
+        <div class="price">From $260</div>
+      </div>
+    </div>
+
+    <div class="card col-4 reveal" data-d="2">
+      <div class="inner">
+        <div class="svc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FBF8F2" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Hydra Glow Facials</h3>
+        <p>Deep cleansing, exfoliation and serum infusion for an instant, luminous reset.</p>
+        <div class="price">From $95</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="section" id="about" style="padding-top:130px;">
+  <div class="about-grid">
+    <div class="about-visual reveal">
+      <div class="bezel">
+        <div class="core">
+          <div class="about-photo">
+            <div class="glyph">
+              <svg viewBox="0 0 200 200" fill="none" stroke="rgba(251,248,242,.85)" stroke-width="1.2">
+                <path d="M60 150 C40 120 48 70 100 60 C152 70 160 120 140 150"/>
+                <path d="M70 150 q30 22 60 0"/>
+                <path d="M86 100 q14 -12 28 0" stroke-width="1.5"/>
+                <path d="M100 60 q4 -22 -10 -34" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="badge-float">
+        <div class="n">A+</div>
+        <div class="l">Patient rated</div>
+      </div>
+    </div>
+
+    <div class="about-text">
+      <span class="eyebrow reveal">About Niño Chung</span>
+      <h2 class="reveal" data-d="1">A clinic built around calm, clarity and real results.</h2>
+      <p class="reveal" data-d="2">We founded Niño Chung on a simple belief: great skin care should feel as considered as it is clinical. No pressure, no one-size-fits-all packages, just honest dermatology and a team that genuinely listens.</p>
+      <p class="reveal" data-d="2">Our specialists combine the latest evidence with an artist's eye, so every outcome looks like the best, most natural version of you.</p>
+      <ul class="about-list reveal" data-d="3">
+        <li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2E3D33" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span> Board-certified dermatologists &amp; trained aestheticians</li>
+        <li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2E3D33" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span> Transparent pricing and honest treatment plans</li>
+        <li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2E3D33" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span> Medical-grade technology in a spa-calm setting</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA BAND ===================== -->
+<section class="section cta-band">
+  <div class="cta-inner reveal">
+    <span class="eyebrow">Ready when you are</span>
+    <h2>Book a consultation and meet your skin's new routine.</h2>
+    <p>Twenty calm minutes with a specialist. We'll assess, advise and map out a plan, no obligation, no pressure.</p>
+    <button class="btn btn-primary" data-book style="margin:0 auto;">Open the booking calendar
+      <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></span>
+    </button>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="section" id="contact" style="padding-bottom:30px;">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <span class="eyebrow reveal">Contact Us</span>
+      <h2 class="reveal" data-d="1">Let's talk about your skin.</h2>
+      <p class="reveal" data-d="2">Send us a note and our front desk will get back to you within one business day. For bookings, the calendar is the fastest route.</p>
+      <div class="reveal" data-d="3">
+        <div class="info-row">
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E3D33" stroke-width="1.5"><path d="M21 16.5v3a2 2 0 0 1-2.2 2A19 19 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8L8.6 11a16 16 0 0 0 4.4 4.4l1.5-1.3a2 2 0 0 1 1.8-.6l3 .5A2 2 0 0 1 21 16.5Z"/></svg></span>
+          <div><div class="l">Call us</div><div class="v">+63 2 8555 0142</div></div>
+        </div>
+        <div class="info-row">
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E3D33" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <div><div class="l">Email</div><div class="v">hello@ninochung.com</div></div>
+        </div>
+        <div class="info-row">
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E3D33" stroke-width="1.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><div class="l">Visit</div><div class="v">128 Lumière Ave, Makati</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-shell reveal" data-d="1">
+      <!-- ===== WEB3FORMS INTEGRATION =====
+           Replace YOUR_ACCESS_KEY_HERE with the key from https://web3forms.com
+           (free, enter your email, copy the access key). That's the only change needed. -->
+      <form class="contact-form" id="contactForm">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+        <input type="hidden" name="subject" value="New enquiry from Niño Chung website" />
+        <input type="hidden" name="from_name" value="Niño Chung Website" />
+        <!-- honeypot anti-spam -->
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <div class="field row">
+          <div><label for="name">Full name</label><input class="input" id="name" name="name" placeholder="Jane Dela Cruz" required /></div>
+          <div><label for="email">Email</label><input class="input" id="email" type="email" name="email" placeholder="jane@email.com" required /></div>
+        </div>
+        <div class="field row">
+          <div><label for="phone">Phone</label><input class="input" id="phone" name="phone" placeholder="+63 ..." /></div>
+          <div><label for="interest">Interested in</label>
+            <select class="input" id="interest" name="interest">
+              <option>Skin Rejuvenation</option>
+              <option>Laser &amp; Light Therapy</option>
+              <option>Acne &amp; Scarring</option>
+              <option>Injectables</option>
+              <option>Hydra Glow Facial</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea class="input" id="message" name="message" placeholder="Tell us a little about your skin goals…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Send enquiry
+          <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg></span>
+        </button>
+        <div class="form-status" id="formStatus"></div>
+        <p class="form-note">We reply within one business day. Your details stay private.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="foot">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand"><span class="dot"></span>Niño Chung</div>
+        <p>Science-led aesthetic dermatology. Personalised treatments, expert hands, and a calm space to feel like yourself again.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Clinic</h4>
+          <a href="#services">Services</a>
+          <a href="#about">About us</a>
+          <a href="#contact">Contact</a>
+          <a href="#" data-book>Book online</a>
+        </div>
+        <div class="foot-col">
+          <h4>Treatments</h4>
+          <a href="#services">Rejuvenation</a>
+          <a href="#services">Laser &amp; Light</a>
+          <a href="#services">Injectables</a>
+          <a href="#services">Facials</a>
+        </div>
+        <div class="foot-col">
+          <h4>Social</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© <span id="year">2026</span> Niño Chung. All rights reserved.</div>
+      <div class="sig">Niño Chung digital creations.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== BOOKING MODAL ===================== -->
+<div class="modal-overlay" id="bookModal">
+  <div class="modal">
+    <div class="modal-pad">
+      <div class="modal-head">
+        <div>
+          <span class="eyebrow">Booking</span>
+          <h3 style="margin-top:12px;">Reserve your consultation</h3>
+          <p>Pick a date &amp; time, a specialist will confirm by email.</p>
+        </div>
+        <button class="modal-close" id="bookClose" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A2722" stroke-width="1.6"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div id="bookBody">
+        <div class="book-grid">
+          <div class="cal">
+            <div class="cal-head">
+              <button class="cal-nav" id="prevM" aria-label="Previous month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2E3D33" stroke-width="1.6"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <span class="m" id="calMonth">Month</span>
+              <button class="cal-nav" id="nextM" aria-label="Next month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2E3D33" stroke-width="1.6"><path d="M9 6l6 6-6 6"/></svg></button>
+            </div>
+            <div class="cal-grid" id="calGrid"></div>
+          </div>
+          <div class="slots">
+            <div class="slabel">Available times</div>
+            <button class="slot" data-time="09:30 AM">09:30 AM</button>
+            <button class="slot" data-time="11:00 AM">11:00 AM</button>
+            <button class="slot" data-time="01:30 PM">01:30 PM</button>
+            <button class="slot" data-time="03:00 PM">03:00 PM</button>
+            <button class="slot" data-time="04:30 PM">04:30 PM</button>
+          </div>
+        </div>
+        <div class="book-foot">
+          <div class="book-summary" id="bookSummary">Select a date and time to continue.</div>
+          <button class="btn btn-primary book-confirm" id="bookConfirm" disabled>Confirm booking
+            <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 6 9 17l-5-5"/></svg></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="book-done" id="bookDone" style="display:none;">
+        <div class="check"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2E3D33" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>You're booked in ✦</h3>
+        <p id="bookDoneText">We've reserved your slot. A confirmation will land in your inbox shortly.</p>
+        <button class="btn btn-ghost" id="bookReset" style="margin-top:24px;">Book another time</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   BOOKING PROVIDER CONFIG
+   - provider: 'mock'  -> built-in calendar mockup (default)
+   - provider: 'calendly' -> opens your Calendly URL in a new tab
+   Swap to Calendly (or any URL-based system) by editing below.
+   ========================================================= */
+const BOOKING_CONFIG = {
+  provider: 'mock',                                  // 'mock' | 'calendly'
+  calendlyUrl: 'https://calendly.com/your-clinic/consult'
+};
+
+/* ---------- year ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---------- mobile menu ---------- */
+const burger = document.getElementById('burger');
+burger.addEventListener('click', () => document.body.classList.toggle('menu-open'));
+document.querySelectorAll('#mobileMenu a').forEach(a =>
+  a.addEventListener('click', () => document.body.classList.remove('menu-open')));
+
+/* ---------- nav shrink on scroll ---------- */
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('shrunk', scrollY > 30), { passive:true });
+
+/* ---------- scroll reveal (IntersectionObserver) ---------- */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold:.16, rootMargin:'0px 0px -8% 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+/* safety net: if the observer never fires (rare environments), never leave content hidden */
+setTimeout(() => {
+  if (!document.querySelector('.reveal.in'))
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+}, 1800);
+
+/* ---------- animated counters ---------- */
+const counters = document.querySelectorAll('[data-count]');
+const cIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, target = +el.dataset.count, suffix = el.dataset.suffix || '';
+    let cur = 0; const step = target / 48;
+    const tick = () => { cur += step; if (cur < target){ el.textContent = Math.round(cur)+suffix; requestAnimationFrame(tick); } else el.textContent = target+suffix; };
+    tick(); cIO.unobserve(el);
+  });
+}, { threshold:.6 });
+counters.forEach(c => cIO.observe(c));
+
+/* ---------- parallax orbs (transform only) ---------- */
+const orbs = document.querySelectorAll('.orb');
+addEventListener('scroll', () => {
+  const y = scrollY;
+  orbs.forEach((o,i) => { o.style.transform = `translateY(${y * (0.04 + i*0.025)}px)`; });
+}, { passive:true });
+
+/* ---------- magnetic buttons ---------- */
+document.querySelectorAll('.btn-primary, .nav-cta').forEach(btn => {
+  btn.addEventListener('pointermove', e => {
+    const r = btn.getBoundingClientRect();
+    const mx = (e.clientX - r.left - r.width/2) / r.width;
+    const my = (e.clientY - r.top - r.height/2) / r.height;
+    btn.style.transform = `translate(${mx*6}px, ${my*6}px)`;
+  });
+  btn.addEventListener('pointerleave', () => btn.style.transform = '');
+});
+
+/* =========================================================
+   CONTACT FORM, Web3Forms (AJAX submit)
+   ========================================================= */
+const form = document.getElementById('contactForm');
+const statusEl = document.getElementById('formStatus');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const key = form.access_key.value;
+  if (key === 'YOUR_ACCESS_KEY_HERE') {
+    statusEl.className = 'form-status ok';
+    statusEl.textContent = '✦ Demo mode, add your Web3Forms access key to send real enquiries.';
+    form.reset();
+    return;
+  }
+  statusEl.className = 'form-status'; statusEl.style.display='none';
+  const btn = form.querySelector('.form-submit'); const label = btn.innerHTML;
+  btn.innerHTML = 'Sending…'; btn.disabled = true;
+  try {
+    const res = await fetch('https://api.web3forms.com/api/submit', {
+      method:'POST', headers:{ 'Accept':'application/json' }, body:new FormData(form)
+    });
+    const data = await res.json();
+    if (data.success){
+      statusEl.className = 'form-status ok';
+      statusEl.textContent = '✦ Thank you, your enquiry is on its way. We\'ll be in touch shortly.';
+      form.reset();
+    } else throw new Error(data.message || 'Failed');
+  } catch (err){
+    statusEl.className = 'form-status err';
+    statusEl.textContent = 'Something went wrong. Please try again or email us directly.';
+  } finally { btn.innerHTML = label; btn.disabled = false; }
+});
+
+/* =========================================================
+   BOOKING MODAL + CALENDAR MOCKUP
+   ========================================================= */
+const modal = document.getElementById('bookModal');
+const openBookers = document.querySelectorAll('[data-book]');
+const closeBtn = document.getElementById('bookClose');
+
+function openBooking(e){
+  if (e) e.preventDefault();
+  if (BOOKING_CONFIG.provider === 'calendly'){
+    window.open(BOOKING_CONFIG.calendlyUrl, '_blank', 'noopener');
+    return;
+  }
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeBooking(){ modal.classList.remove('open'); document.body.style.overflow = ''; }
+
+openBookers.forEach(b => b.addEventListener('click', openBooking));
+closeBtn.addEventListener('click', closeBooking);
+modal.addEventListener('click', e => { if (e.target === modal) closeBooking(); });
+addEventListener('keydown', e => { if (e.key === 'Escape') closeBooking(); });
+
+/* ----- calendar ----- */
+const calGrid  = document.getElementById('calGrid');
+const calMonth = document.getElementById('calMonth');
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const DOW = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+let view = new Date(); view.setDate(1);
+const today = new Date(); today.setHours(0,0,0,0);
+let selDate = null, selTime = null;
+
+function renderCal(){
+  calGrid.innerHTML = '';
+  calMonth.textContent = MONTHS[view.getMonth()] + ' ' + view.getFullYear();
+  DOW.forEach(d => { const h = document.createElement('div'); h.className='dow'; h.textContent=d; calGrid.appendChild(h); });
+
+  const first = new Date(view.getFullYear(), view.getMonth(), 1).getDay();
+  const days  = new Date(view.getFullYear(), view.getMonth()+1, 0).getDate();
+  for (let i=0;i<first;i++){ const b=document.createElement('div'); b.className='day muted'; calGrid.appendChild(b); }
+
+  for (let d=1; d<=days; d++){
+    const cell = document.createElement('button');
+    cell.className = 'day'; cell.textContent = d;
+    const date = new Date(view.getFullYear(), view.getMonth(), d);
+    const dow = date.getDay();
+    if (date < today || dow === 0){ cell.classList.add('off'); }     // past dates + Sundays closed
+    else {
+      cell.classList.add('avail');
+      cell.addEventListener('click', () => {
+        calGrid.querySelectorAll('.day.sel').forEach(x=>x.classList.remove('sel'));
+        cell.classList.add('sel');
+        selDate = date; updateSummary();
+      });
+    }
+    if (selDate && date.toDateString() === selDate.toDateString()) cell.classList.add('sel');
+    calGrid.appendChild(cell);
+  }
+}
+function updateSummary(){
+  const sum = document.getElementById('bookSummary');
+  const confirm = document.getElementById('bookConfirm');
+  if (selDate && selTime){
+    const ds = selDate.toLocaleDateString(undefined,{ weekday:'long', month:'long', day:'numeric' });
+    sum.innerHTML = `<b>${ds}</b> · <b>${selTime}</b>`;
+    confirm.disabled = false;
+  } else if (selDate){
+    sum.textContent = 'Now pick a time slot.'; confirm.disabled = true;
+  } else { sum.textContent = 'Select a date and time to continue.'; confirm.disabled = true; }
+}
+document.querySelectorAll('.slot').forEach(s => s.addEventListener('click', () => {
+  document.querySelectorAll('.slot.sel').forEach(x=>x.classList.remove('sel'));
+  s.classList.add('sel'); selTime = s.dataset.time; updateSummary();
+}));
+document.getElementById('prevM').addEventListener('click', () => {
+  const min = new Date(today.getFullYear(), today.getMonth(), 1);
+  const prev = new Date(view.getFullYear(), view.getMonth()-1, 1);
+  if (prev >= min){ view = prev; renderCal(); }
+});
+document.getElementById('nextM').addEventListener('click', () => { view = new Date(view.getFullYear(), view.getMonth()+1, 1); renderCal(); });
+
+/* confirm + reset */
+document.getElementById('bookConfirm').addEventListener('click', () => {
+  const ds = selDate.toLocaleDateString(undefined,{ weekday:'long', month:'long', day:'numeric', year:'numeric' });
+  document.getElementById('bookDoneText').innerHTML =
+    `We've reserved <b>${ds}</b> at <b>${selTime}</b>. A confirmation will land in your inbox shortly.`;
+  document.getElementById('bookBody').style.display = 'none';
+  document.getElementById('bookDone').style.display = 'block';
+});
+document.getElementById('bookReset').addEventListener('click', () => {
+  selDate = null; selTime = null;
+  document.querySelectorAll('.slot.sel').forEach(x=>x.classList.remove('sel'));
+  updateSummary(); renderCal();
+  document.getElementById('bookDone').style.display = 'none';
+  document.getElementById('bookBody').style.display = 'block';
+});
+
+renderCal();
+</script>
+</body>
+</html>
