@@ -38,7 +38,7 @@ export default function HeroSection() {
           as="h1"
           delay={0.15}
           y={40}
-          className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[15vw] sm:text-[16vw] md:text-[17vw] lg:text-[18vw] mt-6 sm:mt-4 md:-mt-5"
+          className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[13.5vw] sm:text-[14vw] md:text-[14vw] lg:text-[14.5vw] mt-6 sm:mt-4 md:-mt-5"
         >
           Niño Chung
         </FadeIn>

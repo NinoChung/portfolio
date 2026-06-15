@@ -19,3 +19,6 @@ npm-debug.log*
 .shots
 lh*.json
 *.local
+
+# personal notes (kept local, not published)
+SEO-INDEXING-GUIDE.md
