@@ -1,6 +1,25 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import LiveProjectButton from './ui/LiveProjectButton'
+
+/** Touch / small screens: the hover-to-pan live iframe is pointless (no
+ *  hover) and compositing the heavy iframes — especially the video-backed
+ *  n1n0 page — inside the scaled sticky cards glitches mobile GPUs. So we
+ *  render the static screenshots there instead. */
+function useStaticPreview() {
+  const query = '(max-width: 767px), (hover: none)'
+  const [isStatic, setIsStatic] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia(query).matches,
+  )
+  useEffect(() => {
+    const mq = window.matchMedia(query)
+    const onChange = () => setIsStatic(mq.matches)
+    onChange()
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
+  return isStatic
+}
 
 type Project = {
   num: string
@@ -81,6 +100,8 @@ function ProjectCard({
 }) {
   const targetScale = 1 - (total - 1 - index) * 0.03
   const scale = useTransform(progress, [index / total, 1], [1, targetScale])
+  const staticPreview = useStaticPreview()
+  const shot = `/shots/${project.url.split('/')[2]}.jpg` // /projects/<slug>/index.html
 
   return (
     <div
@@ -137,23 +158,33 @@ function ProjectCard({
             </span>
           </div>
 
-          {/* scaled iframe that pans on hover */}
+          {/* preview: static screenshot on touch/mobile, live iframe on desktop */}
           <div
             className="relative w-full"
             style={{ height: 'clamp(320px, 46vh, 520px)' }}
           >
-            <div
-              className="absolute left-0 origin-top-left transition-transform duration-[6500ms] ease-[cubic-bezier(.32,.72,0,1)] group-hover:-translate-y-[560px]"
-              style={{ top: 36, width: '200%', height: 1600, transform: 'scale(0.5)' }}
-            >
-              <iframe
-                src={project.url}
-                title={project.name}
+            {staticPreview ? (
+              <img
+                src={shot}
+                alt={`${project.name} preview`}
                 loading="lazy"
-                scrolling="no"
-                className="w-full h-full border-0 pointer-events-none"
+                decoding="async"
+                className="absolute inset-0 w-full h-full object-cover object-top"
               />
-            </div>
+            ) : (
+              <div
+                className="absolute left-0 origin-top-left transition-transform duration-[6500ms] ease-[cubic-bezier(.32,.72,0,1)] group-hover:-translate-y-[560px]"
+                style={{ top: 36, width: '200%', height: 1600, transform: 'scale(0.5)' }}
+              >
+                <iframe
+                  src={project.url}
+                  title={project.name}
+                  loading="lazy"
+                  scrolling="no"
+                  className="w-full h-full border-0 pointer-events-none"
+                />
+              </div>
+            )}
             {/* bottom fade */}
             <div
               className="absolute inset-x-0 bottom-0 h-24 pointer-events-none"
