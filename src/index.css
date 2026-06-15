@@ -22,6 +22,16 @@ body,
   -webkit-text-fill-color: transparent;
 }
 
+/* On phones the gradient's dark top stop reads as too dark / low-contrast,
+   so brighten it for legibility on small screens. */
+@media (max-width: 640px) {
+  .hero-heading {
+    background: linear-gradient(180deg, #a3aeba 0%, #e3edf3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
 /* Marquee tile - slow vertical auto-pan over a screenshot ("animated screenshot") */
 @keyframes shot-pan {
   from {

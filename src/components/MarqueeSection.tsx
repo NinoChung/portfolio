@@ -7,6 +7,7 @@ const PROJECTS: Tile[] = [
   { img: '/shots/real-estate.jpg', label: 'Architectural Real Estate' },
   { img: '/shots/masterclass.jpg', label: 'Signature Masterclass' },
   { img: '/shots/sahodko.jpg', label: 'SahodKo Calculator' },
+  { img: '/shots/n1n0.jpg', label: 'N1N0 Smart Automation' },
 ]
 
 const ROW_ONE = PROJECTS

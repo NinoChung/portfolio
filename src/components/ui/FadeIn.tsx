@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useMemo } from 'react'
 import type { ReactNode } from 'react'
 
 type FadeInProps = {
@@ -22,7 +23,11 @@ export default function FadeIn({
   className,
   style,
 }: FadeInProps) {
-  const MotionTag = motion.create(as)
+  // Memoize so the motion component identity is stable across re-renders.
+  // Recreating it every render (e.g. when a parent like the ROI sliders
+  // updates state) remounts the element and replays the enter animation,
+  // causing a flicker + upward jump.
+  const MotionTag = useMemo(() => motion.create(as), [as])
 
   return (
     <MotionTag
