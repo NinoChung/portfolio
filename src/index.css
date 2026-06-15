@@ -22,15 +22,17 @@ body,
   -webkit-text-fill-color: transparent;
 }
 
-/* On phones, ANY gradient has a darker top stop that reads as low-contrast
-   on an OLED black background. Use a solid bright fill instead (no dark
-   portion) so the name, section titles, stat numbers, and ROI total stay
-   clearly legible. Desktop keeps the metallic gradient. */
+/* On phones the deeper desktop gradient reads as low-contrast on OLED black.
+   Use a bright-on-bright gradient: a subtle metallic sheen (gentle top-to-
+   bottom highlight) where even the darkest stop stays clearly legible, so
+   the name, section titles, stat numbers, and ROI total read well. */
 @media (max-width: 767px) {
   .hero-heading {
-    background: none;
-    -webkit-text-fill-color: #eef3f7;
-    color: #eef3f7;
+    background: linear-gradient(180deg, #d6dfe7 0%, #f8fbfd 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 }
 
