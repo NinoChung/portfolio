@@ -56,6 +56,16 @@ const PROJECTS: Project[] = [
     tint: 'radial-gradient(135% 95% at 100% 0%, rgba(34,180,220,0.13), transparent 55%), #0C0C0C',
     accent: '#38bdf8',
   },
+  {
+    num: '05',
+    category: 'Landing Page · SaaS',
+    name: 'N1N0 Smarter Automation',
+    desc: 'A SaaS automation hero with a fullscreen video backdrop, an editorial Instrument Serif headline, and a fully hand-coded product dashboard (no screenshots). Interactive "Book a demo" and video modals turn the whole page into a live, clickable mockup.',
+    url: '/projects/n1n0/index.html',
+    bar: 'n1n0saas.netlify.app · SaaS Automation',
+    tint: 'radial-gradient(135% 95% at 0% 0%, rgba(99,102,241,0.15), transparent 55%), #0C0C0C',
+    accent: '#818cf8',
+  },
 ]
 
 function ProjectCard({
