@@ -28,7 +28,9 @@ body,
    the name, section titles, stat numbers, and ROI total read well. */
 @media (max-width: 767px) {
   .hero-heading {
-    background: linear-gradient(180deg, #d6dfe7 0%, #f8fbfd 100%);
+    /* white highlight at top fading to the approved bright silver: every
+       point is at least as bright as the solid that read well on OLED */
+    background: linear-gradient(180deg, #ffffff 0%, #eef3f7 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
