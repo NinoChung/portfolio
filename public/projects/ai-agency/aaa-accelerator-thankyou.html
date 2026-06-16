@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You are in · The AI Agency Accelerator</title>
+<meta name="description" content="Order confirmed. Welcome to The AI Agency Accelerator. Here is what happens next.">
+</head>
+<body>
+
+<!-- ============================================================= -->
+<!-- ⬇⬇⬇  GOHIGHLEVEL PASTE START  ⬇⬇⬇                              -->
+<!-- Post-purchase / order confirmation page. Drop everything       -->
+<!-- between these markers into ONE GHL Custom Code element.         -->
+<!-- Everything is scoped to .aaa-funnel.                           -->
+<!-- ============================================================= -->
+<div class="aaa-funnel">
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=general-sans@400,500,600,700&display=swap');
+
+.aaa-funnel{
+  --bg:#07070b; --bg-2:#0d0d15; --surface:#12121d; --surface-2:#181826;
+  --line:rgba(255,255,255,0.08); --line-2:rgba(255,255,255,0.14);
+  --ink:#f4f4fb; --ink-soft:#a7a7bd; --ink-faint:#6e6e85;
+  --neon:#5cff9d; --neon-deep:#16e07f; --cyan:#43e0ff; --violet:#8b6bff; --amber:#ffcd56;
+  --grad: linear-gradient(115deg,#5cff9d 0%,#43e0ff 55%,#8b6bff 100%);
+  --grad-text: linear-gradient(100deg,#5cff9d 0%,#43e0ff 60%,#8b6bff 100%);
+  --shadow: 0 2px 4px rgba(0,0,0,.4), 0 30px 60px -24px rgba(0,0,0,.7);
+  --ease: cubic-bezier(0.32,0.72,0,1);
+  --r-xl:30px; --r-lg:22px; --r-md:15px;
+  font-family:'General Sans',-apple-system,system-ui,sans-serif;
+  color:var(--ink); background:var(--bg); line-height:1.6;
+  -webkit-font-smoothing:antialiased; position:relative; overflow-x:hidden;
+}
+.aaa-funnel *,.aaa-funnel *::before,.aaa-funnel *::after{ box-sizing:border-box; margin:0; padding:0; }
+.aaa-funnel a{ text-decoration:none; color:inherit; }
+.aaa-funnel button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
+.aaa-funnel h1,.aaa-funnel h2,.aaa-funnel h3,.aaa-funnel h4{ font-family:'Clash Display',sans-serif; font-weight:600; line-height:1.05; letter-spacing:-0.02em; }
+.aaa-funnel::before{ content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:radial-gradient(55% 45% at 50% -5%, rgba(92,255,157,.16), transparent 60%), radial-gradient(50% 45% at 90% 10%, rgba(139,107,255,.14), transparent 60%); }
+
+.aaa-wrap{ width:100%; max-width:840px; margin:0 auto; padding:0 26px; position:relative; z-index:1; }
+.aaa-grad{ background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.aaa-eyebrow{ display:inline-flex; align-items:center; gap:9px; font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.2em; color:var(--neon); background:rgba(92,255,157,.07); border:1px solid rgba(92,255,157,.2); border-radius:100px; padding:7px 15px; }
+
+.aaa-btn{ display:inline-flex; align-items:center; justify-content:center; gap:11px; font-weight:600; font-size:16px; padding:16px 30px; border-radius:100px; background:var(--grad); color:#04140b; box-shadow:0 14px 36px -10px rgba(92,255,157,.55); transition:transform .5s var(--ease), box-shadow .5s var(--ease); }
+.aaa-funnel a.aaa-btn{ color:#04140b; }
+.aaa-btn:hover{ transform:translateY(-3px); box-shadow:0 22px 50px -10px rgba(92,255,157,.7); }
+.aaa-btn-ghost{ background:transparent; color:var(--ink); border:1px solid var(--line-2); box-shadow:none; }
+.aaa-funnel a.aaa-btn-ghost{ color:var(--ink); }
+.aaa-btn-ghost:hover{ background:var(--surface-2); box-shadow:none; }
+.aaa-btn-block{ width:100%; }
+
+/* nav */
+.aaa-nav{ border-bottom:1px solid var(--line); background:rgba(7,7,11,.7); backdrop-filter:blur(12px); position:relative; z-index:2; }
+.aaa-nav-in{ max-width:1080px; margin:0 auto; padding:14px 26px; display:flex; align-items:center; justify-content:space-between; }
+.aaa-logo{ display:flex; align-items:center; gap:10px; font-family:'Clash Display'; font-weight:600; font-size:19px; }
+.aaa-logo .mark{ width:30px; height:30px; border-radius:9px; background:var(--grad); display:grid; place-items:center; color:#04140b; font-weight:700; font-size:15px; }
+.aaa-nav .help{ font-size:14px; color:var(--ink-soft); }
+.aaa-nav .help:hover{ color:var(--ink); }
+
+/* hero */
+.aaa-hero{ text-align:center; padding:72px 0 50px; }
+.aaa-check{ width:92px; height:92px; border-radius:50%; background:var(--grad); color:#04140b; display:grid; place-items:center; font-size:44px; margin:0 auto 26px; box-shadow:0 0 0 10px rgba(92,255,157,.08), 0 18px 50px -12px rgba(92,255,157,.5); animation:aaaPop .6s var(--ease) both; }
+@keyframes aaaPop{ 0%{ transform:scale(.6); opacity:0; } 100%{ transform:scale(1); opacity:1; } }
+.aaa-hero h1{ font-size:clamp(34px,6vw,60px); letter-spacing:-0.03em; }
+.aaa-hero p{ color:var(--ink-soft); font-size:clamp(16px,2vw,19px); max-width:520px; margin:18px auto 0; }
+.aaa-order{ display:inline-flex; align-items:center; gap:10px; margin-top:22px; font-size:13.5px; color:var(--ink-soft); background:var(--surface); border:1px solid var(--line); border-radius:100px; padding:9px 18px; }
+.aaa-order b{ color:var(--ink); font-family:'Clash Display'; }
+
+/* receipt */
+.aaa-receipt{ background:var(--surface); border:1px solid var(--line-2); border-radius:var(--r-lg); overflow:hidden; margin:14px 0 0; box-shadow:var(--shadow); }
+.aaa-receipt .h{ padding:16px 22px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.14em; }
+.aaa-receipt .r{ display:flex; justify-content:space-between; padding:15px 22px; border-bottom:1px solid var(--line); font-size:15px; }
+.aaa-receipt .r small{ display:block; color:var(--ink-faint); font-size:12.5px; }
+.aaa-receipt .r.tot{ background:var(--surface-2); font-weight:700; font-family:'Clash Display'; font-size:16px; }
+
+/* steps */
+.aaa-sec{ padding:56px 0; }
+.aaa-sec h2{ font-size:clamp(26px,3.6vw,38px); text-align:center; }
+.aaa-sec .sub{ text-align:center; color:var(--ink-soft); max-width:520px; margin:14px auto 0; font-size:16px; }
+.aaa-steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:40px; }
+@media(max-width:760px){ .aaa-steps{ grid-template-columns:1fr; } }
+.aaa-step{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:28px 24px; position:relative; }
+.aaa-step .n{ width:38px; height:38px; border-radius:50%; border:1px solid rgba(92,255,157,.3); color:var(--neon); display:grid; place-items:center; font-family:'Clash Display'; font-weight:600; margin-bottom:16px; }
+.aaa-step h3{ font-size:18px; margin-bottom:7px; }
+.aaa-step p{ color:var(--ink-soft); font-size:14.5px; }
+
+/* community band */
+.aaa-band{ background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.aaa-band .in{ display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; padding:40px 0; }
+.aaa-band h3{ font-size:24px; margin-bottom:6px; }
+.aaa-band p{ color:var(--ink-soft); font-size:15px; max-width:440px; }
+
+/* checklist */
+.aaa-list{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:28px 30px; margin-top:36px; }
+.aaa-list li{ list-style:none; display:flex; gap:12px; padding:12px 0; border-top:1px solid var(--line); color:var(--ink-soft); font-size:15px; }
+.aaa-list li:first-child{ border-top:none; }
+.aaa-list .ck{ flex:0 0 auto; width:22px; height:22px; border-radius:50%; background:rgba(92,255,157,.14); color:var(--neon); display:grid; place-items:center; font-size:12px; font-weight:700; }
+
+.aaa-foot{ border-top:1px solid var(--line); padding:36px 0 50px; text-align:center; }
+.aaa-foot p{ font-size:12.5px; color:var(--ink-faint); }
+.aaa-foot .links{ display:flex; gap:20px; justify-content:center; margin-bottom:14px; flex-wrap:wrap; }
+.aaa-foot .links a{ font-size:13.5px; color:var(--ink-soft); }
+.aaa-foot .links a:hover{ color:var(--ink); }
+</style>
+
+<!-- nav -->
+<nav class="aaa-nav">
+  <div class="aaa-nav-in">
+    <div class="aaa-logo"><span class="mark">A</span> AgencyAccelerator</div>
+    <a class="help" href="#">Need help? →</a>
+  </div>
+</nav>
+
+<!-- hero -->
+<header class="aaa-hero aaa-wrap">
+  <div class="aaa-check">✓</div>
+  <span class="aaa-eyebrow">Payment successful</span>
+  <h1 style="margin-top:18px;">You are in. <span class="aaa-grad">Welcome to the Accelerator.</span></h1>
+  <p>Your enrollment is confirmed and a receipt is on its way to your inbox. Let us build your AI automation agency.</p>
+  <div class="aaa-order">Order <b>#AAA-10482</b> · Confirmation sent to your email</div>
+
+  <!-- receipt -->
+  <div class="aaa-receipt" style="text-align:left;">
+    <div class="h"><span>Order summary</span><span>Paid</span></div>
+    <div class="r"><div>AI Agency Accelerator <small>Lifetime access</small></div><div>$997</div></div>
+    <div class="r" id="tyAudit"><div>1:1 Agency Launch Audit <small>One-time add-on</small></div><div>$197</div></div>
+    <div class="r tot"><div>Total paid</div><div id="tyTotal">$1,194</div></div>
+  </div>
+
+  <div style="margin-top:26px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+    <a class="aaa-btn" href="#">Access your dashboard →</a>
+    <a class="aaa-btn aaa-btn-ghost" href="#">Start Module 1</a>
+  </div>
+</header>
+
+<!-- next steps -->
+<section class="aaa-sec aaa-wrap">
+  <h2>Here is what happens next</h2>
+  <p class="sub">Three quick steps to hit the ground running today.</p>
+  <div class="aaa-steps" style="text-align:left;">
+    <div class="aaa-step"><div class="n">1</div><h3>Check your inbox</h3><p>Your login details and receipt have been emailed. Whitelist us so nothing gets lost.</p></div>
+    <div class="aaa-step"><div class="n">2</div><h3>Join the community</h3><p>Get your invite to the private founder community for accountability and deal-sharing.</p></div>
+    <div class="aaa-step" id="tyAuditStep"><div class="n">3</div><h3>Book your Launch Audit</h3><p>You added the 1:1 audit. Grab a time on the calendar and we will map your first offer.</p></div>
+  </div>
+</section>
+
+<!-- community band -->
+<section class="aaa-band">
+  <div class="aaa-wrap in">
+    <div>
+      <h3>Your first win is one step away</h3>
+      <p>Most students ship their first automation within their first week. Open Module 1 and follow along, you will have something working today.</p>
+    </div>
+    <a class="aaa-btn" href="#">Open Module 1 →</a>
+  </div>
+</section>
+
+<!-- checklist -->
+<section class="aaa-sec aaa-wrap">
+  <h2>Before you dive in</h2>
+  <ul class="aaa-list" style="margin-left:auto; margin-right:auto; max-width:620px;">
+    <li><span class="ck">✓</span> Confirm your account from the welcome email</li>
+    <li><span class="ck">✓</span> Join the private community and introduce yourself</li>
+    <li><span class="ck">✓</span> Block 5 to 8 hours this week for focused implementation</li>
+    <li id="tyAuditCheck"><span class="ck">✓</span> Book your 1:1 Agency Launch Audit call</li>
+    <li><span class="ck">✓</span> Start Module 1 and ship your first automation</li>
+  </ul>
+</section>
+
+<!-- footer -->
+<footer class="aaa-foot">
+  <div class="aaa-wrap">
+    <div class="links"><a href="#">Dashboard</a><a href="#">Community</a><a href="#">Support</a><a href="#">Billing</a></div>
+    <p>© 2026 AgencyAccelerator. All rights reserved. · This page is a marketing mockup for demonstration.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.currentScript.closest('.aaa-funnel') || document.querySelector('.aaa-funnel');
+  if(!root) return;
+  /* reflect whether the order-bump (Launch Audit) was added: ?bump=1 keeps it, ?bump=0 removes it */
+  var bump = new URLSearchParams(window.location.search).get('bump');
+  if(bump === '0'){
+    var row = root.querySelector('#tyAudit'); if(row) row.remove();
+    var tot = root.querySelector('#tyTotal'); if(tot) tot.textContent = '$997';
+    var step = root.querySelector('#tyAuditStep');
+    if(step){ step.querySelector('h3').textContent = 'Start Module 1'; step.querySelector('p').textContent = 'Jump into your first lesson and ship your first automation this week.'; }
+    var chk = root.querySelector('#tyAuditCheck'); if(chk) chk.remove();
+  }
+})();
+</script>
+
+</div>
+<!-- ============================================================= -->
+<!-- ⬆⬆⬆  GOHIGHLEVEL PASTE END  ⬆⬆⬆                                -->
+<!-- ============================================================= -->
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The AI Agency Accelerator — Build a $10K/mo AI Automation Agency</title>
+<title>The AI Agency Accelerator · Build a $10K/mo AI Automation Agency</title>
 <meta name="description" content="The step-by-step system to launch a profitable AI automation agency in 90 days, even with zero coding and zero clients today.">
 </head>
 <body>
@@ -691,7 +691,7 @@
 <div class="aaa-modal" id="aaaModal" aria-hidden="true">
   <div class="aaa-modal-card" role="dialog" aria-modal="true" aria-label="Checkout">
     <div class="aaa-modal-head"><b>Secure checkout</b><span class="lock">🔒 256-bit encrypted</span><button class="aaa-modal-x" data-close aria-label="Close">×</button></div>
-    <div class="aaa-steps-bar"><span class="aaa-stepdot act" data-dot="1"></span><span class="aaa-stepdot" data-dot="2"></span><span class="aaa-stepdot" data-dot="3"></span></div>
+    <div class="aaa-steps-bar"><span class="aaa-stepdot act" data-dot="1"></span><span class="aaa-stepdot" data-dot="2"></span></div>
 
     <!-- step 1: details -->
     <div class="aaa-pane" data-pane="1">
@@ -729,20 +729,7 @@
     </div>
     <div class="aaa-modal-foot" data-foot="2" hidden>
       <button class="aaa-link" data-back="1">← Back</button>
-      <button class="aaa-btn" data-next="3">Complete order →</button>
-    </div>
-
-    <!-- step 3: confirmation -->
-    <div class="aaa-pane" data-pane="3" hidden>
-      <div class="aaa-done">
-        <div class="big">✓</div>
-        <h4>Welcome to the Accelerator</h4>
-        <p>Check your inbox for your login details and your first lesson. Time to build your agency.</p>
-        <div class="aaa-recap" id="aaaRecap"></div>
-      </div>
-    </div>
-    <div class="aaa-modal-foot" data-foot="3" hidden>
-      <button class="aaa-btn aaa-btn-block" data-close>Done</button>
+      <button class="aaa-btn" id="aaaComplete">Complete order →</button>
     </div>
   </div>
 </div>
@@ -790,19 +777,17 @@
       modal.querySelectorAll('[data-pane]').forEach(function(p){ p.hidden = p.getAttribute('data-pane')!==String(n); });
       modal.querySelectorAll('[data-foot]').forEach(function(f){ f.hidden = f.getAttribute('data-foot')!==String(n); });
       modal.querySelectorAll('[data-dot]').forEach(function(d){ d.classList.toggle('act', Number(d.getAttribute('data-dot'))<=n); });
-      if(n===3){
-        var bump = modal.querySelector('#aaaBump').checked;
-        var total = 997 + (bump?197:0);
-        modal.querySelector('#aaaRecap').innerHTML =
-          '<div class="r"><span>AI Agency Accelerator</span><span>$997</span></div>' +
-          (bump?'<div class="r"><span>1:1 Agency Launch Audit</span><span>$197</span></div>':'') +
-          '<div class="r tot"><span>Total paid</span><span>$'+total+'</span></div>';
-      }
       modal.querySelector('.aaa-modal-card').scrollTop = 0;
     }
     function openModal(){ modal.classList.add('on'); modal.setAttribute('aria-hidden','false'); showStep(1); document.body.style.overflow='hidden'; }
     function closeModal(){ modal.classList.remove('on'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
     root.querySelectorAll('[data-checkout]').forEach(function(b){ b.addEventListener('click', function(e){ e.preventDefault(); openModal(); }); });
+    var complete = modal.querySelector('#aaaComplete');
+    if(complete) complete.addEventListener('click', function(){
+      var bump = modal.querySelector('#aaaBump').checked ? 1 : 0;
+      document.body.style.overflow='';
+      window.location.href = 'aaa-accelerator-thankyou.html?bump=' + bump;
+    });
     modal.addEventListener('click', function(e){
       var t=e.target;
       if(t===modal || t.hasAttribute('data-close')){ closeModal(); return; }

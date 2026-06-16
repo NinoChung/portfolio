@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Apex Method — Scale to 7 Figures Without Burning Out</title>
+<title>The Apex Method · Scale to 7 Figures Without Burning Out</title>
 <meta name="description" content="Private coaching for established founders and experts ready to scale past $1M without trading their life for it. Apply for a strategy call.">
 </head>
 <body>
@@ -643,8 +643,8 @@
     });
     var addBtn = root.querySelector('#apxUpAdd');
     var skipBtn = root.querySelector('#apxUpSkip');
-    if(addBtn) addBtn.addEventListener('click', function(){ gotoFinish('Your Founder Strategy Intensive is reserved. We will email payment and scheduling details shortly, along with your strategy call.'); });
-    if(skipBtn) skipBtn.addEventListener('click', function(){ gotoFinish('We will reach out within one business day with next steps to book your strategy call.'); });
+    if(addBtn) addBtn.addEventListener('click', function(){ window.location.href = 'apex-coaching-thankyou.html?intensive=1'; });
+    if(skipBtn) skipBtn.addEventListener('click', function(){ window.location.href = 'apex-coaching-thankyou.html?intensive=0'; });
   }
 })();
 </script>
