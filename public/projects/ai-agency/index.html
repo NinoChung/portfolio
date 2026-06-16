@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Agency Accelerator — Build a $10K/mo AI Automation Agency</title>
+<meta name="description" content="The step-by-step system to launch a profitable AI automation agency in 90 days, even with zero coding and zero clients today.">
+</head>
+<body>
+
+<!-- ============================================================= -->
+<!-- ⬇⬇⬇  GOHIGHLEVEL PASTE START  ⬇⬇⬇                              -->
+<!-- Drop everything between these markers into ONE Custom Code     -->
+<!-- (HTML) element in the GHL funnel builder. Fonts, styles, markup-->
+<!-- and JS all travel together. Everything is scoped to .aaa-funnel-->
+<!-- ============================================================= -->
+<div class="aaa-funnel">
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=general-sans@400,500,600,700&display=swap');
+
+/* ---------- SCOPED RESET + TOKENS ---------- */
+.aaa-funnel{
+  --bg:#07070b;
+  --bg-2:#0d0d15;
+  --surface:#12121d;
+  --surface-2:#181826;
+  --line:rgba(255,255,255,0.08);
+  --line-2:rgba(255,255,255,0.14);
+  --ink:#f4f4fb;
+  --ink-soft:#a7a7bd;
+  --ink-faint:#6e6e85;
+  --neon:#5cff9d;
+  --neon-deep:#16e07f;
+  --cyan:#43e0ff;
+  --violet:#8b6bff;
+  --amber:#ffcd56;
+  --grad: linear-gradient(115deg,#5cff9d 0%,#43e0ff 55%,#8b6bff 100%);
+  --grad-text: linear-gradient(100deg,#5cff9d 0%,#43e0ff 60%,#8b6bff 100%);
+  --glow: 0 0 0 1px rgba(92,255,157,.4), 0 18px 50px -12px rgba(92,255,157,.45);
+  --shadow: 0 2px 4px rgba(0,0,0,.4), 0 30px 60px -24px rgba(0,0,0,.7);
+  --ease: cubic-bezier(0.32,0.72,0,1);
+  --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
+  --r-xl:30px; --r-lg:22px; --r-md:15px; --r-sm:10px;
+  font-family:'General Sans',-apple-system,system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  position:relative;
+  overflow-x:hidden;
+}
+.aaa-funnel *,.aaa-funnel *::before,.aaa-funnel *::after{ box-sizing:border-box; margin:0; padding:0; }
+.aaa-funnel img{ max-width:100%; display:block; }
+.aaa-funnel a{ text-decoration:none; color:inherit; }
+.aaa-funnel button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
+.aaa-funnel input{ font-family:inherit; }
+.aaa-funnel h1,.aaa-funnel h2,.aaa-funnel h3,.aaa-funnel h4{
+  font-family:'Clash Display',sans-serif; font-weight:600; line-height:1.05; letter-spacing:-0.02em;
+}
+.aaa-funnel ::selection{ background:var(--neon); color:#04140b; }
+
+/* glow backdrop */
+.aaa-funnel::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(60% 50% at 15% -5%, rgba(92,255,157,.12), transparent 60%),
+    radial-gradient(50% 45% at 95% 5%, rgba(139,107,255,.14), transparent 60%),
+    radial-gradient(55% 50% at 50% 110%, rgba(67,224,255,.10), transparent 60%);
+}
+.aaa-grain{
+  position:fixed; inset:0; z-index:60; pointer-events:none; opacity:.04; mix-blend-mode:screen;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* layout */
+.aaa-wrap{ width:100%; max-width:1180px; margin:0 auto; padding:0 26px; position:relative; z-index:1; }
+.aaa-wrap.narrow{ max-width:840px; }
+.aaa-section{ padding:110px 0; position:relative; z-index:1; }
+.aaa-eyebrow{
+  display:inline-flex; align-items:center; gap:9px;
+  font-family:'General Sans'; font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.2em;
+  color:var(--neon); background:rgba(92,255,157,.07);
+  border:1px solid rgba(92,255,157,.2); border-radius:100px; padding:7px 15px;
+}
+.aaa-eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--neon); box-shadow:0 0 12px var(--neon); animation:aaaPulse 2.2s var(--ease) infinite; }
+@keyframes aaaPulse{ 0%,100%{ transform:scale(1); opacity:1; } 50%{ transform:scale(1.5); opacity:.45; } }
+.aaa-h2{ font-size:clamp(33px,5vw,58px); letter-spacing:-0.03em; }
+.aaa-lead{ font-size:clamp(16px,1.9vw,19px); color:var(--ink-soft); max-width:620px; }
+.aaa-center{ text-align:center; }
+.aaa-center .aaa-lead{ margin-left:auto; margin-right:auto; }
+.aaa-grad{ background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+/* ---------- BUTTONS ---------- */
+.aaa-btn{
+  position:relative; display:inline-flex; align-items:center; justify-content:center; gap:11px;
+  font-family:'General Sans'; font-weight:600; font-size:16px; padding:16px 30px; border-radius:100px;
+  background:var(--grad); color:#04140b; letter-spacing:-0.01em;
+  box-shadow:0 14px 36px -10px rgba(92,255,157,.55);
+  transition:transform .5s var(--ease), box-shadow .5s var(--ease), filter .4s var(--ease);
+  isolation:isolate;
+}
+.aaa-btn:hover{ transform:translateY(-3px); box-shadow:0 22px 50px -10px rgba(92,255,157,.7); filter:saturate(1.1); }
+.aaa-btn:active{ transform:translateY(-1px); }
+.aaa-btn .sub{ font-weight:500; opacity:.7; }
+.aaa-btn-ghost{
+  background:transparent; color:var(--ink); border:1px solid var(--line-2); box-shadow:none;
+  padding:15px 26px; font-weight:500;
+}
+.aaa-btn-ghost:hover{ background:var(--surface-2); border-color:var(--line-2); box-shadow:none; transform:translateY(-2px); }
+.aaa-btn-block{ width:100%; }
+/* keep button label colors above the scoped a{color:inherit} reset */
+.aaa-funnel a.aaa-btn, .aaa-funnel button.aaa-btn{ color:#04140b; }
+.aaa-funnel a.aaa-btn-ghost, .aaa-funnel button.aaa-btn-ghost{ color:var(--ink); }
+
+/* announcement bar */
+.aaa-bar{
+  position:relative; z-index:5; text-align:center; font-size:13px; font-weight:500;
+  padding:10px 20px; background:linear-gradient(90deg,rgba(92,255,157,.12),rgba(139,107,255,.12));
+  border-bottom:1px solid var(--line); color:var(--ink-soft); letter-spacing:.01em;
+}
+.aaa-bar b{ color:var(--neon); font-weight:600; }
+
+/* nav */
+.aaa-nav{
+  position:sticky; top:0; z-index:40; backdrop-filter:blur(14px);
+  background:rgba(7,7,11,.72); border-bottom:1px solid var(--line);
+}
+.aaa-nav-in{ max-width:1180px; margin:0 auto; padding:14px 26px; display:flex; align-items:center; justify-content:space-between; }
+.aaa-logo{ display:flex; align-items:center; gap:10px; font-family:'Clash Display'; font-weight:600; font-size:19px; letter-spacing:-0.02em; }
+.aaa-logo .mark{ width:30px; height:30px; border-radius:9px; background:var(--grad); display:grid; place-items:center; color:#04140b; font-weight:700; font-size:15px; box-shadow:0 0 18px rgba(92,255,157,.5); }
+.aaa-nav-cta{ display:flex; align-items:center; gap:18px; }
+.aaa-nav-cta .lnk{ font-size:14px; color:var(--ink-soft); font-weight:500; }
+.aaa-nav-cta .lnk:hover{ color:var(--ink); }
+.aaa-nav .aaa-btn{ padding:11px 22px; font-size:14px; }
+@media(max-width:720px){ .aaa-nav-cta .lnk{ display:none; } }
+
+/* hero */
+.aaa-hero{ padding:78px 0 90px; position:relative; }
+.aaa-hero .aaa-eyebrow{ margin-bottom:24px; }
+.aaa-h1{ font-size:clamp(40px,7.2vw,82px); letter-spacing:-0.035em; line-height:1.0; max-width:920px; margin:0 auto; }
+.aaa-hero .aaa-lead{ margin:24px auto 0; max-width:660px; font-size:clamp(17px,2.1vw,21px); }
+.aaa-hero-cta{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:36px; }
+.aaa-proofline{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:18px; margin-top:30px; color:var(--ink-faint); font-size:13.5px; }
+.aaa-avatars{ display:flex; }
+.aaa-avatars span{ width:34px; height:34px; border-radius:50%; border:2px solid var(--bg); margin-left:-10px; background-size:cover; background-position:center; }
+.aaa-avatars span:first-child{ margin-left:0; }
+.aaa-stars{ color:var(--amber); letter-spacing:2px; }
+
+/* video frame */
+.aaa-video{
+  position:relative; max-width:880px; margin:54px auto 0; border-radius:var(--r-xl);
+  border:1px solid var(--line-2); background:var(--surface);
+  box-shadow:var(--shadow); overflow:hidden; aspect-ratio:16/9;
+}
+.aaa-video .thumb{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.aaa-video .shade{ position:absolute; inset:0; background:linear-gradient(180deg,rgba(7,7,11,.18),rgba(7,7,11,.62)); }
+.aaa-video .play{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:84px; height:84px; border-radius:50%; background:var(--grad);
+  display:grid; place-items:center; box-shadow:0 0 0 0 rgba(92,255,157,.5); animation:aaaRing 2.4s var(--ease) infinite;
+}
+.aaa-video .play::after{ content:""; border-left:24px solid #04140b; border-top:15px solid transparent; border-bottom:15px solid transparent; margin-left:6px; }
+@keyframes aaaRing{ 0%{ box-shadow:0 0 0 0 rgba(92,255,157,.45);} 70%{ box-shadow:0 0 0 26px rgba(92,255,157,0);} 100%{ box-shadow:0 0 0 0 rgba(92,255,157,0);} }
+.aaa-video .tag{ position:absolute; left:18px; bottom:16px; font-size:12.5px; font-weight:600; color:var(--ink); background:rgba(0,0,0,.5); border:1px solid var(--line); padding:6px 12px; border-radius:100px; backdrop-filter:blur(6px); }
+.aaa-video .live{ position:absolute; right:18px; top:16px; display:flex; align-items:center; gap:7px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:#ff6b6b; background:rgba(0,0,0,.5); padding:6px 12px; border-radius:100px; }
+.aaa-video .live i{ width:7px; height:7px; border-radius:50%; background:#ff6b6b; box-shadow:0 0 10px #ff6b6b; }
+
+/* logo strip */
+.aaa-strip{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:30px 0; background:rgba(255,255,255,.012); }
+.aaa-strip p{ text-align:center; font-size:12px; text-transform:uppercase; letter-spacing:.2em; color:var(--ink-faint); margin-bottom:18px; }
+.aaa-strip .row{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:38px; opacity:.6; }
+.aaa-strip .row span{ font-family:'Clash Display'; font-weight:600; font-size:19px; color:var(--ink-soft); }
+
+/* stats band */
+.aaa-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+.aaa-stat{ text-align:center; padding:30px 18px; border:1px solid var(--line); border-radius:var(--r-lg); background:var(--surface); }
+.aaa-stat .n{ font-family:'Clash Display'; font-weight:600; font-size:clamp(32px,4vw,46px); }
+.aaa-stat .l{ font-size:13.5px; color:var(--ink-soft); margin-top:4px; }
+@media(max-width:680px){ .aaa-stats{ grid-template-columns:repeat(2,1fr); } }
+
+/* problem cards */
+.aaa-grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:52px; }
+@media(max-width:860px){ .aaa-grid-3{ grid-template-columns:1fr; } }
+.aaa-card{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:30px;
+  transition:transform .5s var(--ease), border-color .4s var(--ease), background .4s var(--ease);
+}
+.aaa-card:hover{ transform:translateY(-5px); border-color:var(--line-2); background:var(--surface-2); }
+.aaa-card .ic{ width:48px; height:48px; border-radius:13px; display:grid; place-items:center; font-size:22px; margin-bottom:18px; background:rgba(92,255,157,.08); border:1px solid rgba(92,255,157,.18); }
+.aaa-card h3{ font-size:20px; margin-bottom:9px; }
+.aaa-card p{ color:var(--ink-soft); font-size:15px; }
+.aaa-card.dim .ic{ background:rgba(255,107,107,.08); border-color:rgba(255,107,107,.2); }
+
+/* steps */
+.aaa-steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:52px; counter-reset:step; }
+@media(max-width:860px){ .aaa-steps{ grid-template-columns:1fr; } }
+.aaa-step{ position:relative; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:34px 28px; overflow:hidden; }
+.aaa-step .num{ font-family:'Clash Display'; font-weight:700; font-size:54px; background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent; line-height:1; margin-bottom:14px; }
+.aaa-step h3{ font-size:21px; margin-bottom:9px; }
+.aaa-step p{ color:var(--ink-soft); font-size:15px; }
+.aaa-step .glow{ position:absolute; right:-40px; top:-40px; width:130px; height:130px; border-radius:50%; background:var(--grad); filter:blur(50px); opacity:.18; }
+
+/* curriculum / modules */
+.aaa-mods{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:52px; }
+@media(max-width:780px){ .aaa-mods{ grid-template-columns:1fr; } }
+.aaa-mod{ display:flex; gap:18px; padding:24px; border:1px solid var(--line); border-radius:var(--r-lg); background:var(--surface); transition:border-color .4s var(--ease), background .4s var(--ease); }
+.aaa-mod:hover{ border-color:var(--line-2); background:var(--surface-2); }
+.aaa-mod .badge{ flex:0 0 auto; width:54px; height:54px; border-radius:14px; display:grid; place-items:center; font-family:'Clash Display'; font-weight:600; font-size:15px; color:var(--neon); background:rgba(92,255,157,.08); border:1px solid rgba(92,255,157,.2); }
+.aaa-mod h3{ font-size:18px; margin-bottom:5px; }
+.aaa-mod p{ color:var(--ink-soft); font-size:14.5px; }
+.aaa-mod .tag{ display:inline-block; margin-top:10px; font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); }
+
+/* for who */
+.aaa-fit{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:52px; }
+@media(max-width:780px){ .aaa-fit{ grid-template-columns:1fr; } }
+.aaa-fit-col{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:32px; }
+.aaa-fit-col h3{ font-size:20px; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
+.aaa-fit-col.yes{ border-color:rgba(92,255,157,.25); }
+.aaa-fit-col li{ list-style:none; display:flex; gap:12px; padding:11px 0; border-top:1px solid var(--line); color:var(--ink-soft); font-size:15px; }
+.aaa-fit-col li:first-of-type{ border-top:none; }
+.aaa-fit-col .ck{ flex:0 0 auto; width:22px; height:22px; border-radius:50%; display:grid; place-items:center; font-size:12px; font-weight:700; }
+.aaa-fit-col.yes .ck{ background:rgba(92,255,157,.15); color:var(--neon); }
+.aaa-fit-col.no .ck{ background:rgba(255,107,107,.12); color:#ff8585; }
+
+/* testimonials */
+.aaa-quotes{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:52px; }
+@media(max-width:880px){ .aaa-quotes{ grid-template-columns:1fr; } }
+.aaa-quote{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:28px; display:flex; flex-direction:column; }
+.aaa-quote .stars{ color:var(--amber); letter-spacing:2px; font-size:14px; margin-bottom:14px; }
+.aaa-quote p{ font-size:15.5px; color:var(--ink); line-height:1.6; }
+.aaa-quote .who{ display:flex; align-items:center; gap:12px; margin-top:20px; padding-top:18px; border-top:1px solid var(--line); }
+.aaa-quote .who .pic{ width:44px; height:44px; border-radius:50%; background:var(--grad); background-size:cover; background-position:center; }
+.aaa-quote .who b{ font-size:14.5px; display:block; }
+.aaa-quote .who small{ color:var(--ink-faint); font-size:12.5px; }
+.aaa-quote .res{ margin-top:14px; font-size:12.5px; font-weight:600; color:var(--neon); background:rgba(92,255,157,.08); border:1px solid rgba(92,255,157,.18); border-radius:100px; padding:5px 12px; align-self:flex-start; }
+
+/* instructor */
+.aaa-mentor{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:46px; align-items:center; }
+@media(max-width:860px){ .aaa-mentor{ grid-template-columns:1fr; } }
+.aaa-mentor .ph{ position:relative; aspect-ratio:4/5; border-radius:var(--r-xl); border:1px solid var(--line-2); overflow:hidden; background:linear-gradient(160deg,#141420,#0c0c14); }
+.aaa-mentor .ph .pho{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center; }
+.aaa-mentor .ph .bdg{ position:absolute; left:16px; bottom:16px; right:16px; background:rgba(7,7,11,.7); backdrop-filter:blur(8px); border:1px solid var(--line); border-radius:var(--r-md); padding:14px 16px; }
+.aaa-mentor .ph .bdg b{ font-family:'Clash Display'; font-size:16px; }
+.aaa-mentor .ph .bdg small{ display:block; color:var(--ink-faint); font-size:12.5px; }
+.aaa-mentor h2{ margin-bottom:18px; }
+.aaa-mentor p{ color:var(--ink-soft); font-size:16px; margin-bottom:14px; }
+.aaa-mentor .creds{ display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; }
+.aaa-mentor .creds span{ font-size:13px; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:100px; padding:7px 14px; }
+
+/* offer stack */
+.aaa-offer{ max-width:760px; margin:52px auto 0; background:var(--surface); border:1px solid var(--line-2); border-radius:var(--r-xl); overflow:hidden; box-shadow:var(--shadow); }
+.aaa-offer .head{ padding:26px 30px; background:linear-gradient(90deg,rgba(92,255,157,.1),rgba(139,107,255,.1)); border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+.aaa-offer .head h3{ font-size:21px; }
+.aaa-offer .head small{ color:var(--ink-faint); font-size:13px; }
+.aaa-offer .item{ display:flex; align-items:center; gap:16px; padding:18px 30px; border-bottom:1px solid var(--line); }
+.aaa-offer .item .ck{ flex:0 0 auto; width:24px; height:24px; border-radius:50%; background:rgba(92,255,157,.14); color:var(--neon); display:grid; place-items:center; font-size:13px; font-weight:700; }
+.aaa-offer .item .tx{ flex:1; }
+.aaa-offer .item .tx b{ font-size:15.5px; font-weight:600; }
+.aaa-offer .item .tx small{ display:block; color:var(--ink-faint); font-size:13px; }
+.aaa-offer .item .val{ font-family:'Clash Display'; font-weight:600; font-size:15px; color:var(--ink-soft); white-space:nowrap; }
+.aaa-offer .total{ display:flex; justify-content:space-between; align-items:center; padding:22px 30px; background:var(--surface-2); }
+.aaa-offer .total .l{ color:var(--ink-soft); font-size:15px; }
+.aaa-offer .total .r{ text-align:right; }
+.aaa-offer .total .r .old{ color:var(--ink-faint); text-decoration:line-through; font-size:15px; }
+.aaa-offer .total .r .now{ font-family:'Clash Display'; font-weight:700; font-size:30px; background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+/* guarantee */
+.aaa-guar{ max-width:760px; margin:0 auto; display:flex; gap:26px; align-items:center; background:var(--surface); border:1px solid rgba(255,205,86,.25); border-radius:var(--r-xl); padding:34px; }
+@media(max-width:640px){ .aaa-guar{ flex-direction:column; text-align:center; } }
+.aaa-guar .seal{ flex:0 0 auto; width:96px; height:96px; border-radius:50%; border:2px dashed rgba(255,205,86,.5); display:grid; place-items:center; text-align:center; font-family:'Clash Display'; font-weight:600; font-size:13px; color:var(--amber); line-height:1.1; }
+.aaa-guar h3{ font-size:22px; margin-bottom:8px; }
+.aaa-guar p{ color:var(--ink-soft); font-size:15px; }
+
+/* pricing */
+.aaa-price{ max-width:480px; margin:52px auto 0; position:relative; }
+.aaa-price .ribbon{ position:absolute; top:-13px; left:50%; transform:translateX(-50%); z-index:2; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#04140b; background:var(--grad); padding:7px 18px; border-radius:100px; box-shadow:0 8px 20px -6px rgba(92,255,157,.6); }
+.aaa-price .body{ background:var(--surface); border:1px solid var(--line-2); border-radius:var(--r-xl); padding:42px 34px 34px; box-shadow:var(--glow); text-align:center; }
+.aaa-price .name{ font-family:'Clash Display'; font-weight:600; font-size:22px; }
+.aaa-price .amt{ display:flex; align-items:baseline; justify-content:center; gap:6px; margin:14px 0 4px; }
+.aaa-price .amt .cur{ font-size:24px; color:var(--ink-soft); }
+.aaa-price .amt .big{ font-family:'Clash Display'; font-weight:700; font-size:64px; line-height:1; }
+.aaa-price .plan{ color:var(--ink-faint); font-size:14px; }
+.aaa-price ul{ text-align:left; margin:24px 0; }
+.aaa-price li{ list-style:none; display:flex; gap:11px; padding:9px 0; font-size:15px; color:var(--ink-soft); }
+.aaa-price li .ck{ color:var(--neon); font-weight:700; }
+.aaa-price .fine{ font-size:12.5px; color:var(--ink-faint); margin-top:14px; }
+
+/* countdown */
+.aaa-timer{ display:flex; gap:10px; justify-content:center; margin-top:26px; }
+.aaa-timer .cell{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r-md); padding:12px 16px; min-width:68px; text-align:center; }
+.aaa-timer .cell b{ font-family:'Clash Display'; font-weight:700; font-size:30px; display:block; }
+.aaa-timer .cell small{ font-size:10.5px; text-transform:uppercase; letter-spacing:.14em; color:var(--ink-faint); }
+
+/* faq */
+.aaa-faq{ max-width:780px; margin:52px auto 0; }
+.aaa-q{ border:1px solid var(--line); border-radius:var(--r-md); background:var(--surface); margin-bottom:12px; overflow:hidden; }
+.aaa-q summary{ list-style:none; cursor:pointer; padding:22px 26px; display:flex; justify-content:space-between; align-items:center; gap:18px; font-family:'Clash Display'; font-weight:500; font-size:17px; }
+.aaa-q summary::-webkit-details-marker{ display:none; }
+.aaa-q summary .pl{ flex:0 0 auto; width:26px; height:26px; border-radius:50%; border:1px solid var(--line-2); display:grid; place-items:center; font-size:18px; transition:transform .4s var(--ease); color:var(--neon); }
+.aaa-q[open] summary .pl{ transform:rotate(45deg); }
+.aaa-q .ans{ padding:0 26px 24px; color:var(--ink-soft); font-size:15px; }
+
+/* final cta */
+.aaa-final{ position:relative; text-align:center; border-radius:var(--r-xl); overflow:hidden; border:1px solid var(--line-2); padding:80px 30px; background:var(--bg-2); }
+.aaa-final::before{ content:""; position:absolute; inset:0; background:radial-gradient(70% 120% at 50% 0%, rgba(92,255,157,.16), transparent 60%), radial-gradient(60% 120% at 50% 120%, rgba(139,107,255,.18), transparent 60%); }
+.aaa-final > *{ position:relative; }
+.aaa-final h2{ font-size:clamp(32px,5vw,56px); max-width:780px; margin:0 auto 18px; }
+.aaa-final p{ color:var(--ink-soft); max-width:560px; margin:0 auto 30px; font-size:17px; }
+
+/* sticky cta */
+.aaa-sticky{
+  position:fixed; left:0; right:0; bottom:0; z-index:50; transform:translateY(120%); transition:transform .5s var(--ease);
+  background:rgba(7,7,11,.86); backdrop-filter:blur(14px); border-top:1px solid var(--line-2);
+}
+.aaa-sticky.on{ transform:translateY(0); }
+.aaa-sticky-in{ max-width:1180px; margin:0 auto; padding:13px 26px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.aaa-sticky .tx b{ font-family:'Clash Display'; font-size:16px; display:block; }
+.aaa-sticky .tx small{ color:var(--ink-faint); font-size:12.5px; }
+.aaa-sticky .aaa-btn{ padding:13px 26px; font-size:15px; }
+@media(max-width:600px){ .aaa-sticky .tx small{ display:none; } .aaa-sticky-in{ padding:11px 16px; } }
+
+/* footer */
+.aaa-foot{ border-top:1px solid var(--line); padding:46px 0 60px; }
+.aaa-foot .top{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; align-items:center; margin-bottom:30px; }
+.aaa-foot .links{ display:flex; gap:22px; flex-wrap:wrap; }
+.aaa-foot .links a{ font-size:13.5px; color:var(--ink-soft); }
+.aaa-foot .links a:hover{ color:var(--ink); }
+.aaa-foot .dis{ font-size:12px; color:var(--ink-faint); line-height:1.7; max-width:880px; }
+.aaa-foot .cp{ font-size:12.5px; color:var(--ink-faint); margin-top:20px; }
+
+/* reveal */
+.aaa-rev{ opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+.aaa-rev.in{ opacity:1; transform:none; }
+
+/* ---------- CHECKOUT + UPSELL MODAL ---------- */
+.aaa-modal{ position:fixed; inset:0; z-index:80; display:none; align-items:center; justify-content:center; padding:18px; background:rgba(4,5,9,.74); backdrop-filter:blur(8px); }
+.aaa-modal.on{ display:flex; }
+.aaa-modal-card{ width:100%; max-width:520px; max-height:92vh; overflow-y:auto; background:var(--surface); border:1px solid var(--line-2); border-radius:var(--r-xl); box-shadow:var(--shadow); }
+.aaa-modal-head{ position:sticky; top:0; z-index:2; display:flex; align-items:center; justify-content:space-between; padding:18px 24px; border-bottom:1px solid var(--line); background:var(--surface); }
+.aaa-modal-head b{ font-family:'Clash Display'; font-size:17px; }
+.aaa-modal-head .lock{ color:var(--ink-faint); font-size:12.5px; font-weight:500; }
+.aaa-modal-x{ width:32px; height:32px; border-radius:50%; border:1px solid var(--line-2); display:grid; place-items:center; font-size:18px; color:var(--ink-soft); }
+.aaa-modal-x:hover{ background:var(--surface-2); color:var(--ink); }
+.aaa-steps-bar{ display:flex; gap:8px; padding:16px 24px 0; }
+.aaa-stepdot{ flex:1; height:4px; border-radius:4px; background:var(--line-2); transition:background .4s var(--ease); }
+.aaa-stepdot.act{ background:var(--grad); }
+.aaa-pane{ padding:20px 24px 4px; }
+.aaa-pane h4{ font-family:'Clash Display'; font-weight:600; font-size:21px; margin-bottom:6px; }
+.aaa-pane .muted{ color:var(--ink-soft); font-size:14px; margin-bottom:18px; }
+.aaa-fld{ margin-bottom:13px; }
+.aaa-fld label{ display:block; font-size:12.5px; font-weight:600; margin-bottom:6px; }
+.aaa-in{ width:100%; padding:13px 15px; font-size:14.5px; color:var(--ink); background:var(--bg-2); border:1px solid var(--line-2); border-radius:var(--r-md); }
+.aaa-in:focus{ outline:none; border-color:var(--neon); box-shadow:0 0 0 3px rgba(92,255,157,.18); }
+.aaa-in::placeholder{ color:var(--ink-faint); }
+.aaa-row2{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.aaa-summary{ display:flex; justify-content:space-between; align-items:center; padding:14px 16px; background:var(--bg-2); border:1px solid var(--line); border-radius:var(--r-md); margin-bottom:18px; font-size:14px; }
+.aaa-summary b{ font-family:'Clash Display'; font-size:18px; }
+.aaa-bump{ border:1.5px solid rgba(92,255,157,.32); border-radius:var(--r-lg); padding:20px; background:rgba(92,255,157,.05); }
+.aaa-bump .pill{ display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#04140b; background:var(--neon); padding:4px 11px; border-radius:100px; margin-bottom:12px; }
+.aaa-bump h4{ font-size:19px; margin-bottom:2px; }
+.aaa-bump ul{ margin:12px 0 14px; }
+.aaa-bump li{ list-style:none; display:flex; gap:9px; font-size:13.5px; color:var(--ink-soft); padding:4px 0; }
+.aaa-bump li .ck{ color:var(--neon); font-weight:700; }
+.aaa-bump .prices{ display:flex; align-items:baseline; gap:10px; }
+.aaa-bump .prices .was{ color:var(--ink-faint); text-decoration:line-through; }
+.aaa-bump .prices .now{ font-family:'Clash Display'; font-weight:700; font-size:26px; }
+.aaa-toggle{ display:flex; align-items:center; gap:11px; margin-top:14px; padding:13px 15px; border:1px solid var(--line-2); border-radius:var(--r-md); cursor:pointer; font-size:14px; font-weight:600; transition:border-color .3s var(--ease), background .3s var(--ease); }
+.aaa-toggle:hover{ border-color:rgba(92,255,157,.5); }
+.aaa-toggle input{ width:18px; height:18px; accent-color:var(--neon-deep); }
+.aaa-modal-foot{ display:flex; gap:10px; padding:18px 24px 24px; }
+.aaa-modal-foot .aaa-btn{ flex:1; padding:14px; font-size:15px; }
+.aaa-link{ background:none; color:var(--ink-soft); font-size:14px; font-weight:500; padding:14px 8px; }
+.aaa-link:hover{ color:var(--ink); }
+.aaa-done{ text-align:center; padding:10px 0 6px; }
+.aaa-done .big{ width:64px; height:64px; border-radius:50%; background:var(--grad); color:#04140b; display:grid; place-items:center; font-size:30px; margin:0 auto 16px; box-shadow:0 12px 30px -10px rgba(92,255,157,.6); }
+.aaa-done h4{ font-size:24px; }
+.aaa-done p{ color:var(--ink-soft); font-size:14.5px; margin-top:8px; }
+.aaa-recap{ text-align:left; margin-top:18px; border:1px solid var(--line); border-radius:var(--r-md); overflow:hidden; }
+.aaa-recap .r{ display:flex; justify-content:space-between; padding:11px 15px; font-size:13.5px; border-top:1px solid var(--line); }
+.aaa-recap .r:first-child{ border-top:none; }
+.aaa-recap .r.tot{ background:var(--bg-2); font-weight:700; font-family:'Clash Display'; }
+</style>
+
+<div class="aaa-grain"></div>
+
+<!-- announcement -->
+<div class="aaa-bar">🚀 New cohort enrolling now · <b>Founding price ends Sunday</b> · Only 40 seats per cohort</div>
+
+<!-- nav -->
+<nav class="aaa-nav">
+  <div class="aaa-nav-in">
+    <div class="aaa-logo"><span class="mark">A</span> AgencyAccelerator</div>
+    <div class="aaa-nav-cta">
+      <a class="lnk" href="#how">How it works</a>
+      <a class="lnk" href="#results">Results</a>
+      <a class="lnk" href="#faq">FAQ</a>
+      <a class="aaa-btn" href="#enroll">Enroll now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- hero -->
+<header class="aaa-hero aaa-wrap aaa-center">
+  <span class="aaa-eyebrow"><span class="dot"></span> The AI Agency Accelerator</span>
+  <h1 class="aaa-h1">Build a <span class="aaa-grad">$10K/month AI automation agency</span> in 90 days</h1>
+  <p class="aaa-lead">The step-by-step system to land clients and deliver AI automations with n8n, Make and GPT, even if you have zero coding skills and zero clients today.</p>
+  <div class="aaa-hero-cta">
+    <a class="aaa-btn" href="#enroll">Get instant access <span class="sub">→</span></a>
+    <a class="aaa-btn aaa-btn-ghost" href="#how">▶ Watch the 4-min overview</a>
+  </div>
+  <div class="aaa-proofline">
+    <div class="aaa-avatars">
+      <span style="background-image:url('https://i.pravatar.cc/120?img=11')"></span>
+      <span style="background-image:url('https://i.pravatar.cc/120?img=12')"></span>
+      <span style="background-image:url('https://i.pravatar.cc/120?img=5')"></span>
+      <span style="background-image:url('https://i.pravatar.cc/120?img=32')"></span>
+    </div>
+    <span class="aaa-stars">★★★★★</span>
+    <span>Joined by <b style="color:var(--ink)">2,400+</b> founders building with AI</span>
+  </div>
+
+  <!-- VSL -->
+  <div class="aaa-video">
+    <img class="thumb" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1280&q=72" alt="AI automation dashboard preview" loading="lazy">
+    <div class="shade"></div>
+    <div class="live"><i></i> Live demo</div>
+    <div class="play"></div>
+    <div class="tag">Watch: how a beginner closed a $3,500 retainer in week 6</div>
+  </div>
+</header>
+
+<!-- logo strip -->
+<section class="aaa-strip">
+  <div class="aaa-wrap">
+    <p>Students featured and building with</p>
+    <div class="row">
+      <span>n8n</span><span>Make</span><span>OpenAI</span><span>Zapier</span><span>Airtable</span><span>Slack</span>
+    </div>
+  </div>
+</section>
+
+<!-- stats -->
+<section class="aaa-section" style="padding:78px 0 0;">
+  <div class="aaa-wrap">
+    <div class="aaa-stats aaa-rev">
+      <div class="aaa-stat"><div class="n aaa-grad">2,400+</div><div class="l">Students enrolled</div></div>
+      <div class="aaa-stat"><div class="n aaa-grad">$4.2M</div><div class="l">Client revenue tracked</div></div>
+      <div class="aaa-stat"><div class="n aaa-grad">90</div><div class="l">Days to first client</div></div>
+      <div class="aaa-stat"><div class="n aaa-grad">4.9/5</div><div class="l">Average rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- problem -->
+<section class="aaa-section">
+  <div class="aaa-wrap aaa-center">
+    <span class="aaa-eyebrow aaa-rev">The real problem</span>
+    <h2 class="aaa-h2 aaa-rev" style="margin-top:18px;">AI is moving fast. Most people are<br>watching from the sidelines.</h2>
+    <p class="aaa-lead aaa-rev" style="margin-top:16px;">You know automation is the opportunity of the decade. The issue is not motivation, it is not having a proven path from "interested" to "paid".</p>
+    <div class="aaa-grid-3">
+      <div class="aaa-card dim aaa-rev"><div class="ic">🧩</div><h3>Tutorial overload</h3><p>You have watched 50 YouTube videos and still cannot package a single offer a business will actually pay for.</p></div>
+      <div class="aaa-card dim aaa-rev"><div class="ic">😶</div><h3>No clients, no proof</h3><p>You can build a workflow, but finding businesses, pricing the work and closing the deal feels like a black box.</p></div>
+      <div class="aaa-card dim aaa-rev"><div class="ic">⏳</div><h3>Window is closing</h3><p>Early movers are locking in retainers right now. In 12 months "AI automation" will be table stakes, not a premium.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- solution / how -->
+<section class="aaa-section" id="how" style="background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="aaa-wrap aaa-center">
+    <span class="aaa-eyebrow aaa-rev"><span class="dot"></span> The system</span>
+    <h2 class="aaa-h2 aaa-rev" style="margin-top:18px;">The 3-phase Accelerator method</h2>
+    <p class="aaa-lead aaa-rev" style="margin-top:16px;">A repeatable path from your first automation to a signed retainer, used by 2,400+ students.</p>
+    <div class="aaa-steps">
+      <div class="aaa-step aaa-rev"><div class="glow"></div><div class="num">01</div><h3>Build</h3><p>Master the exact stack (n8n, Make, GPT, Airtable) by shipping 8 real automations you can resell on day one.</p></div>
+      <div class="aaa-step aaa-rev"><div class="glow"></div><div class="num">02</div><h3>Sell</h3><p>Use the outreach scripts and niche picker to book calls and close your first $1,500 to $3,500 retainer.</p></div>
+      <div class="aaa-step aaa-rev"><div class="glow"></div><div class="num">03</div><h3>Scale</h3><p>Productize delivery, hire your first contractor and grow past $10K/mo without trading more hours for money.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- curriculum -->
+<section class="aaa-section">
+  <div class="aaa-wrap aaa-center">
+    <span class="aaa-eyebrow aaa-rev">Inside the program</span>
+    <h2 class="aaa-h2 aaa-rev" style="margin-top:18px;">8 modules. Everything you need,<br>nothing you do not.</h2>
+    <div class="aaa-mods" style="text-align:left;">
+      <div class="aaa-mod aaa-rev"><div class="badge">01</div><div><h3>Foundations of AI automation</h3><p>How automations make money, the tool landscape and picking a profitable niche.</p><span class="tag">6 lessons · 48 min</span></div></div>
+      <div class="aaa-mod aaa-rev"><div class="badge">02</div><div><h3>Your no-code automation stack</h3><p>Set up n8n and Make, connect APIs and ship your first working workflow.</p><span class="tag">9 lessons · 1h 12m</span></div></div>
+      <div class="aaa-mod aaa-rev"><div class="badge">03</div><div><h3>Building with GPT and agents</h3><p>Prompt design, AI agents and connecting LLMs into real business workflows.</p><span class="tag">8 lessons · 1h 04m</span></div></div>
+      <div class="aaa-mod aaa-rev"><div class="badge">04</div><div><h3>The 8 sellable automations</h3><p>Copy-paste blueprints clients pay for: lead routing, content engines, support bots and more.</p><span class="tag">8 lessons · 1h 30m</span></div></div>
+      <div class="aaa-mod aaa-rev"><div class="badge">05</div><div><h3>Finding and landing clients</h3><p>Outreach scripts, niche targeting and the discovery call framework that closes.</p><span class="tag">7 lessons · 58 min</span></div></div>
+      <div class="aaa-mod aaa-rev"><div class="badge">06</div><div><h3>Pricing and proposals</h3><p>Price by value, structure retainers and send proposals that get signed same-day.</p><span class="tag">5 lessons · 41 min</span></div></div>
+      <div class="aaa-mod aaa-rev"><div class="badge">07</div><div><h3>Delivery and systems</h3><p>Onboarding, SOPs and templates so delivery runs without you in every detail.</p><span class="tag">6 lessons · 52 min</span></div></div>
+      <div class="aaa-mod aaa-rev"><div class="badge">08</div><div><h3>Scaling past $10K/mo</h3><p>Productize, hire your first contractor and build predictable monthly revenue.</p><span class="tag">6 lessons · 49 min</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- who is it for -->
+<section class="aaa-section" style="background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="aaa-wrap">
+    <div class="aaa-center">
+      <span class="aaa-eyebrow aaa-rev">Is this for you?</span>
+      <h2 class="aaa-h2 aaa-rev" style="margin-top:18px;">Built for doers, not dabblers</h2>
+    </div>
+    <div class="aaa-fit">
+      <div class="aaa-fit-col yes aaa-rev">
+        <h3>✅ This is for you if</h3>
+        <li><span class="ck">✓</span> You want a real income stream from AI, not just another subscription</li>
+        <li><span class="ck">✓</span> You are willing to put in 5 to 8 focused hours a week</li>
+        <li><span class="ck">✓</span> You are a freelancer, marketer or beginner ready to niche down</li>
+        <li><span class="ck">✓</span> You want proven scripts and templates, not theory</li>
+      </div>
+      <div class="aaa-fit-col no aaa-rev">
+        <h3>🚫 This is not for you if</h3>
+        <li><span class="ck">✕</span> You are looking for a passive, get-rich-overnight scheme</li>
+        <li><span class="ck">✕</span> You will not do outreach or talk to potential clients</li>
+        <li><span class="ck">✕</span> You expect results without implementing anything</li>
+        <li><span class="ck">✕</span> You already run a 6-figure agency and want advanced ops only</li>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- results -->
+<section class="aaa-section" id="results">
+  <div class="aaa-wrap aaa-center">
+    <span class="aaa-eyebrow aaa-rev"><span class="dot"></span> Real results</span>
+    <h2 class="aaa-h2 aaa-rev" style="margin-top:18px;">Students closing real retainers</h2>
+    <div class="aaa-quotes" style="text-align:left;">
+      <div class="aaa-quote aaa-rev">
+        <div class="stars">★★★★★</div>
+        <p>"I came in knowing nothing about no-code. Module 4 alone paid for the course, I closed a content automation for $2,800."</p>
+        <div class="res">First client in 41 days</div>
+        <div class="who"><div class="pic" style="background-image:url('https://i.pravatar.cc/120?img=13')"></div><div><b>Marcus R.</b><small>Ex-warehouse, now solo agency</small></div></div>
+      </div>
+      <div class="aaa-quote aaa-rev">
+        <div class="stars">★★★★★</div>
+        <p>"The outreach scripts are gold. I booked 7 calls in my first week and signed two retainers within a month."</p>
+        <div class="res">$5,200/mo recurring</div>
+        <div class="who"><div class="pic" style="background-image:url('https://i.pravatar.cc/120?img=45')"></div><div><b>Priya D.</b><small>Freelance marketer, India</small></div></div>
+      </div>
+      <div class="aaa-quote aaa-rev">
+        <div class="stars">★★★★★</div>
+        <p>"I had tried three other AI courses. This is the only one that actually shows you how to get paid, step by step."</p>
+        <div class="res">Quit 9 to 5 in month 5</div>
+        <div class="who"><div class="pic" style="background-image:url('https://i.pravatar.cc/120?img=33')"></div><div><b>James T.</b><small>Former accountant, UK</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- instructor -->
+<section class="aaa-section" style="background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="aaa-wrap">
+    <div class="aaa-mentor">
+      <div class="ph aaa-rev">
+        <img class="pho" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&q=72" alt="Daniel Kerr, instructor" loading="lazy">
+        <div class="bdg"><b>Daniel Kerr</b><small>Founder · scaled to $42K/mo in 14 months</small></div>
+      </div>
+      <div class="aaa-rev">
+        <span class="aaa-eyebrow">Your instructor</span>
+        <h2 class="aaa-h2" style="font-size:clamp(30px,4vw,46px); margin-top:16px;">From burned-out freelancer to $42K/mo agency</h2>
+        <p>Two years ago I was charging $25/hour for one-off automations and barely keeping the lights on. When I niched down and packaged AI automation as a productized retainer, everything changed.</p>
+        <p>I have built this Accelerator from the exact playbook I still use today with my own agency. No fluff, no theory you cannot apply this week. Just the path I wish I had when I started.</p>
+        <div class="creds">
+          <span>⚡ 6 years building automations</span>
+          <span>🏆 Trained 2,400+ students</span>
+          <span>🤝 80+ retainer clients served</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- offer + pricing -->
+<section class="aaa-section" id="enroll">
+  <div class="aaa-wrap aaa-center">
+    <span class="aaa-eyebrow aaa-rev"><span class="dot"></span> Enroll today</span>
+    <h2 class="aaa-h2 aaa-rev" style="margin-top:18px;">Everything you get inside</h2>
+    <p class="aaa-lead aaa-rev" style="margin-top:16px;">One enrollment, lifetime access, every future update included.</p>
+
+    <!-- offer stack -->
+    <div class="aaa-offer aaa-rev" style="text-align:left;">
+      <div class="head"><h3>The complete Accelerator package</h3><small>Total value</small></div>
+      <div class="item"><span class="ck">✓</span><div class="tx"><b>The 8-module core program</b><small>40+ video lessons, lifetime access</small></div><div class="val">$1,495</div></div>
+      <div class="item"><span class="ck">✓</span><div class="tx"><b>The Sellable Automations vault</b><small>Copy-paste blueprints clients pay for</small></div><div class="val">$795</div></div>
+      <div class="item"><span class="ck">✓</span><div class="tx"><b>Client outreach and sales scripts</b><small>DMs, emails and discovery call framework</small></div><div class="val">$495</div></div>
+      <div class="item"><span class="ck">✓</span><div class="tx"><b>Proposal and pricing templates</b><small>Same-day-sign proposal swipe file</small></div><div class="val">$295</div></div>
+      <div class="item"><span class="ck">✓</span><div class="tx"><b>Weekly live coaching calls</b><small>Get unstuck with Daniel and the team</small></div><div class="val">$1,200</div></div>
+      <div class="item"><span class="ck">✓</span><div class="tx"><b>Private founder community</b><small>2,400+ members, deal-sharing, accountability</small></div><div class="val">$588</div></div>
+      <div class="total"><div class="l">Total real value</div><div class="r"><div class="old">$5,362</div><div class="now">Today $997</div></div></div>
+    </div>
+
+    <!-- countdown -->
+    <div class="aaa-timer aaa-rev" id="aaaTimer">
+      <div class="cell"><b data-d>02</b><small>Days</small></div>
+      <div class="cell"><b data-h>11</b><small>Hours</small></div>
+      <div class="cell"><b data-m>45</b><small>Mins</small></div>
+      <div class="cell"><b data-s>30</b><small>Secs</small></div>
+    </div>
+
+    <!-- pricing card -->
+    <div class="aaa-price aaa-rev">
+      <div class="ribbon">Founding cohort price</div>
+      <div class="body">
+        <div class="name">The AI Agency Accelerator</div>
+        <div class="amt"><span class="cur">$</span><span class="big">997</span></div>
+        <div class="plan">or 3 monthly payments of $375</div>
+        <ul>
+          <li><span class="ck">✓</span> Lifetime access to all 8 modules and updates</li>
+          <li><span class="ck">✓</span> Sellable automations vault and templates</li>
+          <li><span class="ck">✓</span> Weekly live coaching for 12 weeks</li>
+          <li><span class="ck">✓</span> Private founder community access</li>
+          <li><span class="ck">✓</span> 14-day money-back guarantee</li>
+        </ul>
+        <a class="aaa-btn aaa-btn-block" href="#" data-checkout>Enroll now and start today →</a>
+        <div class="fine">🔒 Secure checkout · Instant access · Cancel anytime</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- guarantee -->
+<section class="aaa-section" style="padding-top:0;">
+  <div class="aaa-wrap">
+    <div class="aaa-guar aaa-rev">
+      <div class="seal">14-DAY<br>GUARANTEE</div>
+      <div>
+        <h3>Try it risk-free for 14 days</h3>
+        <p>Go through the modules, use the scripts, build your first automation. If you do not feel this is the clearest path to your own AI agency, email us within 14 days for a full refund. No hoops, no hard feelings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- faq -->
+<section class="aaa-section" id="faq" style="background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="aaa-wrap aaa-center">
+    <span class="aaa-eyebrow aaa-rev">Questions</span>
+    <h2 class="aaa-h2 aaa-rev" style="margin-top:18px;">Everything you might be wondering</h2>
+    <div class="aaa-faq" style="text-align:left;">
+      <details class="aaa-q aaa-rev"><summary>Do I need to know how to code? <span class="pl">+</span></summary><div class="ans">No. The entire stack is no-code and low-code. If you can use a spreadsheet and follow steps, you can build every automation in this program.</div></details>
+      <details class="aaa-q aaa-rev"><summary>How much time does this take? <span class="pl">+</span></summary><div class="ans">Most students spend 5 to 8 hours a week. The program is self-paced, and the weekly calls keep you moving. You can finish the core modules in about 4 weeks.</div></details>
+      <details class="aaa-q aaa-rev"><summary>What if I have no clients or audience? <span class="pl">+</span></summary><div class="ans">That is exactly who this is built for. Modules 5 and 6 walk you through finding, pitching and closing your first clients from zero, using proven outreach scripts.</div></details>
+      <details class="aaa-q aaa-rev"><summary>What tools will I need to pay for? <span class="pl">+</span></summary><div class="ans">Most tools have generous free tiers to start. As you land clients, you will spend roughly $20 to $50/mo on tools, which is easily covered by a single retainer.</div></details>
+      <details class="aaa-q aaa-rev"><summary>Is there really a refund guarantee? <span class="pl">+</span></summary><div class="ans">Yes. You have a full 14 days. If it is not for you, email us for a complete refund, no questions asked.</div></details>
+      <details class="aaa-q aaa-rev"><summary>How long do I have access? <span class="pl">+</span></summary><div class="ans">Forever. You get lifetime access to all current modules plus every future update, at no extra cost.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- final cta -->
+<section class="aaa-section">
+  <div class="aaa-wrap">
+    <div class="aaa-final aaa-rev">
+      <span class="aaa-eyebrow"><span class="dot"></span> The window is open now</span>
+      <h2 style="margin-top:18px;">Your AI agency starts the<br>day you decide to begin</h2>
+      <p>Join 2,400+ founders building real income with AI automation. Founding price ends Sunday.</p>
+      <a class="aaa-btn" href="#" data-checkout style="font-size:17px; padding:18px 36px;">Enroll now for $997 →</a>
+      <div style="margin-top:18px; color:var(--ink-faint); font-size:13px;">🔒 14-day guarantee · Instant access · 3-pay option available</div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="aaa-foot">
+  <div class="aaa-wrap">
+    <div class="top">
+      <div class="aaa-logo"><span class="mark">A</span> AgencyAccelerator</div>
+      <div class="links">
+        <a href="#how">How it works</a><a href="#results">Results</a><a href="#faq">FAQ</a><a href="#">Login</a><a href="#">Support</a>
+      </div>
+    </div>
+    <p class="dis"><b>Earnings disclaimer:</b> Results shown are not typical and are not a guarantee of income. Building an agency takes effort, skill and time. The figures referenced are examples of what is possible for students who implement, and should not be interpreted as a promise of results. This page is a marketing mockup for demonstration.</p>
+    <p class="cp">© 2026 AgencyAccelerator. All rights reserved. · Privacy · Terms · Earnings Disclaimer</p>
+  </div>
+</footer>
+
+<!-- sticky cta -->
+<div class="aaa-sticky" id="aaaSticky">
+  <div class="aaa-sticky-in">
+    <div class="tx"><b>The AI Agency Accelerator</b><small>Founding price $997 · ends Sunday · 14-day guarantee</small></div>
+    <a class="aaa-btn" href="#enroll">Enroll now →</a>
+  </div>
+</div>
+
+<!-- checkout + upsell modal -->
+<div class="aaa-modal" id="aaaModal" aria-hidden="true">
+  <div class="aaa-modal-card" role="dialog" aria-modal="true" aria-label="Checkout">
+    <div class="aaa-modal-head"><b>Secure checkout</b><span class="lock">🔒 256-bit encrypted</span><button class="aaa-modal-x" data-close aria-label="Close">×</button></div>
+    <div class="aaa-steps-bar"><span class="aaa-stepdot act" data-dot="1"></span><span class="aaa-stepdot" data-dot="2"></span><span class="aaa-stepdot" data-dot="3"></span></div>
+
+    <!-- step 1: details -->
+    <div class="aaa-pane" data-pane="1">
+      <h4>Your details</h4>
+      <p class="muted">You are enrolling in The AI Agency Accelerator.</p>
+      <div class="aaa-summary"><span>AI Agency Accelerator (lifetime)</span><b>$997</b></div>
+      <div class="aaa-row2">
+        <div class="aaa-fld"><label>First name</label><input class="aaa-in" type="text" placeholder="Jane"></div>
+        <div class="aaa-fld"><label>Last name</label><input class="aaa-in" type="text" placeholder="Founder"></div>
+      </div>
+      <div class="aaa-fld"><label>Email</label><input class="aaa-in" type="email" placeholder="jane@email.com"></div>
+      <div class="aaa-fld"><label>Card details</label><input class="aaa-in" type="text" placeholder="Card number" inputmode="numeric"></div>
+      <div class="aaa-row2"><div class="aaa-fld"><input class="aaa-in" type="text" placeholder="MM / YY"></div><div class="aaa-fld"><input class="aaa-in" type="text" placeholder="CVC"></div></div>
+    </div>
+    <div class="aaa-modal-foot" data-foot="1">
+      <button class="aaa-btn aaa-btn-ghost" data-close>Cancel</button>
+      <button class="aaa-btn" data-next="2">Continue →</button>
+    </div>
+
+    <!-- step 2: UPSELL / one-time offer -->
+    <div class="aaa-pane" data-pane="2" hidden>
+      <h4>One last thing, for new students only</h4>
+      <p class="muted">Add this now and it will not be offered at this price again.</p>
+      <div class="aaa-bump">
+        <span class="pill">One-time offer</span>
+        <h4>1:1 Agency Launch Audit</h4>
+        <ul>
+          <li><span class="ck">✓</span> A private 60-min call to map your first paid offer</li>
+          <li><span class="ck">✓</span> We pick your niche and price your first retainer together</li>
+          <li><span class="ck">✓</span> A 30-day action plan so you land clients faster</li>
+        </ul>
+        <div class="prices"><span class="was">$497</span><span class="now">$197</span><span style="color:var(--ink-faint);font-size:13px;">one-time</span></div>
+        <label class="aaa-toggle"><input type="checkbox" id="aaaBump"> Yes, add the Launch Audit for $197</label>
+      </div>
+    </div>
+    <div class="aaa-modal-foot" data-foot="2" hidden>
+      <button class="aaa-link" data-back="1">← Back</button>
+      <button class="aaa-btn" data-next="3">Complete order →</button>
+    </div>
+
+    <!-- step 3: confirmation -->
+    <div class="aaa-pane" data-pane="3" hidden>
+      <div class="aaa-done">
+        <div class="big">✓</div>
+        <h4>Welcome to the Accelerator</h4>
+        <p>Check your inbox for your login details and your first lesson. Time to build your agency.</p>
+        <div class="aaa-recap" id="aaaRecap"></div>
+      </div>
+    </div>
+    <div class="aaa-modal-foot" data-foot="3" hidden>
+      <button class="aaa-btn aaa-btn-block" data-close>Done</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.currentScript.closest('.aaa-funnel') || document.querySelector('.aaa-funnel');
+  if(!root) return;
+
+  /* reveal on scroll */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.12 });
+  root.querySelectorAll('.aaa-rev').forEach(function(el){ io.observe(el); });
+
+  /* sticky cta after hero */
+  var sticky = root.querySelector('#aaaSticky');
+  var hero = root.querySelector('.aaa-hero');
+  var sObs = new IntersectionObserver(function(es){
+    es.forEach(function(e){ sticky.classList.toggle('on', !e.isIntersecting); });
+  }, { threshold:0 });
+  if(hero) sObs.observe(hero);
+
+  /* countdown (resets to ~3 days, persists per visitor) */
+  var timer = root.querySelector('#aaaTimer');
+  if(timer){
+    var KEY='aaa_deadline';
+    var dl = parseInt(localStorage.getItem(KEY)||'0',10);
+    var now = Date.now();
+    if(!dl || dl < now){ dl = now + (1000*60*60*24*3); localStorage.setItem(KEY, dl); }
+    var elD=timer.querySelector('[data-d]'),elH=timer.querySelector('[data-h]'),elM=timer.querySelector('[data-m]'),elS=timer.querySelector('[data-s]');
+    function pad(n){ return n<10?'0'+n:''+n; }
+    function tick(){
+      var diff = Math.max(0, dl - Date.now());
+      var d=Math.floor(diff/86400000), h=Math.floor(diff%86400000/3600000), m=Math.floor(diff%3600000/60000), s=Math.floor(diff%60000/1000);
+      elD.textContent=pad(d); elH.textContent=pad(h); elM.textContent=pad(m); elS.textContent=pad(s);
+    }
+    tick(); setInterval(tick,1000);
+  }
+
+  /* checkout + upsell modal */
+  var modal = root.querySelector('#aaaModal');
+  if(modal){
+    function showStep(n){
+      modal.querySelectorAll('[data-pane]').forEach(function(p){ p.hidden = p.getAttribute('data-pane')!==String(n); });
+      modal.querySelectorAll('[data-foot]').forEach(function(f){ f.hidden = f.getAttribute('data-foot')!==String(n); });
+      modal.querySelectorAll('[data-dot]').forEach(function(d){ d.classList.toggle('act', Number(d.getAttribute('data-dot'))<=n); });
+      if(n===3){
+        var bump = modal.querySelector('#aaaBump').checked;
+        var total = 997 + (bump?197:0);
+        modal.querySelector('#aaaRecap').innerHTML =
+          '<div class="r"><span>AI Agency Accelerator</span><span>$997</span></div>' +
+          (bump?'<div class="r"><span>1:1 Agency Launch Audit</span><span>$197</span></div>':'') +
+          '<div class="r tot"><span>Total paid</span><span>$'+total+'</span></div>';
+      }
+      modal.querySelector('.aaa-modal-card').scrollTop = 0;
+    }
+    function openModal(){ modal.classList.add('on'); modal.setAttribute('aria-hidden','false'); showStep(1); document.body.style.overflow='hidden'; }
+    function closeModal(){ modal.classList.remove('on'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    root.querySelectorAll('[data-checkout]').forEach(function(b){ b.addEventListener('click', function(e){ e.preventDefault(); openModal(); }); });
+    modal.addEventListener('click', function(e){
+      var t=e.target;
+      if(t===modal || t.hasAttribute('data-close')){ closeModal(); return; }
+      var nx=t.getAttribute('data-next'); if(nx){ showStep(Number(nx)); return; }
+      var bk=t.getAttribute('data-back'); if(bk){ showStep(Number(bk)); return; }
+    });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal.classList.contains('on')) closeModal(); });
+  }
+})();
+</script>
+
+</div>
+<!-- ============================================================= -->
+<!-- ⬆⬆⬆  GOHIGHLEVEL PASTE END  ⬆⬆⬆                                -->
+<!-- ============================================================= -->
+
+</body>
+</html>

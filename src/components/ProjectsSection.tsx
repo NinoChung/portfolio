@@ -85,6 +85,26 @@ const PROJECTS: Project[] = [
     tint: 'radial-gradient(135% 95% at 0% 0%, rgba(99,102,241,0.15), transparent 55%), #0C0C0C',
     accent: '#818cf8',
   },
+  {
+    num: '06',
+    category: 'Funnel · AI Course',
+    name: 'AI Agency Accelerator',
+    desc: 'A high-energy course funnel for an AI automation agency: VSL hero, a 3-phase method, an 8-module curriculum, a value-stacked offer with live countdown, and a multi-step checkout featuring a one-time-offer order bump. Built GoHighLevel-ready.',
+    url: '/projects/ai-agency/index.html',
+    bar: 'The AI Agency Accelerator · Course Funnel',
+    tint: 'radial-gradient(135% 95% at 100% 0%, rgba(92,255,157,0.13), transparent 55%), #0C0C0C',
+    accent: '#5cff9d',
+  },
+  {
+    num: '07',
+    category: 'Funnel · High-Ticket Coaching',
+    name: 'Apex Coaching Application',
+    desc: 'A premium application funnel for high-ticket coaching: VSL, a 3-shift method, hard-number case studies, a qualifying application form, and a post-application upsell for a paid Strategy Intensive. Editorial light design, built GoHighLevel-ready.',
+    url: '/projects/apex-coaching/index.html',
+    bar: 'Apex · High-Ticket Coaching Funnel',
+    tint: 'radial-gradient(135% 95% at 0% 0%, rgba(205,167,101,0.16), transparent 55%), #0C0C0C',
+    accent: '#cda765',
+  },
 ]
 
 function ProjectCard({

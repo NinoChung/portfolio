@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Apex Method — Scale to 7 Figures Without Burning Out</title>
+<meta name="description" content="Private coaching for established founders and experts ready to scale past $1M without trading their life for it. Apply for a strategy call.">
+</head>
+<body>
+
+<!-- ============================================================= -->
+<!-- ⬇⬇⬇  GOHIGHLEVEL PASTE START  ⬇⬇⬇                              -->
+<!-- Drop everything between these markers into ONE Custom Code     -->
+<!-- (HTML) element in the GHL funnel builder. Everything is scoped -->
+<!-- to .apx-funnel so it will not collide with GHL theme styles.   -->
+<!-- ============================================================= -->
+<div class="apx-funnel">
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=zodiak@400,500,600&f[]=general-sans@400,500,600,700&display=swap');
+
+/* ---------- SCOPED RESET + TOKENS ---------- */
+.apx-funnel{
+  --paper:#f6f2ea;
+  --paper-2:#efe9dd;
+  --surface:#fffdf8;
+  --ink:#1c1a17;
+  --ink-soft:#56524b;
+  --ink-faint:#8d887e;
+  --line:rgba(28,26,23,0.10);
+  --line-2:rgba(28,26,23,0.16);
+  --gold:#b08442;
+  --gold-deep:#8a6328;
+  --gold-soft:#e8d9bd;
+  --forest:#21433a;
+  --forest-soft:#dbe6df;
+  --shadow-soft: 0 1px 2px rgba(28,26,23,.04), 0 16px 40px -18px rgba(28,26,23,.22);
+  --shadow-lift: 0 2px 6px rgba(28,26,23,.06), 0 40px 80px -30px rgba(28,26,23,.38);
+  --ease: cubic-bezier(0.32,0.72,0,1);
+  --r-xl:28px; --r-lg:20px; --r-md:14px; --r-sm:9px;
+  font-family:'General Sans',-apple-system,system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  position:relative;
+  overflow-x:hidden;
+}
+.apx-funnel *,.apx-funnel *::before,.apx-funnel *::after{ box-sizing:border-box; margin:0; padding:0; }
+.apx-funnel img{ max-width:100%; display:block; }
+.apx-funnel a{ text-decoration:none; color:inherit; }
+.apx-funnel button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
+.apx-funnel input,.apx-funnel select,.apx-funnel textarea{ font-family:inherit; }
+.apx-funnel h1,.apx-funnel h2,.apx-funnel h3,.apx-funnel h4{
+  font-family:'Zodiak',Georgia,serif; font-weight:500; line-height:1.08; letter-spacing:-0.01em; color:var(--ink);
+}
+.apx-funnel ::selection{ background:var(--gold); color:#fff; }
+
+/* layout */
+.apx-wrap{ width:100%; max-width:1140px; margin:0 auto; padding:0 26px; position:relative; }
+.apx-wrap.narrow{ max-width:820px; }
+.apx-section{ padding:104px 0; position:relative; }
+.apx-eyebrow{
+  display:inline-flex; align-items:center; gap:9px;
+  font-family:'General Sans'; font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.24em;
+  color:var(--gold-deep);
+}
+.apx-eyebrow .ln{ width:26px; height:1px; background:var(--gold); display:inline-block; }
+.apx-h2{ font-size:clamp(32px,4.8vw,56px); letter-spacing:-0.02em; }
+.apx-lead{ font-size:clamp(16px,1.9vw,19px); color:var(--ink-soft); max-width:620px; }
+.apx-center{ text-align:center; }
+.apx-center .apx-lead{ margin-left:auto; margin-right:auto; }
+.apx-serif-it{ font-style:italic; color:var(--gold-deep); }
+
+/* buttons */
+.apx-btn{
+  position:relative; display:inline-flex; align-items:center; justify-content:center; gap:11px;
+  font-family:'General Sans'; font-weight:600; font-size:15.5px; padding:16px 30px; border-radius:100px;
+  background:var(--ink); color:var(--paper); letter-spacing:-0.01em;
+  box-shadow:0 12px 30px -12px rgba(28,26,23,.5);
+  transition:transform .5s var(--ease), box-shadow .5s var(--ease), background .4s var(--ease);
+}
+.apx-btn:hover{ transform:translateY(-3px); box-shadow:0 20px 44px -14px rgba(28,26,23,.6); background:#000; }
+.apx-btn:active{ transform:translateY(-1px); }
+.apx-btn-gold{ background:var(--gold); color:#fff; box-shadow:0 12px 30px -12px rgba(176,132,66,.6); }
+.apx-btn-gold:hover{ background:var(--gold-deep); box-shadow:0 20px 44px -14px rgba(176,132,66,.7); }
+.apx-btn-ghost{ background:transparent; color:var(--ink); border:1px solid var(--line-2); box-shadow:none; padding:15px 26px; }
+.apx-btn-ghost:hover{ background:var(--surface); box-shadow:none; }
+.apx-btn-block{ width:100%; }
+/* keep button label colors above the scoped a{color:inherit} reset */
+.apx-funnel a.apx-btn, .apx-funnel button.apx-btn{ color:var(--paper); }
+.apx-funnel a.apx-btn-gold, .apx-funnel button.apx-btn-gold{ color:#fff; }
+.apx-funnel a.apx-btn-ghost, .apx-funnel button.apx-btn-ghost{ color:var(--ink); }
+.apx-btn .arr{ font-weight:500; }
+
+/* nav */
+.apx-nav{ position:sticky; top:0; z-index:40; backdrop-filter:blur(12px); background:rgba(246,242,234,.78); border-bottom:1px solid var(--line); }
+.apx-nav-in{ max-width:1140px; margin:0 auto; padding:16px 26px; display:flex; align-items:center; justify-content:space-between; }
+.apx-logo{ display:flex; align-items:center; gap:11px; font-family:'Zodiak'; font-weight:600; font-size:20px; letter-spacing:-0.01em; }
+.apx-logo .mark{ width:34px; height:34px; border-radius:50%; border:1.5px solid var(--gold); display:grid; place-items:center; font-size:15px; color:var(--gold-deep); }
+.apx-nav-cta{ display:flex; align-items:center; gap:20px; }
+.apx-nav-cta .lnk{ font-size:14px; color:var(--ink-soft); font-weight:500; }
+.apx-nav-cta .lnk:hover{ color:var(--ink); }
+.apx-nav .apx-btn{ padding:11px 22px; font-size:14px; }
+@media(max-width:720px){ .apx-nav-cta .lnk{ display:none; } }
+
+/* hero */
+.apx-hero{ padding:84px 0 70px; text-align:center; }
+.apx-hero .apx-eyebrow{ justify-content:center; margin-bottom:26px; }
+.apx-h1{ font-family:'Zodiak'; font-weight:500; font-size:clamp(42px,6.6vw,76px); line-height:1.04; letter-spacing:-0.02em; max-width:920px; margin:0 auto; }
+.apx-hero .apx-lead{ margin:26px auto 0; max-width:600px; font-size:clamp(17px,2vw,20px); }
+.apx-hero-cta{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:36px; }
+.apx-trust{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px; margin-top:30px; color:var(--ink-faint); font-size:13.5px; }
+.apx-ava{ display:flex; }
+.apx-ava span{ width:34px; height:34px; border-radius:50%; border:2px solid var(--paper); margin-left:-10px; background-size:cover; background-position:center; }
+.apx-ava span:first-child{ margin-left:0; }
+.apx-stars{ color:var(--gold); letter-spacing:2px; }
+
+/* VSL */
+.apx-vsl{ position:relative; max-width:860px; margin:54px auto 0; border-radius:var(--r-xl); border:1px solid var(--line-2); background:var(--ink); box-shadow:var(--shadow-lift); overflow:hidden; aspect-ratio:16/9; }
+.apx-vsl .thumb{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.apx-vsl .shade{ position:absolute; inset:0; background:linear-gradient(180deg,rgba(21,20,15,.15),rgba(21,20,15,.55)); }
+.apx-vsl .play{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:84px; height:84px; border-radius:50%; background:var(--paper); display:grid; place-items:center; box-shadow:0 14px 40px -10px rgba(0,0,0,.6); transition:transform .4s var(--ease); }
+.apx-vsl .play:hover{ transform:translate(-50%,-50%) scale(1.06); }
+.apx-vsl .play::after{ content:""; border-left:23px solid var(--ink); border-top:14px solid transparent; border-bottom:14px solid transparent; margin-left:6px; }
+.apx-vsl .cap{ position:absolute; left:18px; bottom:16px; color:var(--paper); font-size:13px; font-weight:500; background:rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.14); padding:7px 13px; border-radius:100px; backdrop-filter:blur(6px); }
+.apx-vsl .dur{ position:absolute; right:18px; bottom:16px; color:var(--paper); font-size:12.5px; font-weight:600; background:rgba(0,0,0,.45); padding:6px 11px; border-radius:7px; }
+
+/* trust strip */
+.apx-strip{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:28px 0; }
+.apx-strip p{ text-align:center; font-size:11px; text-transform:uppercase; letter-spacing:.22em; color:var(--ink-faint); margin-bottom:16px; }
+.apx-strip .row{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:40px; opacity:.55; }
+.apx-strip .row span{ font-family:'Zodiak'; font-weight:600; font-size:19px; }
+
+/* problem / promise split */
+.apx-split{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+@media(max-width:840px){ .apx-split{ grid-template-columns:1fr; gap:34px; } }
+.apx-split p{ color:var(--ink-soft); font-size:16.5px; margin-bottom:16px; }
+.apx-split .pull{ font-family:'Zodiak'; font-weight:500; font-size:clamp(22px,3vw,30px); line-height:1.3; color:var(--ink); }
+.apx-painlist li{ list-style:none; display:flex; gap:13px; padding:14px 0; border-top:1px solid var(--line); color:var(--ink-soft); font-size:15.5px; }
+.apx-painlist li:first-child{ border-top:none; }
+.apx-painlist .mk{ flex:0 0 auto; width:22px; height:22px; border-radius:50%; background:var(--forest-soft); color:var(--forest); display:grid; place-items:center; font-size:12px; font-weight:700; }
+
+/* method */
+.apx-method{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:54px; }
+@media(max-width:840px){ .apx-method{ grid-template-columns:1fr; } }
+.apx-pillar{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:34px 30px; transition:transform .5s var(--ease), box-shadow .5s var(--ease); }
+.apx-pillar:hover{ transform:translateY(-5px); box-shadow:var(--shadow-soft); }
+.apx-pillar .step{ font-family:'General Sans'; font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:16px; }
+.apx-pillar h3{ font-size:24px; margin-bottom:10px; }
+.apx-pillar p{ color:var(--ink-soft); font-size:15px; }
+.apx-pillar .rule{ width:38px; height:2px; background:var(--gold); margin:18px 0 0; }
+
+/* who for */
+.apx-fit{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:54px; }
+@media(max-width:780px){ .apx-fit{ grid-template-columns:1fr; } }
+.apx-fit-col{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:34px; }
+.apx-fit-col h3{ font-size:22px; margin-bottom:18px; }
+.apx-fit-col.no{ background:var(--paper-2); }
+.apx-fit-col li{ list-style:none; display:flex; gap:12px; padding:12px 0; border-top:1px solid var(--line); color:var(--ink-soft); font-size:15.5px; }
+.apx-fit-col li:first-of-type{ border-top:none; }
+.apx-fit-col .ck{ flex:0 0 auto; width:23px; height:23px; border-radius:50%; display:grid; place-items:center; font-size:12px; font-weight:700; }
+.apx-fit-col.yes .ck{ background:var(--forest); color:#fff; }
+.apx-fit-col.no .ck{ background:var(--line-2); color:var(--ink-faint); }
+
+/* case studies */
+.apx-cases{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:54px; }
+@media(max-width:880px){ .apx-cases{ grid-template-columns:1fr; } }
+.apx-case{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:30px; display:flex; flex-direction:column; }
+.apx-case .metric{ font-family:'Zodiak'; font-weight:600; font-size:38px; color:var(--forest); line-height:1; }
+.apx-case .ml{ font-size:13px; color:var(--ink-faint); margin-top:6px; margin-bottom:18px; }
+.apx-case p{ font-size:15px; color:var(--ink-soft); flex:1; }
+.apx-case .who{ display:flex; align-items:center; gap:12px; margin-top:20px; padding-top:18px; border-top:1px solid var(--line); }
+.apx-case .who .pic{ width:44px; height:44px; border-radius:50%; background:var(--gold-soft); background-size:cover; background-position:center; }
+.apx-case .who b{ font-size:14.5px; display:block; }
+.apx-case .who small{ color:var(--ink-faint); font-size:12.5px; }
+
+/* big quote */
+.apx-bigq{ text-align:center; max-width:860px; margin:0 auto; }
+.apx-bigq .stars{ color:var(--gold); letter-spacing:3px; font-size:16px; margin-bottom:22px; }
+.apx-bigq blockquote{ font-family:'Zodiak'; font-weight:500; font-size:clamp(24px,3.6vw,38px); line-height:1.3; letter-spacing:-0.01em; }
+.apx-bigq .src{ margin-top:26px; font-size:14.5px; color:var(--ink-soft); }
+.apx-bigq .src b{ color:var(--ink); }
+
+/* about coach */
+.apx-coach{ display:grid; grid-template-columns:1fr 1.1fr; gap:50px; align-items:center; }
+@media(max-width:860px){ .apx-coach{ grid-template-columns:1fr; } }
+.apx-coach .ph{ position:relative; aspect-ratio:4/5; border-radius:var(--r-xl); overflow:hidden; background:linear-gradient(160deg,#2a2722,#16140f); border:1px solid var(--line-2); }
+.apx-coach .ph .pho{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center; }
+.apx-coach .ph .bdg{ position:absolute; left:16px; right:16px; bottom:16px; background:rgba(246,242,234,.94); border-radius:var(--r-md); padding:14px 16px; }
+.apx-coach .ph .bdg b{ font-family:'Zodiak'; font-size:16px; }
+.apx-coach .ph .bdg small{ display:block; color:var(--ink-faint); font-size:12.5px; }
+.apx-coach h2{ margin-bottom:18px; }
+.apx-coach p{ color:var(--ink-soft); font-size:16px; margin-bottom:14px; }
+.apx-coach .creds{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+.apx-coach .creds span{ font-size:13px; background:var(--surface); border:1px solid var(--line); border-radius:100px; padding:7px 14px; }
+
+/* process steps */
+.apx-proc{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:54px; }
+@media(max-width:840px){ .apx-proc{ grid-template-columns:1fr; } }
+.apx-pstep{ position:relative; padding:32px 28px; border:1px solid var(--line); border-radius:var(--r-lg); background:var(--surface); }
+.apx-pstep .n{ width:46px; height:46px; border-radius:50%; border:1.5px solid var(--gold); color:var(--gold-deep); display:grid; place-items:center; font-family:'Zodiak'; font-weight:600; font-size:19px; margin-bottom:18px; }
+.apx-pstep h3{ font-size:20px; margin-bottom:9px; }
+.apx-pstep p{ color:var(--ink-soft); font-size:15px; }
+
+/* application form */
+.apx-apply{ position:relative; }
+.apx-apply-card{ max-width:760px; margin:0 auto; background:var(--surface); border:1px solid var(--line-2); border-radius:var(--r-xl); box-shadow:var(--shadow-lift); overflow:hidden; }
+.apx-apply-head{ padding:34px 38px 26px; border-bottom:1px solid var(--line); background:linear-gradient(180deg,var(--paper-2),transparent); }
+.apx-apply-head h3{ font-size:clamp(24px,3vw,32px); }
+.apx-apply-head p{ color:var(--ink-soft); font-size:15px; margin-top:8px; }
+.apx-form{ padding:32px 38px 38px; }
+.apx-field{ margin-bottom:18px; }
+.apx-field label{ display:block; font-size:13px; font-weight:600; color:var(--ink); margin-bottom:7px; letter-spacing:.01em; }
+.apx-field .req{ color:var(--gold-deep); }
+.apx-input, .apx-select{
+  width:100%; padding:14px 16px; font-size:15px; color:var(--ink);
+  background:var(--paper); border:1px solid var(--line-2); border-radius:var(--r-md);
+  transition:border-color .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease);
+}
+.apx-input:focus, .apx-select:focus{ outline:none; border-color:var(--gold); background:var(--surface); box-shadow:0 0 0 4px rgba(176,132,66,.14); }
+.apx-input::placeholder{ color:var(--ink-faint); }
+.apx-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media(max-width:560px){ .apx-row{ grid-template-columns:1fr; } }
+.apx-form .fine{ font-size:12.5px; color:var(--ink-faint); margin-top:14px; text-align:center; }
+.apx-form .agree{ display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--ink-soft); margin:6px 0 20px; }
+.apx-form .agree input{ margin-top:3px; accent-color:var(--gold); }
+.apx-ok{ display:none; text-align:center; padding:50px 38px; }
+.apx-ok.show{ display:block; }
+.apx-ok .tick{ width:64px; height:64px; border-radius:50%; background:var(--forest); color:#fff; display:grid; place-items:center; font-size:30px; margin:0 auto 20px; }
+.apx-ok h3{ font-size:26px; margin-bottom:10px; }
+.apx-ok p{ color:var(--ink-soft); font-size:15px; max-width:440px; margin:0 auto; }
+
+/* seats note */
+.apx-seats{ display:inline-flex; align-items:center; gap:9px; font-size:13px; font-weight:600; color:var(--forest); background:var(--forest-soft); border-radius:100px; padding:8px 16px; margin-top:22px; }
+.apx-seats i{ width:8px; height:8px; border-radius:50%; background:var(--forest); }
+
+/* guarantee */
+.apx-guar{ max-width:760px; margin:0 auto; display:flex; gap:26px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-xl); padding:34px; box-shadow:var(--shadow-soft); }
+@media(max-width:640px){ .apx-guar{ flex-direction:column; text-align:center; } }
+.apx-guar .seal{ flex:0 0 auto; width:94px; height:94px; border-radius:50%; border:2px solid var(--gold); display:grid; place-items:center; text-align:center; font-family:'Zodiak'; font-weight:600; font-size:13px; color:var(--gold-deep); line-height:1.15; }
+.apx-guar h3{ font-size:22px; margin-bottom:8px; }
+.apx-guar p{ color:var(--ink-soft); font-size:15px; }
+
+/* faq */
+.apx-faq{ max-width:780px; margin:50px auto 0; }
+.apx-q{ border-bottom:1px solid var(--line); }
+.apx-q summary{ list-style:none; cursor:pointer; padding:24px 6px; display:flex; justify-content:space-between; align-items:center; gap:18px; font-family:'Zodiak'; font-weight:500; font-size:19px; }
+.apx-q summary::-webkit-details-marker{ display:none; }
+.apx-q summary .pl{ flex:0 0 auto; width:28px; height:28px; border-radius:50%; border:1px solid var(--line-2); display:grid; place-items:center; font-size:18px; color:var(--gold-deep); transition:transform .4s var(--ease); }
+.apx-q[open] summary .pl{ transform:rotate(45deg); }
+.apx-q .ans{ padding:0 6px 26px; color:var(--ink-soft); font-size:15.5px; max-width:680px; }
+
+/* final */
+.apx-final{ position:relative; text-align:center; border-radius:var(--r-xl); overflow:hidden; padding:84px 30px; background:var(--ink); color:var(--paper); }
+.apx-final::before{ content:""; position:absolute; inset:0; background:radial-gradient(60% 120% at 50% 0%, rgba(176,132,66,.3), transparent 60%); }
+.apx-final > *{ position:relative; }
+.apx-final .apx-eyebrow{ color:var(--gold-soft); justify-content:center; }
+.apx-final h2{ color:var(--paper); font-size:clamp(32px,5vw,54px); max-width:760px; margin:18px auto; }
+.apx-final p{ color:rgba(246,242,234,.72); max-width:540px; margin:0 auto 30px; font-size:17px; }
+
+/* footer */
+.apx-foot{ border-top:1px solid var(--line); padding:46px 0 60px; }
+.apx-foot .top{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; align-items:center; margin-bottom:28px; }
+.apx-foot .links{ display:flex; gap:22px; flex-wrap:wrap; }
+.apx-foot .links a{ font-size:13.5px; color:var(--ink-soft); }
+.apx-foot .links a:hover{ color:var(--ink); }
+.apx-foot .dis{ font-size:12px; color:var(--ink-faint); line-height:1.7; max-width:880px; }
+.apx-foot .cp{ font-size:12.5px; color:var(--ink-faint); margin-top:20px; }
+
+/* reveal */
+.apx-rev{ opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+.apx-rev.in{ opacity:1; transform:none; }
+
+/* ---------- POST-APPLICATION UPSELL STEP ---------- */
+.apx-up{ display:none; padding:34px 38px 38px; }
+.apx-up.show{ display:block; }
+.apx-up .pre{ display:inline-flex; align-items:center; gap:8px; font-size:11.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--forest); background:var(--forest-soft); border-radius:100px; padding:6px 13px; margin-bottom:14px; }
+.apx-up h3{ font-size:clamp(22px,2.6vw,28px); margin-bottom:8px; }
+.apx-up > p{ color:var(--ink-soft); font-size:15px; margin-bottom:20px; max-width:520px; }
+.apx-intensive{ border:1.5px solid var(--gold-soft); border-radius:var(--r-lg); padding:24px; background:linear-gradient(180deg,rgba(232,217,189,.28),transparent); }
+.apx-intensive .top{ display:flex; justify-content:space-between; align-items:flex-start; gap:14px; flex-wrap:wrap; }
+.apx-intensive h4{ font-family:'Zodiak'; font-weight:600; font-size:20px; }
+.apx-intensive .price{ text-align:right; white-space:nowrap; }
+.apx-intensive .price .was{ color:var(--ink-faint); text-decoration:line-through; font-size:14px; }
+.apx-intensive .price .now{ font-family:'Zodiak'; font-weight:600; font-size:26px; color:var(--gold-deep); }
+.apx-intensive ul{ margin:16px 0 4px; }
+.apx-intensive li{ list-style:none; display:flex; gap:11px; padding:7px 0; font-size:14.5px; color:var(--ink-soft); }
+.apx-intensive li .ck{ flex:0 0 auto; width:22px; height:22px; border-radius:50%; background:var(--forest); color:#fff; display:grid; place-items:center; font-size:12px; font-weight:700; }
+.apx-intensive .credit{ font-size:13px; color:var(--gold-deep); font-weight:600; margin-top:14px; }
+.apx-up-actions{ display:flex; flex-direction:column; gap:10px; margin-top:22px; }
+.apx-up-actions .apx-btn{ width:100%; }
+.apx-up-actions .skip{ background:none; color:var(--ink-soft); font-weight:500; font-size:14.5px; padding:12px; }
+.apx-up-actions .skip:hover{ color:var(--ink); }
+</style>
+
+<!-- nav -->
+<nav class="apx-nav">
+  <div class="apx-nav-in">
+    <div class="apx-logo"><span class="mark">A</span> Apex</div>
+    <div class="apx-nav-cta">
+      <a class="lnk" href="#method">The method</a>
+      <a class="lnk" href="#results">Results</a>
+      <a class="lnk" href="#faq">FAQ</a>
+      <a class="apx-btn" href="#apply">Apply now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- hero -->
+<header class="apx-hero apx-wrap">
+  <span class="apx-eyebrow"><span class="ln"></span> Private coaching for founders</span>
+  <h1 class="apx-h1">Scale to <span class="apx-serif-it">seven figures</span> without trading your life for it</h1>
+  <p class="apx-lead">A hands-on coaching partnership for established founders and experts ready to grow past $1M, build a team that runs without them, and get their time back.</p>
+  <div class="apx-hero-cta">
+    <a class="apx-btn apx-btn-gold" href="#apply">Apply for a strategy call <span class="arr">→</span></a>
+    <a class="apx-btn apx-btn-ghost" href="#vsl">▶ Watch the method (12 min)</a>
+  </div>
+  <div class="apx-trust">
+    <div class="apx-ava">
+      <span style="background-image:url('https://i.pravatar.cc/120?img=1')"></span>
+      <span style="background-image:url('https://i.pravatar.cc/120?img=8')"></span>
+      <span style="background-image:url('https://i.pravatar.cc/120?img=9')"></span>
+    </div>
+    <span class="apx-stars">★★★★★</span>
+    <span>Trusted by <b style="color:var(--ink)">180+</b> founders scaling past $1M</span>
+  </div>
+
+  <!-- VSL -->
+  <div class="apx-vsl" id="vsl">
+    <img class="thumb" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1280&q=72" alt="Founder strategy session preview" loading="lazy">
+    <div class="shade"></div>
+    <div class="play"></div>
+    <div class="cap">The Apex Method, explained in 12 minutes</div>
+    <div class="dur">12:04</div>
+  </div>
+</header>
+
+<!-- trust strip -->
+<section class="apx-strip">
+  <div class="apx-wrap">
+    <p>Founders coached have been featured in</p>
+    <div class="row"><span>Forbes</span><span>Inc.</span><span>Entrepreneur</span><span>TechCrunch</span><span>Fast Company</span></div>
+  </div>
+</section>
+
+<!-- problem / promise -->
+<section class="apx-section">
+  <div class="apx-wrap">
+    <div class="apx-split">
+      <div class="apx-rev">
+        <span class="apx-eyebrow"><span class="ln"></span> The ceiling</span>
+        <h2 class="apx-h2" style="margin:18px 0 22px;">You built it. Now it depends on you for everything.</h2>
+        <p class="pull">The business that gave you freedom slowly became the thing you cannot step away from.</p>
+        <p style="margin-top:18px;">Revenue is good, but growth has stalled. Every decision routes through you. You are working more than ever and the path to the next level is not "work harder", it is a different operating system entirely.</p>
+      </div>
+      <div class="apx-rev">
+        <ul class="apx-painlist">
+          <li><span class="mk">→</span> You are the bottleneck in sales, delivery and decisions</li>
+          <li><span class="mk">→</span> Revenue plateaued and you cannot see the next lever</li>
+          <li><span class="mk">→</span> Your team is capable but you cannot let go</li>
+          <li><span class="mk">→</span> You have no real time off without things slipping</li>
+          <li><span class="mk">→</span> You have read the books, but execution is the gap</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- method -->
+<section class="apx-section" id="method" style="background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="apx-wrap apx-center">
+    <span class="apx-eyebrow apx-rev" style="justify-content:center;"><span class="ln"></span> The Apex Method <span class="ln"></span></span>
+    <h2 class="apx-h2 apx-rev" style="margin-top:18px;">Three shifts that move you<br>from operator to owner</h2>
+    <p class="apx-lead apx-rev" style="margin-top:16px;">A proven framework refined across 180+ founder engagements.</p>
+    <div class="apx-method" style="text-align:left;">
+      <div class="apx-pillar apx-rev"><div class="step">Phase 01</div><h3>Clarity</h3><p>Pinpoint the one constraint capping your growth and design the 12-month plan that removes it.</p><div class="rule"></div></div>
+      <div class="apx-pillar apx-rev"><div class="step">Phase 02</div><h3>Capacity</h3><p>Build the team, systems and offers that let the business grow without routing everything through you.</p><div class="rule"></div></div>
+      <div class="apx-pillar apx-rev"><div class="step">Phase 03</div><h3>Compounding</h3><p>Install the rhythms and metrics that turn one good quarter into predictable, repeatable scale.</p><div class="rule"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- who for -->
+<section class="apx-section">
+  <div class="apx-wrap">
+    <div class="apx-center">
+      <span class="apx-eyebrow apx-rev" style="justify-content:center;"><span class="ln"></span> Who this is for <span class="ln"></span></span>
+      <h2 class="apx-h2 apx-rev" style="margin-top:18px;">This is selective, by design</h2>
+      <p class="apx-lead apx-rev" style="margin-top:16px;">Apex is a small, high-touch partnership. We only take founders we are confident we can help.</p>
+    </div>
+    <div class="apx-fit">
+      <div class="apx-fit-col yes apx-rev">
+        <h3>A strong fit</h3>
+        <li><span class="ck">✓</span> You run an established business doing $300K to $5M per year</li>
+        <li><span class="ck">✓</span> You have a product or service that already works</li>
+        <li><span class="ck">✓</span> You are ready to delegate and build real systems</li>
+        <li><span class="ck">✓</span> You value direct, candid coaching over cheerleading</li>
+      </div>
+      <div class="apx-fit-col no apx-rev">
+        <h3>Not a fit yet</h3>
+        <li><span class="ck">✕</span> You are pre-revenue or still validating an idea</li>
+        <li><span class="ck">✕</span> You want a done-for-you agency, not coaching</li>
+        <li><span class="ck">✕</span> You are not willing to change how you operate</li>
+        <li><span class="ck">✕</span> You are looking for a quick tactic, not a system</li>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- case studies -->
+<section class="apx-section" id="results" style="background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="apx-wrap apx-center">
+    <span class="apx-eyebrow apx-rev" style="justify-content:center;"><span class="ln"></span> Results <span class="ln"></span></span>
+    <h2 class="apx-h2 apx-rev" style="margin-top:18px;">Outcomes, not just testimonials</h2>
+    <div class="apx-cases" style="text-align:left;">
+      <div class="apx-case apx-rev">
+        <div class="metric">$680K → $2.1M</div>
+        <div class="ml">Annual revenue in 14 months</div>
+        <p>"I finally got out of the day to day. We tripled revenue and I took my first real vacation in six years."</p>
+        <div class="who"><div class="pic" style="background-image:url('https://i.pravatar.cc/120?img=47')"></div><div><b>Sarah R.</b><small>Agency founder</small></div></div>
+      </div>
+      <div class="apx-case apx-rev">
+        <div class="metric">−25 hrs</div>
+        <div class="ml">Per week, same revenue and rising</div>
+        <p>"Apex helped me build a leadership team. I went from 70-hour weeks to under 45 with the business still growing."</p>
+        <div class="who"><div class="pic" style="background-image:url('https://i.pravatar.cc/120?img=14')"></div><div><b>Marcus O.</b><small>E-commerce, 8 figures</small></div></div>
+      </div>
+      <div class="apx-case apx-rev">
+        <div class="metric">3.4x</div>
+        <div class="ml">Profit per client, year one</div>
+        <p>"We restructured the offer and pricing in the first 90 days. Margin transformed before we even touched marketing."</p>
+        <div class="who"><div class="pic" style="background-image:url('https://i.pravatar.cc/120?img=44')"></div><div><b>Lena C.</b><small>Consulting firm</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- big quote -->
+<section class="apx-section">
+  <div class="apx-wrap">
+    <div class="apx-bigq apx-rev">
+      <div class="stars">★★★★★</div>
+      <blockquote>"I had worked with two other coaches before. The difference here is the focus on systems and accountability. Within a year my business runs without me in every decision, and I am finally building the company I set out to."</blockquote>
+      <div class="src"><b>David M.</b> · Founder, SaaS company · scaled from $1.2M to $4.6M</div>
+    </div>
+  </div>
+</section>
+
+<!-- about coach -->
+<section class="apx-section" style="background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="apx-wrap">
+    <div class="apx-coach">
+      <div class="ph apx-rev">
+        <img class="pho" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=72" alt="Jonathan Cole, founder and coach" loading="lazy">
+        <div class="bdg"><b>Jonathan Cole</b><small>Founder of Apex · 2 exits · 180+ founders coached</small></div>
+      </div>
+      <div class="apx-rev">
+        <span class="apx-eyebrow"><span class="ln"></span> Your coach</span>
+        <h2 class="apx-h2" style="font-size:clamp(30px,4vw,44px); margin-top:16px;">I have built it, sold it, and helped 180+ founders do the same</h2>
+        <p>I scaled and exited two companies before I started coaching. I know the lonely middle, profitable enough to be trapped, not yet free, because I lived it.</p>
+        <p>Apex is not theory. It is the exact operating system I used to step out of the day to day, distilled into a partnership where I work directly with you on the constraints that actually matter.</p>
+        <div class="creds">
+          <span>🏆 2 successful exits</span>
+          <span>📈 180+ founders coached</span>
+          <span>⭐ 4.9/5 client rating</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- process -->
+<section class="apx-section">
+  <div class="apx-wrap apx-center">
+    <span class="apx-eyebrow apx-rev" style="justify-content:center;"><span class="ln"></span> What happens next <span class="ln"></span></span>
+    <h2 class="apx-h2 apx-rev" style="margin-top:18px;">A simple, no-pressure process</h2>
+    <div class="apx-proc" style="text-align:left;">
+      <div class="apx-pstep apx-rev"><div class="n">1</div><h3>Apply</h3><p>Answer a few questions so we understand your business and where you are stuck. Takes about 3 minutes.</p></div>
+      <div class="apx-pstep apx-rev"><div class="n">2</div><h3>Strategy call</h3><p>If it looks like a fit, we map your biggest constraint and the plan to remove it. You leave with clarity either way.</p></div>
+      <div class="apx-pstep apx-rev"><div class="n">3</div><h3>Partner</h3><p>If it makes sense for both sides, we begin. If not, no pressure. Either way the call is genuinely useful.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- application -->
+<section class="apx-section apx-apply" id="apply" style="background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="apx-wrap">
+    <div class="apx-center" style="margin-bottom:42px;">
+      <span class="apx-eyebrow apx-rev" style="justify-content:center;"><span class="ln"></span> Apply now <span class="ln"></span></span>
+      <h2 class="apx-h2 apx-rev" style="margin-top:18px;">Apply for your strategy call</h2>
+      <p class="apx-lead apx-rev" style="margin-top:16px;">A handful of new partnerships open each quarter. Tell us about your business below.</p>
+      <div class="apx-seats apx-rev"><i></i> Only 4 partnership spots open this quarter</div>
+    </div>
+
+    <div class="apx-apply-card apx-rev">
+      <div class="apx-apply-head" id="apxFormTop">
+        <h3>Tell us about your business</h3>
+        <p>This helps us prepare and make sure the call is worth your time.</p>
+      </div>
+      <form class="apx-form" id="apxForm" novalidate>
+        <div class="apx-row">
+          <div class="apx-field"><label>Full name <span class="req">*</span></label><input class="apx-input" type="text" name="name" placeholder="Jane Founder" required></div>
+          <div class="apx-field"><label>Email <span class="req">*</span></label><input class="apx-input" type="email" name="email" placeholder="jane@company.com" required></div>
+        </div>
+        <div class="apx-row">
+          <div class="apx-field"><label>Company website</label><input class="apx-input" type="text" name="site" placeholder="company.com"></div>
+          <div class="apx-field"><label>Current annual revenue <span class="req">*</span></label>
+            <select class="apx-select" name="revenue" required>
+              <option value="">Select a range</option>
+              <option>Under $300K</option>
+              <option>$300K to $1M</option>
+              <option>$1M to $3M</option>
+              <option>$3M to $5M</option>
+              <option>$5M+</option>
+            </select>
+          </div>
+        </div>
+        <div class="apx-field"><label>What is the single biggest constraint on your growth right now? <span class="req">*</span></label>
+          <textarea class="apx-input" name="constraint" rows="3" placeholder="Tell us where you feel most stuck..." required></textarea>
+        </div>
+        <label class="agree"><input type="checkbox" required> I understand this is an application for a limited number of coaching spots and there is no obligation.</label>
+        <button class="apx-btn apx-btn-gold apx-btn-block" type="submit">Submit application <span class="arr">→</span></button>
+        <p class="fine">🔒 Your information stays private. We typically reply within 1 business day.</p>
+      </form>
+      <div class="apx-up" id="apxUp">
+        <span class="pre">✓ Application received · one optional add-on</span>
+        <h3>Want to make the most of your call?</h3>
+        <p>Most founders who get the fastest results start with a focused working session. You can add one now, it is completely optional.</p>
+        <div class="apx-intensive">
+          <div class="top">
+            <h4>The Founder Strategy Intensive</h4>
+            <div class="price"><div class="was">$750</div><div class="now">$300</div></div>
+          </div>
+          <ul>
+            <li><span class="ck">✓</span> A private 90-minute deep-dive on your single biggest constraint</li>
+            <li><span class="ck">✓</span> A written 90-day growth plan you keep, whatever you decide next</li>
+            <li><span class="ck">✓</span> Priority scheduling, skip the regular waitlist</li>
+          </ul>
+          <div class="credit">Fully credited toward your coaching if you join Apex.</div>
+        </div>
+        <div class="apx-up-actions">
+          <button class="apx-btn apx-btn-gold" id="apxUpAdd" type="button">Yes, add the Strategy Intensive · $300 →</button>
+          <button class="skip" id="apxUpSkip" type="button">No thanks, just the free strategy call</button>
+        </div>
+      </div>
+
+      <div class="apx-ok" id="apxOk">
+        <div class="tick">✓</div>
+        <h3>Application received</h3>
+        <p>Thank you. We are reviewing your application now.</p>
+        <p id="apxOkExtra" style="margin-top:10px;"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- guarantee -->
+<section class="apx-section" style="padding-bottom:0;">
+  <div class="apx-wrap">
+    <div class="apx-guar apx-rev">
+      <div class="seal">VALUE<br>PROMISE</div>
+      <div>
+        <h3>The call is worth your time, guaranteed</h3>
+        <p>Whether or not we end up working together, you will leave the strategy call with a clear read on your single biggest constraint and the next move to make. If you feel it was not a valuable use of your time, tell us and we will make it right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- faq -->
+<section class="apx-section">
+  <div class="apx-wrap" id="faq">
+    <div class="apx-center">
+      <span class="apx-eyebrow apx-rev" style="justify-content:center;"><span class="ln"></span> Questions <span class="ln"></span></span>
+      <h2 class="apx-h2 apx-rev" style="margin-top:18px;">Common questions</h2>
+    </div>
+    <div class="apx-faq">
+      <details class="apx-q apx-rev"><summary>How much does the coaching cost? <span class="pl">+</span></summary><div class="ans">Apex is a premium, high-touch partnership and is priced accordingly. We share full details on the strategy call once we both confirm it is a fit. Most clients see the investment returned many times over within the first few months.</div></details>
+      <details class="apx-q apx-rev"><summary>What is the time commitment? <span class="pl">+</span></summary><div class="ans">Plan on a focused 60 to 90 minutes per week between sessions and implementation. The whole point is to give you time back, so the work is designed around high-leverage moves, not busywork.</div></details>
+      <details class="apx-q apx-rev"><summary>Is this 1-on-1 or group? <span class="pl">+</span></summary><div class="ans">It is a blend: direct 1-on-1 sessions for your specific business, plus a small peer group of other founders at your level for accountability and perspective.</div></details>
+      <details class="apx-q apx-rev"><summary>What if it is not a fit? <span class="pl">+</span></summary><div class="ans">Then we will tell you honestly on the call, and you still walk away with a clear plan. We only take on founders we are confident we can help, which is why we keep spots limited.</div></details>
+      <details class="apx-q apx-rev"><summary>How soon could we start? <span class="pl">+</span></summary><div class="ans">We open a small number of spots each quarter. If your application and strategy call confirm a fit, onboarding usually begins within one to two weeks.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- final cta -->
+<section class="apx-section" style="padding-top:0;">
+  <div class="apx-wrap">
+    <div class="apx-final apx-rev">
+      <span class="apx-eyebrow"><span class="ln"></span> Your next chapter <span class="ln"></span></span>
+      <h2>The business that works without you starts with one conversation</h2>
+      <p>Apply now to claim one of the limited strategy call spots this quarter.</p>
+      <a class="apx-btn apx-btn-gold" href="#apply" style="font-size:16.5px; padding:18px 36px;">Apply for your strategy call →</a>
+      <div style="margin-top:18px; color:rgba(246,242,234,.6); font-size:13px;">Only 4 partnership spots open · No obligation · Reply within 1 business day</div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="apx-foot">
+  <div class="apx-wrap">
+    <div class="top">
+      <div class="apx-logo"><span class="mark">A</span> Apex</div>
+      <div class="links"><a href="#method">The method</a><a href="#results">Results</a><a href="#faq">FAQ</a><a href="#apply">Apply</a><a href="#">Contact</a></div>
+    </div>
+    <p class="dis"><b>Disclaimer:</b> Results shown are individual outcomes and are not typical or guaranteed. Business results depend on many factors including effort, market and execution. The figures referenced are real client examples shared for illustration and should not be taken as a promise of results. This page is a marketing mockup for demonstration.</p>
+    <p class="cp">© 2026 Apex Coaching. All rights reserved. · Privacy · Terms</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.currentScript.closest('.apx-funnel') || document.querySelector('.apx-funnel');
+  if(!root) return;
+
+  /* reveal on scroll */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.12 });
+  root.querySelectorAll('.apx-rev').forEach(function(el){ io.observe(el); });
+
+  /* application form -> upsell step -> success state (mockup, no backend) */
+  var form = root.querySelector('#apxForm');
+  var up = root.querySelector('#apxUp');
+  var ok = root.querySelector('#apxOk');
+  var head = root.querySelector('#apxFormTop');
+  function gotoFinish(msg){
+    if(up) up.classList.remove('show');
+    var extra = ok.querySelector('#apxOkExtra'); if(extra) extra.textContent = msg;
+    ok.classList.add('show');
+    ok.scrollIntoView({ behavior:'smooth', block:'center' });
+  }
+  if(form){
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      if(!form.checkValidity()){ form.reportValidity(); return; }
+      form.style.display='none';
+      if(head) head.style.display='none';
+      if(up){ up.classList.add('show'); up.scrollIntoView({ behavior:'smooth', block:'center' }); }
+      else { gotoFinish('We will reach out within one business day to book your strategy call.'); }
+    });
+    var addBtn = root.querySelector('#apxUpAdd');
+    var skipBtn = root.querySelector('#apxUpSkip');
+    if(addBtn) addBtn.addEventListener('click', function(){ gotoFinish('Your Founder Strategy Intensive is reserved. We will email payment and scheduling details shortly, along with your strategy call.'); });
+    if(skipBtn) skipBtn.addEventListener('click', function(){ gotoFinish('We will reach out within one business day with next steps to book your strategy call.'); });
+  }
+})();
+</script>
+
+</div>
+<!-- ============================================================= -->
+<!-- ⬆⬆⬆  GOHIGHLEVEL PASTE END  ⬆⬆⬆                                -->
+<!-- ============================================================= -->
+
+</body>
+</html>
